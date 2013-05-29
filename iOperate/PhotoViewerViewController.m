@@ -13,6 +13,7 @@
 	NSMutableArray *arrayOfImages;
     NSMutableArray *arrayOfDescriptions;
 	int currentButtonNum;
+	int mainFontSize;
 }
 @property (weak, nonatomic) IBOutlet UICollectionView *thumbnailCollectionView;
 @property (weak, nonatomic) IBOutlet UITextView *textFieldViewer;
@@ -26,7 +27,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *leftButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollWindow;
 @property (weak, nonatomic) IBOutlet UIButton *rightButton;
+@property (weak, nonatomic) IBOutlet UIView *toolsView;
+- (IBAction)activateTools:(id)sender;
 - (IBAction)ButtonPress:(UIButton *)sender;
+- (IBAction)increaseFontSize:(id)sender;
+- (IBAction)decreaseFontSize:(id)sender;
 @end
 
 @implementation PhotoViewerViewController
@@ -92,6 +97,19 @@ typedef enum possibleMoveDirection {
     self.imageDisplay.layer.shadowOpacity = 1;
     self.imageDisplay.layer.shadowRadius = 10.0;
     self.imageDisplay.clipsToBounds = NO;
+	
+	self.toolsView.layer.shadowColor = [UIColor grayColor].CGColor;
+    self.toolsView.layer.shadowOffset = CGSizeMake(2, 2);
+    self.toolsView.layer.shadowOpacity = 1;
+    self.toolsView.layer.shadowRadius = 10.0;
+    self.toolsView.clipsToBounds = NO;
+	[[self.toolsView layer] setBorderColor:[[UIColor blackColor] CGColor]];
+    [[self.toolsView layer] setBorderWidth:0.1];
+    [[self.toolsView layer] setCornerRadius:8];
+	self.toolsView.hidden = YES;
+	mainFontSize = 14;
+	self.textFieldViewer.font = [UIFont fontWithName:self.textFieldViewer.font.fontName size:mainFontSize];
+	
 }
 
 - (void)didReceiveMemoryWarning
@@ -107,6 +125,17 @@ typedef enum possibleMoveDirection {
         button.imageView.contentMode = UIViewContentModeScaleAspectFit;
     }
 }
+- (IBAction)activateTools:(id)sender {
+	if (self.toolsView.hidden == YES) {
+		self.toolsView.hidden = NO;
+		[UIView animateWithDuration:0.4 animations:^{ self.toolsView.frame = CGRectMake(561, 240, 218, 480);}];
+	}
+	else {
+		[UIView animateWithDuration:0.4 animations:^{ self.toolsView.frame = CGRectMake(700, 240, 218, 480);}];
+		self.toolsView.hidden = YES;
+	}
+}
+
 - (IBAction)ButtonPress:(UIButton*)sender {
     UIImage* buttonImage = sender.imageView.image;
     for (int i = 0; i < [self.photoButtons count]; i++) {
@@ -120,6 +149,16 @@ typedef enum possibleMoveDirection {
 	if (sender.tag == 8) {
 		[self playMovie];
 	}
+}
+
+- (IBAction)increaseFontSize:(id)sender {
+	mainFontSize++;
+	self.textFieldViewer.font = [UIFont fontWithName:self.textFieldViewer.font.fontName size:mainFontSize];
+}
+
+- (IBAction)decreaseFontSize:(id)sender {
+	mainFontSize--;
+	self.textFieldViewer.font = [UIFont fontWithName:self.textFieldViewer.font.fontName size:mainFontSize];
 }
 
 - (IBAction)buttonLeft:(UIButton *)sender {
