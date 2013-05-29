@@ -14,6 +14,7 @@
     NSMutableArray *arrayOfDescriptions;
 	int currentButtonNum;
 	int mainFontSize;
+    float imageCenter;
 }
 @property (weak, nonatomic) IBOutlet UICollectionView *thumbnailCollectionView;
 @property (weak, nonatomic) IBOutlet UITextView *textFieldViewer;
@@ -55,7 +56,7 @@ typedef enum possibleMoveDirection {
     
     [[self myCollectionView]setDataSource:self];
     [[self myCollectionView]setDelegate:self];
-    
+    imageCenter = self.view.center.x;
     arrayOfImages = [[NSMutableArray alloc]initWithObjects:@"1.tif",@"2.tif",@"3.tif",@"4.tif",@"5.tif",@"6.tif",@"7.tif",@"8.tif",@"9.tif",@"10.tif",@"11.tif",@"12.tif",@"13.tif",@"14.tif",@"15.tif",nil];
     
     arrayOfDescriptions = [[NSMutableArray alloc]initWithObjects:
@@ -358,6 +359,33 @@ typedef enum possibleMoveDirection {
     NSString *segueIdentifier = sender.titleLabel.text;
     //NSString *segueIdentifier =  sender.description;
     [self performSegueWithIdentifier:segueIdentifier sender:sender];
+}
+- (IBAction)panImage:(UIPanGestureRecognizer *)sender {
+    //[_imageOne setCenter: CGPointMake(_imageOne.center.x+[sender translationInView:self.view].x, _imageOne.center.y+[sender translationInView:self.view].y)];
+    //[sender tr]
+    CGPoint translation = [sender translationInView:self.view];
+    float addX = translation.x+imageCenter;
+    //float addY = y;
+    [_imageDisplay setCenter:CGPointMake(addX, _imageDisplay.center.y)];
+    if(sender.state ==UIGestureRecognizerStateEnded){
+        float velX = [sender velocityInView:self.view].x;
+        if(velX >0){
+            if(currentButtonNum>0){
+                currentButtonNum-=1;
+                [self button:self.rightButton moveInDirection:LEFT];
+            }
+        }else{
+            if(currentButtonNum<arrayOfImages.count-1){
+                currentButtonNum+=1;
+                [self button:self.leftButton moveInDirection:RIGHT];
+            }
+        }
+        imageCenter = _imageDisplay.center.x;
+        //y = _imageOne.center.y;
+    }
+    //if([sender )
+    //[_imageOne setCenter:CGPointMake(100.0, 100.0)];
+    //[_imageOne setAlpha:0.0];
 }
 
 @end

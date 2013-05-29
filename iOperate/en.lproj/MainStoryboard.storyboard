@@ -396,12 +396,15 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="1.tif" translatesAutoresizingMaskIntoConstraints="NO" id="i4k-7T-Lr8">
+                            <imageView contentMode="scaleAspectFit" image="1.tif" translatesAutoresizingMaskIntoConstraints="NO" id="i4k-7T-Lr8">
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="620" id="6Pc-uY-hvF"/>
                                     <constraint firstAttribute="height" constant="460" id="Kyw-Ex-85J"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Z2r-eO-kjG" appends="YES" id="6mW-T9-LFK"/>
+                                </connections>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="black" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fan-1Z-wnH">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -562,6 +565,7 @@
                                     </textView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="wfF-uU-zag" firstAttribute="centerX" secondItem="ezr-SH-G2d" secondAttribute="centerX" type="default" id="9eR-a3-hHR"/>
                                     <constraint firstAttribute="trailing" secondItem="BHq-8m-hGw" secondAttribute="trailing" constant="45" id="GBn-XM-5yC"/>
@@ -618,14 +622,19 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t6r-0f-hvd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="ET0-VJ-FPp">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Z2r-eO-kjG">
                     <connections>
-                        <action selector="swipeRight:" destination="kmc-zu-ia8" id="7TE-5s-d2f"/>
+                        <action selector="panImage:" destination="kmc-zu-ia8" id="0Ee-Bi-9se"/>
                     </connections>
-                </swipeGestureRecognizer>
+                </panGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="8Iu-xg-vSZ">
                     <connections>
                         <action selector="swipeLeft:" destination="kmc-zu-ia8" id="b8F-x9-0fh"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="ET0-VJ-FPp">
+                    <connections>
+                        <action selector="swipeRight:" destination="kmc-zu-ia8" id="7TE-5s-d2f"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -923,13 +932,8 @@
             <relationships>
                 <relationship kind="action" name="ButtonPress:" candidateClass="UIButton"/>
                 <relationship kind="action" name="activateTools:"/>
-                <relationship kind="action" name="buttonLeft:" candidateClass="UIButton"/>
-                <relationship kind="action" name="buttonPress:" candidateClass="UIButton"/>
-                <relationship kind="action" name="buttonRight:" candidateClass="UIButton"/>
                 <relationship kind="action" name="decreaseFontSize:"/>
                 <relationship kind="action" name="increaseFontSize:"/>
-                <relationship kind="action" name="swipeLeft:" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="action" name="swipeRight:" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="imageDisplay" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="myCollectionView" candidateClass="UICollectionView"/>
