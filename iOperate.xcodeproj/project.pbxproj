@@ -84,6 +84,10 @@
 		1AFF583817456BF9000BCCCD /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		1AFF583A17456D43000BCCCD /* MainMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuCell.h; sourceTree = "<group>"; };
 		1AFF583B17456D43000BCCCD /* MainMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuCell.m; sourceTree = "<group>"; };
+		C8D2B2621755AD4800DF9365 /* AdvancedCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdvancedCell.h; sourceTree = "<group>"; };
+		C8D2B2631755AD4800DF9365 /* AdvancedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdvancedCell.m; sourceTree = "<group>"; };
+		C8D2B2641755AD4800DF9365 /* AdvancedCollectionViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdvancedCollectionViewViewController.h; sourceTree = "<group>"; };
+		C8D2B2651755AD4800DF9365 /* AdvancedCollectionViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdvancedCollectionViewViewController.m; sourceTree = "<group>"; };
 		D62B3A7617419038006BFAE8 /* iOperate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOperate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62B3A7917419038006BFAE8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D62B3A7B17419038006BFAE8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -170,6 +174,10 @@
 		D62B3A7F17419038006BFAE8 /* iOperate */ = {
 			isa = PBXGroup;
 			children = (
+				C8D2B2621755AD4800DF9365 /* AdvancedCell.h */,
+				C8D2B2631755AD4800DF9365 /* AdvancedCell.m */,
+				C8D2B2641755AD4800DF9365 /* AdvancedCollectionViewViewController.h */,
+				C8D2B2651755AD4800DF9365 /* AdvancedCollectionViewViewController.m */,
 				1A4A11011755200300B5A253 /* MainStoryboard.storyboard */,
 				D62B3A8817419038006BFAE8 /* UTLAppDelegate.h */,
 				D62B3A8917419038006BFAE8 /* UTLAppDelegate.m */,
