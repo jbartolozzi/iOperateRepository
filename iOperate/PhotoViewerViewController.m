@@ -20,10 +20,10 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageDisplay;/*
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *photoButtons;
 
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *photoButtonsOrdered;*/
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *photoButtonsOrdered;
 
 @property (strong, nonatomic)NSMutableArray *photoButtons;
-@property (strong, nonatomic) NSArray *photoButtonsOrdered;
+@property (strong, nonatomic) NSArray *photoButtonsOrdered;*/
 @property (weak, nonatomic) IBOutlet UIButton *leftButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollWindow;
 @property (weak, nonatomic) IBOutlet UIButton *rightButton;
@@ -84,7 +84,7 @@ typedef enum possibleMoveDirection {
         return (NSComparisonResult)NSOrderedAscending; } return (NSComparisonResult)NSOrderedSame;
     };
 	
-    self.photoButtonsOrdered = [self.photoButtons sortedArrayUsingComparator:compareTags];
+    //self.photoButtonsOrdered = [self.photoButtons sortedArrayUsingComparator:compareTags];
     [[self.textFieldViewer layer] setBorderColor:[[UIColor grayColor] CGColor]];
     [[self.textFieldViewer layer] setBorderWidth:1.5];
     [[self.textFieldViewer layer] setCornerRadius:2];
@@ -117,14 +117,14 @@ typedef enum possibleMoveDirection {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+/*
 -(void) setPhotoButtons:(NSArray*)photoButtons{
     currentButtonNum=0;
     _photoButtons = photoButtons;
     for(UIButton* button in _photoButtons){
         button.imageView.contentMode = UIViewContentModeScaleAspectFit;
     }
-}
+}*/
 - (IBAction)activateTools:(id)sender {
 	if (self.toolsView.hidden == YES) {
 		self.toolsView.hidden = NO;
@@ -138,17 +138,20 @@ typedef enum possibleMoveDirection {
 
 - (IBAction)ButtonPress:(UIButton*)sender {
     UIImage* buttonImage = sender.imageView.image;
-    for (int i = 0; i < [self.photoButtons count]; i++) {
+    /*for (int i = 0; i < [self.photoButtons count]; i++) {
         UIButton *element = [self.photoButtons objectAtIndex:i];
         element.alpha = 0.5;
-    }
-    sender.alpha = 1.0;
+    }*/
+    //sender.alpha = 1.0;
     self.textFieldViewer.text = sender.titleLabel.text;
     [_imageDisplay setImage:buttonImage];
 	
 	if (sender.tag == 8) {
 		[self playMovie];
 	}
+    
+    currentButtonNum = sender.tag;
+    [_myCollectionView reloadData];
 }
 
 - (IBAction)increaseFontSize:(id)sender {
@@ -164,41 +167,41 @@ typedef enum possibleMoveDirection {
 - (IBAction)buttonLeft:(UIButton *)sender {
     if(currentButtonNum>0){
         currentButtonNum-=1;
-	
+	/*
 		for (int i = 0; i < [self.photoButtons count]; i++) {
 			UIButton *element = [self.photoButtons objectAtIndex:i];
 			element.alpha = 0.5;
-		}
+		}*/
 		[self button:self.leftButton moveInDirection:LEFT];
     }
 }
 - (IBAction)swipeRight:(UISwipeGestureRecognizer *)sender {
     if(currentButtonNum>0){
         currentButtonNum-=1;
-		for (int i = 0; i < [self.photoButtons count]; i++) {
+		/*for (int i = 0; i < [self.photoButtons count]; i++) {
 			UIButton *element = [self.photoButtons objectAtIndex:i];
 			element.alpha = 0.5;
-		}
+		}*/
 		[self button:self.leftButton moveInDirection:LEFT];
     }
 }
 - (IBAction)buttonRight:(UIButton *)sender {
-    if(currentButtonNum<self.photoButtons.count-1){
+    if(currentButtonNum<arrayOfImages.count-1){
         currentButtonNum+=1;
-		for (int i = 0; i < [self.photoButtons count]; i++) {
+		/*for (int i = 0; i < [self.photoButtons count]; i++) {
 			UIButton *element = [self.photoButtons objectAtIndex:i];
 			element.alpha = 0.5;
-		}
+		}*/
 		[self button:self.rightButton moveInDirection:RIGHT];
     }
 }
 - (IBAction)swipeLeft:(UISwipeGestureRecognizer *)sender {
-    if(currentButtonNum<self.photoButtons.count-1){
+    if(currentButtonNum<arrayOfImages.count-1){
         currentButtonNum+=1;
-		for (int i = 0; i < [self.photoButtons count]; i++) {
+		/*for (int i = 0; i < [arrayOfImages count]; i++) {
 			UIButton *element = [self.photoButtons objectAtIndex:i];
 			element.alpha = 0.5;
-		}
+		}*/
 		[self button:self.rightButton moveInDirection:RIGHT];
     }
 }
@@ -320,6 +323,7 @@ typedef enum possibleMoveDirection {
 		self.textFieldViewer.text =[arrayOfDescriptions objectAtIndex:currentButtonNum];
 		[UIView animateWithDuration:0.5 animations:^{self.textFieldViewer.alpha = 1.0;}];
 	}
+    [_myCollectionView reloadData];
 	
 }
 
@@ -340,8 +344,12 @@ typedef enum possibleMoveDirection {
     [[cell myDescriptionLabel]setText:[arrayOfDescriptions objectAtIndex:indexPath.item]];
     NSString *segueIdentifier = [arrayOfDescriptions objectAtIndex:indexPath.item];
     [[cell myButton]setTitle:segueIdentifier forState:normal];
-    [[cell myButton].imageView setAlpha:.2f];
+    [[cell myButton] setAlpha:.2f];
+    if(indexPath.item==currentButtonNum){
+        [[cell myButton] setAlpha:1.0f];
+    }
     [[cell myButton]setContentMode:UIViewContentModeScaleAspectFit];
+    [[cell myButton] setTag:indexPath.item];
     return cell;
 }
 
