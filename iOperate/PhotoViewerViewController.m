@@ -372,12 +372,12 @@ typedef enum possibleMoveDirection {
         if(velX >0){
             if(currentButtonNum>0){
                 currentButtonNum-=1;
-                [self button:self.rightButton moveInDirection:LEFT];
+                [self button:self.leftButton moveInDirection:LEFT];
             }
         }else{
             if(currentButtonNum<arrayOfImages.count-1){
                 currentButtonNum+=1;
-                [self button:self.leftButton moveInDirection:RIGHT];
+                [self button:self.rightButton moveInDirection:RIGHT];
             }
         }
         imageCenter = _imageDisplay.center.x;
