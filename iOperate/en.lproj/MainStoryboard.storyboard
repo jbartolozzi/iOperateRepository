@@ -702,6 +702,7 @@
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Mkl-0J-ddM">
                                 <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="103" id="5QX-oQ-zmX"/>
                                 </constraints>
@@ -761,6 +762,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Jd2-ex-yew" appends="YES" id="UXA-d4-yZ1"/>
+                                    <outletCollection property="gestureRecognizers" destination="Jd2-ex-yew" appends="YES" id="Sv4-lG-S6i"/>
+                                </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uI1-zI-l0J">
                                 <subviews>
@@ -889,6 +894,11 @@
                         <action selector="swipeRight:" destination="kmc-zu-ia8" id="7TE-5s-d2f"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Jd2-ex-yew">
+                    <connections>
+                        <action selector="LongPress:" destination="kmc-zu-ia8" id="mf2-Ys-CHz"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1314" y="-3856"/>
         </scene>
@@ -1183,6 +1193,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoViewerViewController.h"/>
             <relationships>
                 <relationship kind="action" name="ButtonPress:" candidateClass="UIButton"/>
+                <relationship kind="action" name="LongPress:" candidateClass="UILongPressGestureRecognizer"/>
                 <relationship kind="action" name="activateTools:"/>
                 <relationship kind="action" name="buttonLeft:" candidateClass="UIButton"/>
                 <relationship kind="action" name="buttonPress:" candidateClass="UIButton"/>

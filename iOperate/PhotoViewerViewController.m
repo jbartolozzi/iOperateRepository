@@ -387,6 +387,7 @@ typedef enum possibleMoveDirection {
             }
             else {
                 [UIView animateWithDuration:0.5 animations:^{self.imageDisplay.frame = CGRectMake(74, 11, 620, 558);}];
+               
             }
         }
         imageCenter = _imageDisplay.center.x;
@@ -395,6 +396,11 @@ typedef enum possibleMoveDirection {
     //if([sender )
     //[_imageOne setCenter:CGPointMake(100.0, 100.0)];
     //[_imageOne setAlpha:0.0];
+}
+- (IBAction)LongPress:(UILongPressGestureRecognizer *)sender {
+    //if(sender.state == UIGestureRecognizerStateBegan){
+     [UIView animateWithDuration:0.5 animations:^{_myCollectionView.frame = CGRectMake(0, self.view.center.y-384, 768, 768);}];
+    //}
 }
 
 @end
