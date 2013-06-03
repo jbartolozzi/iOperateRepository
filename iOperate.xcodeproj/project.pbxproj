@@ -22,6 +22,8 @@
 		1A8B098D174E6EAE00B082B7 /* tabRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8B098B174E6EAE00B082B7 /* tabRight.png */; };
 		1A8B0990174E706900B082B7 /* tabLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8B098E174E706900B082B7 /* tabLeft.png */; };
 		1A8B0991174E706900B082B7 /* tabRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8B098F174E706900B082B7 /* tabRight.png */; };
+		1AB1B51C175D07A800F849DA /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB1B51B175D07A800F849DA /* QuizViewController.m */; };
+		1AB1B51F175D07E200F849DA /* QuizCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB1B51E175D07E200F849DA /* QuizCell.m */; };
 		1AD4E5BE17568C780028E418 /* AdvancedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4E5BB17568C780028E418 /* AdvancedCell.m */; };
 		1AD4E5BF17568C780028E418 /* AdvancedCollectionViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4E5BD17568C780028E418 /* AdvancedCollectionViewViewController.m */; };
 		1AD55B81174EC5CE0003071F /* arrowLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD55B7F174EC5CE0003071F /* arrowLeft.png */; };
@@ -77,6 +79,10 @@
 		1A8B098B174E6EAE00B082B7 /* tabRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabRight.png; sourceTree = "<group>"; };
 		1A8B098E174E706900B082B7 /* tabLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabLeft.png; sourceTree = "<group>"; };
 		1A8B098F174E706900B082B7 /* tabRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabRight.png; sourceTree = "<group>"; };
+		1AB1B51A175D07A800F849DA /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizViewController.h; sourceTree = "<group>"; };
+		1AB1B51B175D07A800F849DA /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizViewController.m; sourceTree = "<group>"; };
+		1AB1B51D175D07E200F849DA /* QuizCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizCell.h; sourceTree = "<group>"; };
+		1AB1B51E175D07E200F849DA /* QuizCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizCell.m; sourceTree = "<group>"; };
 		1AD4E5BA17568C780028E418 /* AdvancedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvancedCell.h; sourceTree = "<group>"; };
 		1AD4E5BB17568C780028E418 /* AdvancedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvancedCell.m; sourceTree = "<group>"; };
 		1AD4E5BC17568C780028E418 /* AdvancedCollectionViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvancedCollectionViewViewController.h; sourceTree = "<group>"; };
@@ -181,6 +187,10 @@
 				1AD4E5BC17568C780028E418 /* AdvancedCollectionViewViewController.h */,
 				1AD4E5BD17568C780028E418 /* AdvancedCollectionViewViewController.m */,
 				1A4A11011755200300B5A253 /* MainStoryboard.storyboard */,
+				1AB1B51D175D07E200F849DA /* QuizCell.h */,
+				1AB1B51E175D07E200F849DA /* QuizCell.m */,
+				1AB1B51A175D07A800F849DA /* QuizViewController.h */,
+				1AB1B51B175D07A800F849DA /* QuizViewController.m */,
 				D62B3A8817419038006BFAE8 /* UTLAppDelegate.h */,
 				D62B3A8917419038006BFAE8 /* UTLAppDelegate.m */,
 				D67C1495174D2F0500237C69 /* CustomCell.h */,
@@ -363,6 +373,8 @@
 				D67C149A174D30AC00237C69 /* CollectionViewViewController.m in Sources */,
 				1AD4E5BE17568C780028E418 /* AdvancedCell.m in Sources */,
 				1AD4E5BF17568C780028E418 /* AdvancedCollectionViewViewController.m in Sources */,
+				1AB1B51C175D07A800F849DA /* QuizViewController.m in Sources */,
+				1AB1B51F175D07E200F849DA /* QuizCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
