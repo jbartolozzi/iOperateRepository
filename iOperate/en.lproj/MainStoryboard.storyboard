@@ -1184,8 +1184,14 @@
             <relationships>
                 <relationship kind="action" name="ButtonPress:" candidateClass="UIButton"/>
                 <relationship kind="action" name="activateTools:"/>
+                <relationship kind="action" name="buttonLeft:" candidateClass="UIButton"/>
+                <relationship kind="action" name="buttonPress:" candidateClass="UIButton"/>
+                <relationship kind="action" name="buttonRight:" candidateClass="UIButton"/>
                 <relationship kind="action" name="decreaseFontSize:"/>
                 <relationship kind="action" name="increaseFontSize:"/>
+                <relationship kind="action" name="panImage:" candidateClass="UIPanGestureRecognizer"/>
+                <relationship kind="action" name="swipeLeft:" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="action" name="swipeRight:" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="imageDisplay" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="myCollectionView" candidateClass="UICollectionView"/>

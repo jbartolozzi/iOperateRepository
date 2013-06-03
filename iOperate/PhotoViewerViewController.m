@@ -369,15 +369,24 @@ typedef enum possibleMoveDirection {
     [_imageDisplay setCenter:CGPointMake(addX, _imageDisplay.center.y)];
     if(sender.state ==UIGestureRecognizerStateEnded){
         float velX = [sender velocityInView:self.view].x;
-        if(velX >0){
+        
+        if(velX >200){
             if(currentButtonNum>0){
                 currentButtonNum-=1;
                 [self button:self.leftButton moveInDirection:LEFT];
             }
-        }else{
+        }else if(velX <-200){
             if(currentButtonNum<arrayOfImages.count-1){
                 currentButtonNum+=1;
                 [self button:self.rightButton moveInDirection:RIGHT];
+            }
+        }
+        if((velX<=200&&velX>=-200)||currentButtonNum==arrayOfImages.count-1 || currentButtonNum==0){
+            if (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+                [UIView animateWithDuration:0.5 animations:^{self.imageDisplay.frame = CGRectMake(20, 20, 505, 580);}];
+            }
+            else {
+                [UIView animateWithDuration:0.5 animations:^{self.imageDisplay.frame = CGRectMake(74, 11, 620, 558);}];
             }
         }
         imageCenter = _imageDisplay.center.x;
