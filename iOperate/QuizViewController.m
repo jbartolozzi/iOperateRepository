@@ -51,6 +51,9 @@
 	arrayOfD = [[NSMutableArray alloc]initWithObjects:@"Answer 1",@"Answer 2",@"Answer 3", nil];
 	arrayOfE = [[NSMutableArray alloc]initWithObjects:@"Answer 1",@"Answer 2",@"Answer 3", nil];
 	arrayOfF = [[NSMutableArray alloc]initWithObjects:@"Answer 1",@"Answer 2",@"Answer 3", nil];
+	
+	self.questionNum.text = [NSString stringWithFormat:@"%d",1];
+	self.totalNum.text = [NSString stringWithFormat:@"%d",[arrayOfTitles count]];
 	// Do any additional setup after loading the view.
 }
 
@@ -79,7 +82,14 @@
 	[[cell optionD] setText:[arrayOfD objectAtIndex:indexPath.item]];
 	[[cell optionE] setText:[arrayOfE objectAtIndex:indexPath.item]];
 	[[cell optionF] setText:[arrayOfF objectAtIndex:indexPath.item]];
+	self.questionNum.text = [NSString stringWithFormat:@"%d",indexPath.item + 1];
 	return cell;
 }
 					  
+- (IBAction)goNext:(id)sender {
+}
+
+- (IBAction)goPrev:(id)sender {
+}
+
 @end
