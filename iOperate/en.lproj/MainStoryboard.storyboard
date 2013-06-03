@@ -195,27 +195,27 @@
             </objects>
             <point key="canvasLocation" x="-2388" y="-5589"/>
         </scene>
-        <!--View Controller-->
+        <!--Quiz View Controller-->
         <scene sceneID="xou-S7-o7u">
             <objects>
-                <viewController id="6Oy-Zg-6Cr" sceneMemberID="viewController">
+                <viewController id="6Oy-Zg-6Cr" customClass="QuizViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bLQ-KJ-Yr5">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fAr-qO-cvd">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fAr-qO-cvd">
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="850" id="lXB-Bp-qMj"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XQZ-hp-lNR">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XQZ-hp-lNR">
                                     <size key="itemSize" width="768" height="850"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="CDh-MA-Dgu">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="" reuseIdentifier="Cell" id="CDh-MA-Dgu" customClass="QuizCell">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="850"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -396,6 +396,17 @@
                                             <constraint firstItem="g9x-4e-0id" firstAttribute="trailing" secondItem="xDg-eK-FZh" secondAttribute="trailing" type="default" id="xv0-zF-MIM"/>
                                             <constraint firstItem="21N-IQ-zL1" firstAttribute="leading" secondItem="maA-dU-XBu" secondAttribute="leading" type="default" id="yMW-3t-f4n"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="optionA" destination="Bac-7X-SYa" id="YU0-rj-TZZ"/>
+                                            <outlet property="optionB" destination="5P0-5i-led" id="neu-Dg-juB"/>
+                                            <outlet property="optionC" destination="t5V-e0-Lbs" id="Hex-Bw-k4M"/>
+                                            <outlet property="optionD" destination="BdF-HH-hu8" id="OYk-o6-4hL"/>
+                                            <outlet property="optionE" destination="DI9-Hh-ZsJ" id="B11-jB-3JP"/>
+                                            <outlet property="optionF" destination="WfR-xh-6ko" id="08Y-wo-Sbf"/>
+                                            <outlet property="qBox" destination="ixs-c8-oVc" id="wfY-m3-Sin"/>
+                                            <outlet property="qTitle" destination="T6b-cg-o3y" id="DPd-IN-pYI"/>
+                                            <outlet property="segControl" destination="qD8-Mb-mHr" id="sy5-Ie-knb"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -442,10 +453,14 @@
                             <constraint firstItem="fAr-qO-cvd" firstAttribute="trailing" secondItem="bLQ-KJ-Yr5" secondAttribute="trailing" type="default" id="oj9-9E-ZSQ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Zxm-jO-zkA"/>
+                    <connections>
+                        <outlet property="myCollectionView" destination="fAr-qO-cvd" id="cUL-52-V89"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7HP-ok-X1q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1220" y="-5604"/>
+            <point key="canvasLocation" x="-1314" y="-5330"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="kyR-6T-93s">
@@ -491,21 +506,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jDJ-Ok-SCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-380" y="-879"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="NWi-5P-CKp">
-            <objects>
-                <viewController id="HY6-pD-ydh" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Jz9-EE-WT5">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="o6p-pW-Q0R"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VBj-Qd-WZ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-212" y="-2635"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Fea-LA-wMv">
@@ -628,12 +628,12 @@
                         <outlet property="myCollectionView" destination="tdj-7Q-IKI" id="y5e-40-oOD"/>
                         <segue destination="wXT-Bz-9ww" kind="push" identifier="eight" id="mxk-oj-Z7i"/>
                         <segue destination="dec-TP-W7S" kind="push" identifier="nine" id="7c7-mJ-udN"/>
-                        <segue destination="HY6-pD-ydh" kind="push" identifier="four" id="W4l-Jo-Z5l"/>
                         <segue destination="L48-lL-F6i" kind="push" identifier="five" id="4QC-ub-Jv6"/>
                         <segue destination="DGN-71-N1l" kind="push" identifier="six" id="aix-RM-83b"/>
                         <segue destination="dwW-dK-Wai" kind="push" identifier="seven" id="j7U-Mt-RZ2"/>
                         <segue destination="b3a-bZ-QdV" kind="push" identifier="Test Page" id="qMa-lZ-rtg"/>
                         <segue destination="49K-et-Ltx" kind="push" identifier="Image Viewer" id="Jwh-ZU-FpO"/>
+                        <segue destination="6Oy-Zg-6Cr" kind="push" identifier="four" id="RHe-Xu-5W3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edF-6W-JmF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1184,8 +1184,14 @@
             <relationships>
                 <relationship kind="action" name="ButtonPress:" candidateClass="UIButton"/>
                 <relationship kind="action" name="activateTools:"/>
+                <relationship kind="action" name="buttonLeft:" candidateClass="UIButton"/>
+                <relationship kind="action" name="buttonPress:" candidateClass="UIButton"/>
+                <relationship kind="action" name="buttonRight:" candidateClass="UIButton"/>
                 <relationship kind="action" name="decreaseFontSize:"/>
                 <relationship kind="action" name="increaseFontSize:"/>
+                <relationship kind="action" name="panImage:" candidateClass="UIPanGestureRecognizer"/>
+                <relationship kind="action" name="swipeLeft:" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="action" name="swipeRight:" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="imageDisplay" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="myCollectionView" candidateClass="UICollectionView"/>
@@ -1194,6 +1200,26 @@
                 <relationship kind="outlet" name="textFieldViewer" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="thumbnailCollectionView" candidateClass="UICollectionView"/>
                 <relationship kind="outlet" name="toolsView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="QuizCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuizCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="optionA" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="optionB" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="optionC" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="optionD" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="optionE" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="optionF" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="qBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="qTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="segControl" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="QuizViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuizViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="myCollectionView" candidateClass="UICollectionView"/>
             </relationships>
         </class>
         <class className="UICollectionReusableView" superclassName="UIView">
