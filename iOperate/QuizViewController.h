@@ -13,6 +13,6 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *myCollectionView;
 @property (weak, nonatomic) IBOutlet UILabel *totalNum;
 @property (weak, nonatomic) IBOutlet UILabel *questionNum;
-- (IBAction)goNext:(id)sender;
-- (IBAction)goPrev:(id)sender;
+- (IBAction)answerSelected:(id)sender;
+- (IBAction)qFinish:(id)sender;
 @end

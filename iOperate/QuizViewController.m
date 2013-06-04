@@ -9,6 +9,7 @@
 #import "QuizViewController.h"
 
 @interface QuizViewController () {
+	NSIndexPath *globalPath;
 	NSMutableArray *arrayOfTitles;
 	NSMutableArray *arrayOfQuestions;
 	NSMutableArray *arrayOfA;
@@ -17,7 +18,11 @@
 	NSMutableArray *arrayOfD;
 	NSMutableArray *arrayOfE;
 	NSMutableArray *arrayOfF;
+	NSMutableArray *arrayOfSegStates;
+	NSMutableArray *arrayOfSegAnswers;
+	NSMutableArray *arrayOfCorrect;
 }
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segControl;
 
 @end
 
@@ -38,12 +43,27 @@
 	[[self myCollectionView]setDataSource:self];
 	[[self myCollectionView]setDelegate:self];
 	
+	arrayOfSegStates = [[NSMutableArray alloc]initWithObjects:@"1",@"1",@"1", nil];
+	
+	NSNumber *ans1 = [NSNumber numberWithInt:0];
+	NSNumber *ans2 = [NSNumber numberWithInt:1];
+	NSNumber *ans3 = [NSNumber numberWithInt:2];
+	arrayOfSegAnswers = [[NSMutableArray alloc]initWithObjects:ans1,ans2,ans3, nil];
+	
+	
+	// Correct Array
+	NSNumber *finalAns1 = [NSNumber numberWithInt:0];
+	NSNumber *finalAns2 = [NSNumber numberWithInt:1];
+	NSNumber *finalAns3 = [NSNumber numberWithInt:2];
+	arrayOfCorrect = [[NSMutableArray alloc]initWithObjects:finalAns1,finalAns2,finalAns3, nil];
+	
 	arrayOfTitles = [[NSMutableArray alloc]initWithObjects:@"Question 1",@"Question 2",@"Question 3", nil];
 	arrayOfQuestions = [[NSMutableArray alloc]initWithObjects:
 						@"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.",
 						@"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.",
 						@"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.",nil];
-	arrayOfA = [[NSMutableArray alloc]initWithObjects:@"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.",
+	arrayOfA = [[NSMutableArray alloc]initWithObjects:
+				@"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.",
 				@"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.",
 				@"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.",nil];
 	arrayOfB = [[NSMutableArray alloc]initWithObjects:@"Answer 1",@"Answer 2",@"Answer 3", nil];
@@ -73,6 +93,7 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *CellIdentifier = @"Cell";
+	globalPath = indexPath;
 	QuizCell *cell = [self.myCollectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
 	[[cell qTitle] setText:[arrayOfTitles objectAtIndex:indexPath.item]];
 	[[cell qBox] setText:[arrayOfQuestions objectAtIndex:indexPath.item]];
@@ -83,13 +104,54 @@
 	[[cell optionE] setText:[arrayOfE objectAtIndex:indexPath.item]];
 	[[cell optionF] setText:[arrayOfF objectAtIndex:indexPath.item]];
 	self.questionNum.text = [NSString stringWithFormat:@"%d",indexPath.item + 1];
+	
+	self.segControl.selected = NO;
+	if ([[arrayOfSegStates objectAtIndex:indexPath.item] isEqual: @"0"]) {
+		self.segControl.selected = YES;
+		NSNumber *num = [arrayOfSegAnswers objectAtIndex:indexPath.item];
+		self.segControl.selectedSegmentIndex = [num integerValue];
+	}
 	return cell;
 }
-					  
-- (IBAction)goNext:(id)sender {
+
+- (IBAction)answerSelected:(id)sender {
+	[arrayOfSegStates replaceObjectAtIndex:globalPath.item withObject:@"0"];
+	NSNumber *num = [NSNumber numberWithInt:[sender selectedSegmentIndex]];
+	[arrayOfSegAnswers replaceObjectAtIndex:globalPath.item withObject:num];
 }
 
-- (IBAction)goPrev:(id)sender {
+- (IBAction)qFinish:(id)sender {
+	BOOL allDone = NO;
+	
+	if (allDone == NO) {
+		UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Exam Complete" message:@"Would you like to finish taking the quiz?" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"Yes",nil];
+		[alert show];
+	}
+	else {
+		UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning!" message:@"Not all questions have been answered. Continue anyway?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes",nil];
+		[alert show];
+	}
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+	if (buttonIndex == 1) {
+		float total = 100;
+		for (int i = 0; i < [arrayOfSegAnswers count]; i++) {
+			if ([arrayOfSegAnswers objectAtIndex:i] == [arrayOfCorrect objectAtIndex:i]) {
+				
+			}
+			else {
+				total -= (100.f/(float)[arrayOfCorrect count]);
+			}
+		}
+		NSString *message = [NSString stringWithFormat:@"%f",total];
+		
+		
+		UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Your Score:" message:[message stringByAppendingString:@"%"] delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
+		[UIView animateWithDuration:1 animations:^{self.view.alpha = 0.0;}];
+		self.view.hidden = YES;
+		[alert show];
+		
+	}
+}
 @end
