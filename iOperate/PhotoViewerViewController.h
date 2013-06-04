@@ -14,5 +14,7 @@
 
 @interface PhotoViewerViewController : UIViewController <UICollectionViewDataSource,UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *myCollectionView;
+@property (weak, nonatomic) IBOutlet UICollectionView *fullScreenCollection;
+
 
 @end

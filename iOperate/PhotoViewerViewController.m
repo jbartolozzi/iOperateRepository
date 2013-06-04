@@ -57,6 +57,8 @@ typedef enum possibleMoveDirection {
     
     [[self myCollectionView]setDataSource:self];
     [[self myCollectionView]setDelegate:self];
+    [[self fullScreenCollection]setDataSource:self];
+    [[self fullScreenCollection]setDelegate:self];
     imageCenter = self.view.center.x;
     fullScreen = NO;
     arrayOfImages = [[NSMutableArray alloc]initWithObjects:@"1.tif",@"2.tif",@"3.tif",@"4.tif",@"5.tif",@"6.tif",@"7.tif",@"8.tif",@"9.tif",@"10.tif",@"11.tif",@"12.tif",@"13.tif",@"14.tif",@"15.tif",nil];
@@ -416,14 +418,21 @@ typedef enum possibleMoveDirection {
     //[_ViewForCollection setContentMode:UIViewContentModeBottom];
     if(!fullScreen){
         //[_myCollectionView setBounds:CGRectMake(0,0,768,300)];
-        [UIView animateWithDuration:.5 animations:^{_myCollectionView.frame = CGRectMake(0, self.view.center.y-51, 768, 103);}];
+        //[UIView animateWithDuration:.5 animations:^{_myCollectionView.frame = CGRectMake(0, self.view.center.y-51, 768, 103);}];
         //_myCollectionView.frame = CGRectMake(0, 0, 768, 103);
+        [UIView animateWithDuration:.5 animations:^{[_fullScreenCollection setAlpha:1.0f];}];
+        [UIView animateWithDuration:.3 animations:^{[_myCollectionView setAlpha:0.0f];}];
+        //[_fullScreenCollection setAlpha:1.0f];
         fullScreen = YES;
-        [_myCollectionView reloadData];
+        [_fullScreenCollection reloadData];
         [sender setTitle:@"-" forState:UIControlStateNormal];
     } else {
-        [UIView animateWithDuration:0.5 animations:^{_myCollectionView.frame = CGRectMake(0, 857, 768, 103);}];
+        //[UIView animateWithDuration:0.5 animations:^{_myCollectionView.frame = CGRectMake(0, 857, 768, 103);}];
         //_myCollectionView.frame = CGRectMake(0, 0, 768, 103);
+        //[_fullScreenCollection setAlpha:0.0f];
+        
+        [UIView animateWithDuration:.3 animations:^{[_fullScreenCollection setAlpha:0.0f];}];
+        [UIView animateWithDuration:.5 animations:^{[_myCollectionView setAlpha:1.0f];}];
         fullScreen = NO;
         [_myCollectionView reloadData];
         [sender setTitle:@"+" forState:UIControlStateNormal];
