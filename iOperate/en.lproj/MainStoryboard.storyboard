@@ -235,7 +235,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="298" id="DHq-yk-mwa"/>
                                                     </constraints>
-                                                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -814,10 +814,6 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Jd2-ex-yew" appends="YES" id="UXA-d4-yZ1"/>
-                                    <outletCollection property="gestureRecognizers" destination="Jd2-ex-yew" appends="YES" id="Sv4-lG-S6i"/>
-                                </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uI1-zI-l0J">
                                 <subviews>
@@ -887,6 +883,23 @@
                                     <constraint firstItem="IBD-Fp-RaY" firstAttribute="top" secondItem="uI1-zI-l0J" secondAttribute="top" constant="51" id="yby-Ex-Tgi"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5s-lK-JCJ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="GBd-GV-E2S"/>
+                                    <constraint firstAttribute="width" constant="25" id="WXG-00-C9k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Expand:" destination="kmc-zu-ia8" eventType="touchUpInside" id="p5W-R0-Oee"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -896,6 +909,7 @@
                             <constraint firstItem="Fan-1Z-wnH" firstAttribute="top" secondItem="i4k-7T-Lr8" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5qy-Kh-hmX"/>
                             <constraint firstItem="Fan-1Z-wnH" firstAttribute="centerX" secondItem="i4k-7T-Lr8" secondAttribute="centerX" type="default" id="87E-tJ-doe"/>
                             <constraint firstItem="8Ia-ym-aiJ" firstAttribute="top" secondItem="LFg-Z6-PDS" secondAttribute="top" type="default" id="9ju-Qn-ANK"/>
+                            <constraint firstItem="n5s-lK-JCJ" firstAttribute="trailing" secondItem="FhZ-Ru-5Wj" secondAttribute="trailing" type="default" id="CgK-6G-q8Z"/>
                             <constraint firstItem="Mkl-0J-ddM" firstAttribute="bottom" secondItem="FhZ-Ru-5Wj" secondAttribute="bottom" type="default" id="D1P-0B-eoQ"/>
                             <constraint firstItem="Fan-1Z-wnH" firstAttribute="trailing" secondItem="FhZ-Ru-5Wj" secondAttribute="trailing" type="default" id="ISG-KU-E9q"/>
                             <constraint firstItem="uI1-zI-l0J" firstAttribute="centerY" secondItem="FhZ-Ru-5Wj" secondAttribute="centerY" type="default" id="IXF-C8-HDT"/>
@@ -905,6 +919,7 @@
                             <constraint firstItem="i4k-7T-Lr8" firstAttribute="top" secondItem="FhZ-Ru-5Wj" secondAttribute="top" constant="109" id="ZQi-XZ-OwN"/>
                             <constraint firstItem="uI1-zI-l0J" firstAttribute="top" secondItem="FhZ-Ru-5Wj" secondAttribute="top" constant="240" id="aE7-L8-oAh"/>
                             <constraint firstItem="LFg-Z6-PDS" firstAttribute="top" secondItem="FhZ-Ru-5Wj" secondAttribute="top" constant="285" id="c9E-KN-Mmw"/>
+                            <constraint firstItem="n5s-lK-JCJ" firstAttribute="top" secondItem="Mkl-0J-ddM" secondAttribute="top" type="default" id="d7o-1q-Ujr"/>
                             <constraint firstItem="uI1-zI-l0J" firstAttribute="trailing" secondItem="FhZ-Ru-5Wj" secondAttribute="trailing" type="default" id="htT-Zn-7bd"/>
                             <constraint firstItem="8Ia-ym-aiJ" firstAttribute="leading" secondItem="i4k-7T-Lr8" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="lGm-KF-Tcd"/>
                             <constraint firstItem="uI1-zI-l0J" firstAttribute="leading" secondItem="FhZ-Ru-5Wj" secondAttribute="leading" constant="550" id="uhu-d7-OEF"/>
@@ -946,11 +961,6 @@
                         <action selector="swipeRight:" destination="kmc-zu-ia8" id="7TE-5s-d2f"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Jd2-ex-yew">
-                    <connections>
-                        <action selector="LongPress:" destination="kmc-zu-ia8" id="mf2-Ys-CHz"/>
-                    </connections>
-                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1314" y="-3856"/>
         </scene>
@@ -1245,9 +1255,16 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoViewerViewController.h"/>
             <relationships>
                 <relationship kind="action" name="ButtonPress:" candidateClass="UIButton"/>
+                <relationship kind="action" name="Expand:" candidateClass="UIButton"/>
                 <relationship kind="action" name="activateTools:"/>
+                <relationship kind="action" name="buttonLeft:" candidateClass="UIButton"/>
+                <relationship kind="action" name="buttonPress:" candidateClass="UIButton"/>
+                <relationship kind="action" name="buttonRight:" candidateClass="UIButton"/>
                 <relationship kind="action" name="decreaseFontSize:"/>
                 <relationship kind="action" name="increaseFontSize:"/>
+                <relationship kind="action" name="panImage:" candidateClass="UIPanGestureRecognizer"/>
+                <relationship kind="action" name="swipeLeft:" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="action" name="swipeRight:" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="imageDisplay" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="myCollectionView" candidateClass="UICollectionView"/>
