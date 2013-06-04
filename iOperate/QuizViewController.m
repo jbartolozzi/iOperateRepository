@@ -22,6 +22,11 @@
 	NSMutableArray *arrayOfSegAnswers;
 	NSMutableArray *arrayOfCorrect;
 }
+@property (weak, nonatomic) IBOutlet UIView *quizView;
+@property (weak, nonatomic) IBOutlet UIView *examFailureView;
+@property (weak, nonatomic) IBOutlet UILabel *failureScore;
+@property (weak, nonatomic) IBOutlet UIView *examCompleteView;
+@property (weak, nonatomic) IBOutlet UILabel *completeScore;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segControl;
 
 @end
@@ -39,6 +44,9 @@
 
 - (void)viewDidLoad
 {
+	self.examCompleteView.hidden = YES;
+	self.examFailureView.hidden = YES;
+	
     [super viewDidLoad];
 	[[self myCollectionView]setDataSource:self];
 	[[self myCollectionView]setDelegate:self];
@@ -135,23 +143,28 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
 	if (buttonIndex == 1) {
-		float total = 100;
+		int total = 100;
 		for (int i = 0; i < [arrayOfSegAnswers count]; i++) {
 			if ([arrayOfSegAnswers objectAtIndex:i] == [arrayOfCorrect objectAtIndex:i]) {
 				
 			}
 			else {
-				total -= (100.f/(float)[arrayOfCorrect count]);
+				total -= (100.f/(double)[arrayOfCorrect count]);
 			}
 		}
-		NSString *message = [NSString stringWithFormat:@"%f",total];
+		NSString *message = [NSString stringWithFormat:@"%d",total];
 		
 		
-		UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Your Score:" message:[message stringByAppendingString:@"%"] delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
-		[UIView animateWithDuration:1 animations:^{self.view.alpha = 0.0;}];
-		self.view.hidden = YES;
-		[alert show];
-		
+		if (total < 65) {
+			self.quizView.hidden = YES;
+			self.examFailureView.hidden = NO;
+			self.failureScore.text = [message stringByAppendingString:@"%"];
+		}
+		else if (total > 65) {
+			self.quizView.hidden = YES;
+			self.examCompleteView.hidden = NO;
+			self.completeScore.text = [message stringByAppendingString:@"%"];
+		}
 	}
 }
 @end
