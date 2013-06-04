@@ -112,6 +112,7 @@ typedef enum possibleMoveDirection {
 	self.toolsView.hidden = YES;
 	mainFontSize = 14;
 	self.textFieldViewer.font = [UIFont fontWithName:self.textFieldViewer.font.fontName size:mainFontSize];
+    //_myCollectionView.
 	
 }
 
@@ -401,13 +402,30 @@ typedef enum possibleMoveDirection {
 }
 - (IBAction)Expand:(UIButton *)sender {
      //[UIView animateWithDuration:0.5 animations:^{_myCollectionView.frame = CGRectMake(0, self.view.center.y-51, 768, 103);}];
+    /*[_myCollectionView performBatchUpdates:^{[UIView animateWithDuration:0.5 animations:^{_myCollectionView.frame = CGRectMake(0, 10, 768, 103);}];}
+                                completion:^(BOOL finished){if(finished){[UIView animateWithDuration:0.5 animations:^{_myCollectionView.frame = CGRectMake(0, 856, 768, 103);}];};}];*/
+    /*[_myCollectionView performBatchUpdates:^{_myCollectionView an}
+                                completion:^(BOOL finished){if(finished){[UIView animateWithDuration:0.5 animations:^{_myCollectionView.frame = CGRectMake(0, 856, 768, 103);}];};}];*/
+    //CABasicAnimation *grow = [CABasicAnimation animation];
+    //[grow setToValue:[NSNumber numberWithInt:10]];
+    //[UIView animateWithDuration:0.5 animations:^{_myCollectionView.frame = CGRectMake(0, 10, 500, 103);}];
+    //[UIView animateWithDuration:0.5 delay:10 options:UIViewAnimationOptionBeginFromCurrentState animations:^{_myCollectionView.frame = CGRectMake(0, 857, 768, 103);} completion:nil];
+    /*[_ViewForCollection setAutoresizesSubviews:YES];
+    [_ViewForCollection setAutoresizingMask:UIViewAutoresizingFlexibleHeight];*/
+    //[_myCollectionView setContentMode:UIViewContentModeBottom];
+    //[_ViewForCollection setContentMode:UIViewContentModeBottom];
     if(!fullScreen){
-        [UIView animateWithDuration:0.5 animations:^{_myCollectionView.frame = CGRectMake(0, self.view.center.y-51, 768, 103);}];
+        //[_myCollectionView setBounds:CGRectMake(0,0,768,300)];
+        [UIView animateWithDuration:.5 animations:^{_myCollectionView.frame = CGRectMake(0, self.view.center.y-51, 768, 103);}];
+        //_myCollectionView.frame = CGRectMake(0, 0, 768, 103);
         fullScreen = YES;
+        [_myCollectionView reloadData];
         [sender setTitle:@"-" forState:UIControlStateNormal];
     } else {
-        [UIView animateWithDuration:0.5 animations:^{_myCollectionView.frame = CGRectMake(0, 0, 768, 857);}];
+        [UIView animateWithDuration:0.5 animations:^{_myCollectionView.frame = CGRectMake(0, 857, 768, 103);}];
+        //_myCollectionView.frame = CGRectMake(0, 0, 768, 103);
         fullScreen = NO;
+        [_myCollectionView reloadData];
         [sender setTitle:@"+" forState:UIControlStateNormal];
     }
 }
