@@ -15,6 +15,7 @@
 	int currentButtonNum;
 	int mainFontSize;
     float imageCenter;
+    bool fullScreen;
 }
 @property (weak, nonatomic) IBOutlet UICollectionView *thumbnailCollectionView;
 @property (weak, nonatomic) IBOutlet UITextView *textFieldViewer;
@@ -57,6 +58,7 @@ typedef enum possibleMoveDirection {
     [[self myCollectionView]setDataSource:self];
     [[self myCollectionView]setDelegate:self];
     imageCenter = self.view.center.x;
+    fullScreen = NO;
     arrayOfImages = [[NSMutableArray alloc]initWithObjects:@"1.tif",@"2.tif",@"3.tif",@"4.tif",@"5.tif",@"6.tif",@"7.tif",@"8.tif",@"9.tif",@"10.tif",@"11.tif",@"12.tif",@"13.tif",@"14.tif",@"15.tif",nil];
     
     arrayOfDescriptions = [[NSMutableArray alloc]initWithObjects:
@@ -397,10 +399,17 @@ typedef enum possibleMoveDirection {
     //[_imageOne setCenter:CGPointMake(100.0, 100.0)];
     //[_imageOne setAlpha:0.0];
 }
-- (IBAction)LongPress:(UILongPressGestureRecognizer *)sender {
-    //if(sender.state == UIGestureRecognizerStateBegan){
-     [UIView animateWithDuration:0.5 animations:^{_myCollectionView.frame = CGRectMake(0, self.view.center.y-384, 768, 768);}];
-    //}
+- (IBAction)Expand:(UIButton *)sender {
+     //[UIView animateWithDuration:0.5 animations:^{_myCollectionView.frame = CGRectMake(0, self.view.center.y-51, 768, 103);}];
+    if(!fullScreen){
+        [UIView animateWithDuration:0.5 animations:^{_myCollectionView.frame = CGRectMake(0, self.view.center.y-51, 768, 103);}];
+        fullScreen = YES;
+        [sender setTitle:@"-" forState:UIControlStateNormal];
+    } else {
+        [UIView animateWithDuration:0.5 animations:^{_myCollectionView.frame = CGRectMake(0, 0, 768, 857);}];
+        fullScreen = NO;
+        [sender setTitle:@"+" forState:UIControlStateNormal];
+    }
 }
 
 @end
