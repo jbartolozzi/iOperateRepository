@@ -23,9 +23,8 @@
 	NSMutableArray *arrayOfCorrect;
 }
 @property (weak, nonatomic) IBOutlet UIView *quizView;
-@property (weak, nonatomic) IBOutlet UIView *examFailureView;
-@property (weak, nonatomic) IBOutlet UILabel *failureScore;
 @property (weak, nonatomic) IBOutlet UIView *examCompleteView;
+@property (weak, nonatomic) IBOutlet UILabel *completeMessage;
 @property (weak, nonatomic) IBOutlet UILabel *completeScore;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segControl;
 
@@ -45,17 +44,15 @@
 - (void)viewDidLoad
 {
 	self.examCompleteView.hidden = YES;
-	self.examFailureView.hidden = YES;
-	
     [super viewDidLoad];
 	[[self myCollectionView]setDataSource:self];
 	[[self myCollectionView]setDelegate:self];
 	
 	arrayOfSegStates = [[NSMutableArray alloc]initWithObjects:@"1",@"1",@"1", nil];
 	
-	NSNumber *ans1 = [NSNumber numberWithInt:0];
-	NSNumber *ans2 = [NSNumber numberWithInt:1];
-	NSNumber *ans3 = [NSNumber numberWithInt:2];
+	NSNumber *ans1 = [NSNumber numberWithInt:6];
+	NSNumber *ans2 = [NSNumber numberWithInt:6];
+	NSNumber *ans3 = [NSNumber numberWithInt:6];
 	arrayOfSegAnswers = [[NSMutableArray alloc]initWithObjects:ans1,ans2,ans3, nil];
 	
 	
@@ -113,26 +110,58 @@
 	[[cell optionF] setText:[arrayOfF objectAtIndex:indexPath.item]];
 	self.questionNum.text = [NSString stringWithFormat:@"%d",indexPath.item + 1];
 	
-	self.segControl.selected = NO;
-	if ([[arrayOfSegStates objectAtIndex:indexPath.item] isEqual: @"0"]) {
-		self.segControl.selected = YES;
-		NSNumber *num = [arrayOfSegAnswers objectAtIndex:indexPath.item];
-		self.segControl.selectedSegmentIndex = [num integerValue];
-	}
-	return cell;
+	
+    NSNumber *num = [arrayOfSegAnswers objectAtIndex:indexPath.item];
+    self.segControl.selectedSegmentIndex = [num integerValue];
+    
+    self.nextButton.hidden = NO;
+    self.prevButton.hidden = NO;
+    self.completeButton.hidden = YES;
+    
+    if (indexPath.item == ([self->arrayOfA count]-1)){
+        self.nextButton.hidden = YES;
+        self.completeButton.hidden = NO;
+    }
+    if (indexPath.item == 0) {
+        self.prevButton.hidden = YES;
+    }
+    
+    return cell;
 }
 
 - (IBAction)answerSelected:(id)sender {
+    
 	[arrayOfSegStates replaceObjectAtIndex:globalPath.item withObject:@"0"];
 	NSNumber *num = [NSNumber numberWithInt:[sender selectedSegmentIndex]];
 	[arrayOfSegAnswers replaceObjectAtIndex:globalPath.item withObject:num];
 }
 
+- (IBAction)goNext:(id)sender {
+    NSInteger newLast = [globalPath indexAtPosition:globalPath.length-1]+1;
+    globalPath = [[globalPath indexPathByRemovingLastIndex] indexPathByAddingIndex:newLast];
+    [self.myCollectionView scrollToItemAtIndexPath:(globalPath) atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+}
+
+- (IBAction)goPrev:(id)sender {
+    NSInteger newLast = [globalPath indexAtPosition:globalPath.length-1]-1;
+    globalPath = [[globalPath indexPathByRemovingLastIndex] indexPathByAddingIndex:newLast];
+    [self.myCollectionView scrollToItemAtIndexPath:(globalPath) atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+}
+
 - (IBAction)qFinish:(id)sender {
 	BOOL allDone = NO;
 	
-	if (allDone == NO) {
-		UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Exam Complete" message:@"Would you like to finish taking the quiz?" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"Yes",nil];
+    for(int i = 0; i < [self->arrayOfSegAnswers count]; i++) {
+        if ([self->arrayOfSegAnswers objectAtIndex:i] == [NSNumber numberWithInt:6]) {
+            allDone = NO;
+        }
+        else {
+            allDone = YES;
+        }
+    }
+    
+	if (allDone == YES) {
+		UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Exam Complete:" message:@"Submit your score?" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"Yes",nil];
 		[alert show];
 	}
 	else {
@@ -152,19 +181,34 @@
 				total -= (100.f/(double)[arrayOfCorrect count]);
 			}
 		}
+        if (total < 0) {
+            total = 0.0;
+        }
 		NSString *message = [NSString stringWithFormat:@"%d",total];
 		
 		
 		if (total < 65) {
 			self.quizView.hidden = YES;
-			self.examFailureView.hidden = NO;
-			self.failureScore.text = [message stringByAppendingString:@"%"];
+            self.examCompleteView.backgroundColor = [UIColor colorWithRed:(186.0/255.0) green:0.0 blue:0.0 alpha:1.0f];
+            self.completeMessage.text = @"Failure!";
+            self.examCompleteView.hidden = NO;
+            self.completeScore.text = [message stringByAppendingString:@"%"];
+			
 		}
-		else if (total > 65) {
+		else if (total > 65 && total < 95) {
 			self.quizView.hidden = YES;
+            self.examCompleteView.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:(153.0/255.0) alpha:1.0f];
 			self.examCompleteView.hidden = NO;
+            self.completeMessage.text = @"You Passed!";
 			self.completeScore.text = [message stringByAppendingString:@"%"];
 		}
+        else if (total == 100) {
+            self.examCompleteView.backgroundColor = [UIColor colorWithRed:0.0 green:(102.0/255.0) blue:(51.0/255) alpha:1.0f];
+            self.quizView.hidden = YES;
+            self.examCompleteView.hidden = NO;
+            self.completeMessage.text = @"Perfect!";
+            self.completeScore.text = [message stringByAppendingString:@"%"];
+        }
 	}
 }
 @end
