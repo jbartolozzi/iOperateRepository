@@ -149,14 +149,11 @@
 }
 
 - (IBAction)qFinish:(id)sender {
-	BOOL allDone = NO;
+	BOOL allDone = YES;
 	
     for(int i = 0; i < [self->arrayOfSegAnswers count]; i++) {
         if ([self->arrayOfSegAnswers objectAtIndex:i] == [NSNumber numberWithInt:6]) {
             allDone = NO;
-        }
-        else {
-            allDone = YES;
         }
     }
     
