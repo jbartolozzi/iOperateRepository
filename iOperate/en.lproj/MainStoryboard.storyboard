@@ -593,16 +593,65 @@
             </objects>
             <point key="canvasLocation" x="-1314" y="-5330"/>
         </scene>
-        <!--View Controller-->
+        <!--Evaluation View Controller-->
         <scene sceneID="kyR-6T-93s">
             <objects>
-                <viewController id="L48-lL-F6i" sceneMemberID="viewController">
+                <viewController id="L48-lL-F6i" customClass="EvaluationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zem-Y3-c89">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hXQ-Oo-Xez">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jV8-KW-2Wl">
+                                    <size key="itemSize" width="768" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="l7G-Ge-18r" customClass="EvaluationCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ms8-EJ-iSq">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="441" id="1We-0h-0Lb"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="ms8-EJ-iSq" firstAttribute="centerX" secondItem="l7G-Ge-18r" secondAttribute="centerX" type="default" id="8AW-em-Cb5"/>
+                                            <constraint firstItem="ms8-EJ-iSq" firstAttribute="top" secondItem="l7G-Ge-18r" secondAttribute="top" type="default" id="FoH-MP-PCZ"/>
+                                            <constraint firstItem="ms8-EJ-iSq" firstAttribute="bottom" secondItem="l7G-Ge-18r" secondAttribute="bottom" type="default" id="i90-Hb-Sih"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="evaluationText" destination="ms8-EJ-iSq" id="LbL-S6-xmb"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hXQ-Oo-Xez" firstAttribute="bottom" secondItem="zem-Y3-c89" secondAttribute="bottom" type="default" id="1Do-Kv-AlT"/>
+                            <constraint firstItem="hXQ-Oo-Xez" firstAttribute="trailing" secondItem="zem-Y3-c89" secondAttribute="trailing" type="default" id="RAF-XR-aEY"/>
+                            <constraint firstItem="hXQ-Oo-Xez" firstAttribute="top" secondItem="zem-Y3-c89" secondAttribute="top" type="default" id="VXQ-ov-zUZ"/>
+                            <constraint firstItem="hXQ-Oo-Xez" firstAttribute="leading" secondItem="zem-Y3-c89" secondAttribute="leading" type="default" id="zH9-js-muw"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Tas-mW-JpZ"/>
+                    <connections>
+                        <outlet property="evaluationCollection" destination="hXQ-Oo-Xez" id="dRP-zx-yyA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nr1-1t-xRr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1374,6 +1423,18 @@
                 <relationship kind="outlet" name="myDescriptionLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
+        <class className="EvaluationCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EvaluationCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="evaluationText" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="EvaluationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EvaluationViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="evaluationCollection" candidateClass="UICollectionView"/>
+            </relationships>
+        </class>
         <class className="MovieViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MovieViewController.h"/>
             <relationships>
@@ -1393,9 +1454,12 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoViewerViewController.h"/>
             <relationships>
                 <relationship kind="action" name="ButtonPress:" candidateClass="UIButton"/>
+                <relationship kind="action" name="Expand:" candidateClass="UIButton"/>
                 <relationship kind="action" name="activateTools:"/>
                 <relationship kind="action" name="decreaseFontSize:"/>
                 <relationship kind="action" name="increaseFontSize:"/>
+                <relationship kind="action" name="swipeLeft:" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="action" name="swipeRight:" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="fullScreenCollection" candidateClass="UICollectionView"/>
                 <relationship kind="outlet" name="imageDisplay" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>

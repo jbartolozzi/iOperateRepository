@@ -42,6 +42,8 @@
 		D62B3A8E17419038006BFAE8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D62B3A8D17419038006BFAE8 /* Default@2x.png */; };
 		D62B3A9017419038006BFAE8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D62B3A8F17419038006BFAE8 /* Default-568h@2x.png */; };
 		D62B3A9617419038006BFAE8 /* UTLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D62B3A9517419038006BFAE8 /* UTLViewController.m */; };
+		D66FFA45175FB6EE004C9AA4 /* EvaluationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66FFA44175FB6EE004C9AA4 /* EvaluationViewController.m */; };
+		D66FFA48175FB765004C9AA4 /* EvaluationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D66FFA47175FB765004C9AA4 /* EvaluationCell.m */; };
 		D67C1497174D2F0500237C69 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D67C1496174D2F0500237C69 /* CustomCell.m */; };
 		D67C149A174D30AC00237C69 /* CollectionViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67C1499174D30AC00237C69 /* CollectionViewViewController.m */; };
 		D67CEEE717468CAD0036B49F /* PhotoViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67CEEE617468CAD0036B49F /* PhotoViewerViewController.m */; };
@@ -111,6 +113,10 @@
 		D62B3A8F17419038006BFAE8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D62B3A9417419038006BFAE8 /* UTLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UTLViewController.h; sourceTree = "<group>"; };
 		D62B3A9517419038006BFAE8 /* UTLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UTLViewController.m; sourceTree = "<group>"; };
+		D66FFA43175FB6EE004C9AA4 /* EvaluationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluationViewController.h; sourceTree = "<group>"; };
+		D66FFA44175FB6EE004C9AA4 /* EvaluationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluationViewController.m; sourceTree = "<group>"; };
+		D66FFA46175FB765004C9AA4 /* EvaluationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluationCell.h; sourceTree = "<group>"; };
+		D66FFA47175FB765004C9AA4 /* EvaluationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluationCell.m; sourceTree = "<group>"; };
 		D67C1495174D2F0500237C69 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		D67C1496174D2F0500237C69 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		D67C1498174D30AC00237C69 /* CollectionViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewViewController.h; sourceTree = "<group>"; };
@@ -183,6 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				1AD4E5BA17568C780028E418 /* AdvancedCell.h */,
+				D66FFA46175FB765004C9AA4 /* EvaluationCell.h */,
+				D66FFA47175FB765004C9AA4 /* EvaluationCell.m */,
 				1AD4E5BB17568C780028E418 /* AdvancedCell.m */,
 				1AD4E5BC17568C780028E418 /* AdvancedCollectionViewViewController.h */,
 				1AD4E5BD17568C780028E418 /* AdvancedCollectionViewViewController.m */,
@@ -208,6 +216,8 @@
 				D62B3A9417419038006BFAE8 /* UTLViewController.h */,
 				D62B3A9517419038006BFAE8 /* UTLViewController.m */,
 				D62B3A8017419038006BFAE8 /* Supporting Files */,
+				D66FFA43175FB6EE004C9AA4 /* EvaluationViewController.h */,
+				D66FFA44175FB6EE004C9AA4 /* EvaluationViewController.m */,
 			);
 			path = iOperate;
 			sourceTree = "<group>";
@@ -375,6 +385,8 @@
 				1AD4E5BF17568C780028E418 /* AdvancedCollectionViewViewController.m in Sources */,
 				1AB1B51C175D07A800F849DA /* QuizViewController.m in Sources */,
 				1AB1B51F175D07E200F849DA /* QuizCell.m in Sources */,
+				D66FFA45175FB6EE004C9AA4 /* EvaluationViewController.m in Sources */,
+				D66FFA48175FB765004C9AA4 /* EvaluationCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
