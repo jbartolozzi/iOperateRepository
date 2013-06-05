@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface EvaluationCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UILabel *evaluationText;
+@property (weak, nonatomic) IBOutlet UITextView *evaluationText;
+@property (weak, nonatomic) IBOutlet UILabel *evaluationLabel;
+@property (weak, nonatomic) IBOutlet UIStepper *evaluationClicker;
+@property (weak, nonatomic) IBOutlet UILabel *evaluationScore;
 
 @end

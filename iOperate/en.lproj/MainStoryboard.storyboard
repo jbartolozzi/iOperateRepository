@@ -596,6 +596,7 @@
         <!--Evaluation View Controller-->
         <scene sceneID="kyR-6T-93s">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nr1-1t-xRr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="L48-lL-F6i" customClass="EvaluationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zem-Y3-c89">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -603,38 +604,82 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hXQ-Oo-Xez">
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jV8-KW-2Wl">
-                                    <size key="itemSize" width="768" height="50"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="jV8-KW-2Wl">
+                                    <size key="itemSize" width="768" height="67"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="l7G-Ge-18r" customClass="EvaluationCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
+                                        <rect key="frame" x="0.0" y="10" width="768" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ms8-EJ-iSq">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="If4-Xo-0Sb">
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="441" id="1We-0h-0Lb"/>
+                                                        <constraint firstAttribute="width" constant="296" id="iwD-h3-ZYE"/>
+                                                    </constraints>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Instructor Comments" translatesAutoresizingMaskIntoConstraints="NO" id="Zag-fm-3Gy">
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="283" id="5EK-l5-J4e"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdZ-Ey-QCs">
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="2KE-mH-5UG"/>
+                                                        <constraint firstAttribute="width" constant="26" id="cC3-ap-5jF"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="qYY-sc-UJG">
+                                                    <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </stepper>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="4/5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiX-VZ-KGY">
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="41" id="cGd-IN-aLZ"/>
+                                                        <constraint firstAttribute="height" constant="24" id="xOb-BV-nxc"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="ms8-EJ-iSq" firstAttribute="centerX" secondItem="l7G-Ge-18r" secondAttribute="centerX" type="default" id="8AW-em-Cb5"/>
-                                            <constraint firstItem="ms8-EJ-iSq" firstAttribute="top" secondItem="l7G-Ge-18r" secondAttribute="top" type="default" id="FoH-MP-PCZ"/>
-                                            <constraint firstItem="ms8-EJ-iSq" firstAttribute="bottom" secondItem="l7G-Ge-18r" secondAttribute="bottom" type="default" id="i90-Hb-Sih"/>
+                                            <constraint firstItem="GiX-VZ-KGY" firstAttribute="top" secondItem="qYY-sc-UJG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1xO-u1-KgX"/>
+                                            <constraint firstItem="pdZ-Ey-QCs" firstAttribute="top" secondItem="l7G-Ge-18r" secondAttribute="top" constant="18" id="5JK-Fh-dh5"/>
+                                            <constraint firstItem="Zag-fm-3Gy" firstAttribute="top" secondItem="l7G-Ge-18r" secondAttribute="top" type="default" id="6Ri-ai-KLy"/>
+                                            <constraint firstItem="qYY-sc-UJG" firstAttribute="top" secondItem="l7G-Ge-18r" secondAttribute="top" type="default" id="B4R-jB-xT8"/>
+                                            <constraint firstItem="Zag-fm-3Gy" firstAttribute="leading" secondItem="l7G-Ge-18r" secondAttribute="leading" constant="378" id="BE7-7S-G9u"/>
+                                            <constraint firstItem="qYY-sc-UJG" firstAttribute="leading" secondItem="Zag-fm-3Gy" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="CYH-xq-8Nk"/>
+                                            <constraint firstItem="If4-Xo-0Sb" firstAttribute="leading" secondItem="l7G-Ge-18r" secondAttribute="leading" constant="69" id="EfH-E2-jtt"/>
+                                            <constraint firstItem="If4-Xo-0Sb" firstAttribute="top" secondItem="l7G-Ge-18r" secondAttribute="top" type="default" id="Krh-fg-Z49"/>
+                                            <constraint firstItem="Zag-fm-3Gy" firstAttribute="bottom" secondItem="l7G-Ge-18r" secondAttribute="bottom" type="default" id="VuQ-fK-ybT"/>
+                                            <constraint firstItem="pdZ-Ey-QCs" firstAttribute="leading" secondItem="l7G-Ge-18r" secondAttribute="leading" constant="20" type="default" id="eOt-Zb-7aJ"/>
+                                            <constraint firstItem="If4-Xo-0Sb" firstAttribute="bottom" secondItem="l7G-Ge-18r" secondAttribute="bottom" type="default" id="gRq-fV-Xhi"/>
+                                            <constraint firstItem="GiX-VZ-KGY" firstAttribute="centerX" secondItem="qYY-sc-UJG" secondAttribute="centerX" type="default" id="hZy-fG-1tT"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="evaluationText" destination="ms8-EJ-iSq" id="LbL-S6-xmb"/>
+                                            <outlet property="evaluationClicker" destination="qYY-sc-UJG" id="ZpF-4m-XOe"/>
+                                            <outlet property="evaluationLabel" destination="pdZ-Ey-QCs" id="nhV-00-uBk"/>
+                                            <outlet property="evaluationScore" destination="GiX-VZ-KGY" id="ujN-db-S2P"/>
+                                            <outlet property="evaluationText" destination="If4-Xo-0Sb" id="Lev-Fs-1XP"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -653,7 +698,6 @@
                         <outlet property="evaluationCollection" destination="hXQ-Oo-Xez" id="dRP-zx-yyA"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nr1-1t-xRr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1090" y="-1895"/>
         </scene>
@@ -1426,7 +1470,10 @@
         <class className="EvaluationCell" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EvaluationCell.h"/>
             <relationships>
-                <relationship kind="outlet" name="evaluationText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="evaluationClicker" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="evaluationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="evaluationScore" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="evaluationText" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="EvaluationViewController" superclassName="UIViewController">
@@ -1454,12 +1501,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoViewerViewController.h"/>
             <relationships>
                 <relationship kind="action" name="ButtonPress:" candidateClass="UIButton"/>
-                <relationship kind="action" name="Expand:" candidateClass="UIButton"/>
                 <relationship kind="action" name="activateTools:"/>
                 <relationship kind="action" name="decreaseFontSize:"/>
                 <relationship kind="action" name="increaseFontSize:"/>
-                <relationship kind="action" name="swipeLeft:" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="action" name="swipeRight:" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="fullScreenCollection" candidateClass="UICollectionView"/>
                 <relationship kind="outlet" name="imageDisplay" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>
