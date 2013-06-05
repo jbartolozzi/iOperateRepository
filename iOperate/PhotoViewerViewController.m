@@ -350,11 +350,15 @@ typedef enum possibleMoveDirection {
     [[cell myDescriptionLabel]setText:[arrayOfDescriptions objectAtIndex:indexPath.item]];
     NSString *segueIdentifier = [arrayOfDescriptions objectAtIndex:indexPath.item];
     [[cell myButton]setTitle:segueIdentifier forState:normal];
-    [[cell myButton] setAlpha:.2f];
-    if(indexPath.item==currentButtonNum){
+    if(!fullScreen){
+        [[cell myButton] setAlpha:.2f];
+        if(indexPath.item==currentButtonNum){
+            [[cell myButton] setAlpha:1.0f];
+        }
+    } else {
         [[cell myButton] setAlpha:1.0f];
     }
-    [[cell myButton]setContentMode:UIViewContentModeScaleAspectFit];
+    [[cell myButton].imageView setContentMode:UIViewContentModeScaleAspectFit];
     [[cell myButton] setTag:indexPath.item];
     return cell;
 }
@@ -420,6 +424,8 @@ typedef enum possibleMoveDirection {
         //[_myCollectionView setBounds:CGRectMake(0,0,768,300)];
         //[UIView animateWithDuration:.5 animations:^{_myCollectionView.frame = CGRectMake(0, self.view.center.y-51, 768, 103);}];
         //_myCollectionView.frame = CGRectMake(0, 0, 768, 103);
+        //_fullScreenCollection.backgroundView.alpha = .5f;
+        //_fullScreenCollection.viewForBaselineLayout.alpha = 0.0;
         [UIView animateWithDuration:.5 animations:^{[_fullScreenCollection setAlpha:1.0f];}];
         [UIView animateWithDuration:.3 animations:^{[_myCollectionView setAlpha:0.0f];}];
         //[_fullScreenCollection setAlpha:1.0f];
@@ -433,6 +439,7 @@ typedef enum possibleMoveDirection {
         
         [UIView animateWithDuration:.3 animations:^{[_fullScreenCollection setAlpha:0.0f];}];
         [UIView animateWithDuration:.5 animations:^{[_myCollectionView setAlpha:1.0f];}];
+        
         fullScreen = NO;
         [_myCollectionView reloadData];
         [sender setTitle:@"+" forState:UIControlStateNormal];
