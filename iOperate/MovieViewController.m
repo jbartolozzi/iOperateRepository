@@ -37,19 +37,23 @@
 - (void) willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
     {
+        //self.view.hidden = YES;
         self.imageWindow.frame = CGRectMake(20, 20, 506, 708);
         self.textWindow.frame = CGRectMake(534, 25, 470, 635);
         self.popupButton.frame = CGRectMake(204, 288, 29, 31);
         self.infoBox.frame = CGRectMake(230, 302, 217, 205);
         self.playButton.frame = CGRectMake(718, 672, 102, 44);
+        [self.view setNeedsDisplay];
     }
     else
     {
+        //self.view.hidden = NO;
         self.imageWindow.frame = CGRectMake(20, 20, 728, 398);
         self.textWindow.frame = CGRectMake(20, 418, 728, 449);
         self.popupButton.frame = CGRectMake(336, 158, 29, 31);
         self.infoBox.frame = CGRectMake(362, 172, 217, 205);
         self.playButton.frame = CGRectMake(333, 897, 102, 44);
+        [self.view setNeedsDisplay];
     }
 }
 
@@ -61,24 +65,7 @@
     [[self.infoBox layer] setBorderColor:[[UIColor blackColor] CGColor]];
     [[self.infoBox layer] setBorderWidth:2.3];
     [[self.infoBox layer] setCornerRadius:5];
-}
-
--(void)awakeFromNib {
-    if([[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeRight) {
-        self.imageWindow.frame = CGRectMake(20, 20, 506, 708);
-        self.textWindow.frame = CGRectMake(534, 25, 470, 635);
-        self.popupButton.frame = CGRectMake(204, 288, 29, 31);
-        self.infoBox.frame = CGRectMake(230, 302, 240, 128);
-        self.playButton.frame = CGRectMake(718, 672, 102, 44);
-    }
-    else
-    {
-        self.imageWindow.frame = CGRectMake(20, 20, 728, 398);
-        self.textWindow.frame = CGRectMake(20, 418, 728, 449);
-        self.popupButton.frame = CGRectMake(336, 158, 29, 31);
-        self.infoBox.frame = CGRectMake(362, 172, 240, 128);
-        self.playButton.frame = CGRectMake(333, 897, 102, 44);
-    }
+    [self willAnimateRotationToInterfaceOrientation:self.interfaceOrientation duration:1];
 }
 
 - (void)didReceiveMemoryWarning

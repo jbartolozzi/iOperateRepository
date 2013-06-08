@@ -478,6 +478,8 @@
 		D62B3A9A17419038006BFAE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Aline Normoyle (44BG9DZDLW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Aline Normoyle (44BG9DZDLW)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -486,6 +488,8 @@
 				GCC_PREFIX_HEADER = "iOperate/iOperate-Prefix.pch";
 				INFOPLIST_FILE = "iOperate/iOperate-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "81B496DB-0EF8-47E4-B404-CD677283A149";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "81B496DB-0EF8-47E4-B404-CD677283A149";
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
@@ -494,6 +498,8 @@
 		D62B3A9B17419038006BFAE8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Aline Normoyle (44BG9DZDLW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Aline Normoyle (44BG9DZDLW)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -502,6 +508,8 @@
 				GCC_PREFIX_HEADER = "iOperate/iOperate-Prefix.pch";
 				INFOPLIST_FILE = "iOperate/iOperate-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "81B496DB-0EF8-47E4-B404-CD677283A149";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "81B496DB-0EF8-47E4-B404-CD677283A149";
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
