@@ -53,8 +53,9 @@ typedef enum possibleMoveDirection {
 
 - (void)viewDidLoad
 {
-	[super viewDidLoad];
-    
+    [super viewDidLoad];
+    [self willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)[[UIDevice currentDevice] orientation] duration:0.2];
+	
     [[self myCollectionView]setDataSource:self];
     [[self myCollectionView]setDelegate:self];
     [[self fullScreenCollection]setDataSource:self];
@@ -102,7 +103,6 @@ typedef enum possibleMoveDirection {
     self.imageDisplay.layer.shadowOpacity = 1;
     self.imageDisplay.layer.shadowRadius = 10.0;
     self.imageDisplay.clipsToBounds = NO;
-	
 	self.toolsView.layer.shadowColor = [UIColor grayColor].CGColor;
     self.toolsView.layer.shadowOffset = CGSizeMake(2, 2);
     self.toolsView.layer.shadowOpacity = 1;

@@ -43,8 +43,10 @@
 
 - (void)viewDidLoad
 {
-	self.examCompleteView.hidden = YES;
+	
     [super viewDidLoad];
+    [self willAnimateRotationToInterfaceOrientation:self.interfaceOrientation duration:0.1];
+    self.examCompleteView.hidden = YES;
 	[[self myCollectionView]setDataSource:self];
 	[[self myCollectionView]setDelegate:self];
 	
@@ -207,5 +209,9 @@
             self.completeScore.text = [message stringByAppendingString:@"%"];
         }
 	}
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation == UIInterfaceOrientationPortrait || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown);
 }
 @end

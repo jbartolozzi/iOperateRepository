@@ -30,7 +30,7 @@
     
     arrayOfImages = [[NSMutableArray alloc]initWithObjects:@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",nil];
     
-    arrayOfDescriptions = [[NSMutableArray alloc]initWithObjects:@"Test Page",@"Image Viewer",@"New View", @"four",@"five",@"six",@"seven",@"eight",@"nine", nil];
+    arrayOfDescriptions = [[NSMutableArray alloc]initWithObjects:@"Test Page",@"Image Viewer",@"Evaluation", @"Quiz 1", nil];
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
