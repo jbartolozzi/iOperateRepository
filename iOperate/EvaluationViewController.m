@@ -117,6 +117,7 @@
 	for(int i =0; i < arrayOfText.count; i++){
         arrayOfComments[i] =  @"...";
     }
+	
 	// Do any additional setup after loading the view.
 }
 
@@ -150,9 +151,8 @@
         [cell evaluationResult].backgroundColor = [UIColor colorWithRed:255.0 green:0.0 blue:0.0 alpha:1.0f];
     }
     [cell evaluationResult].tag = indexPath.item;
+	arrayOfComments[indexPath.item] = [cell evaluationComments].text;
     [[cell evaluationComments]setText:arrayOfComments[indexPath.item]];
-	UITextView.UITextViewTextDidBeginEditingNotification()
-	[[cell evaluationComments]]
 	
     return cell;
 }
