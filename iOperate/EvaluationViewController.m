@@ -10,6 +10,7 @@
 
 @interface EvaluationViewController (){
     NSMutableArray *arrayOfText;
+    NSMutableArray *arrayOfResults;
 }
 
 @end
@@ -107,6 +108,10 @@
                    @"Trainee appropriately asked for help/assistance when needed.",
                    @"Trainee asked for performance feedback immediately after the operation.",
                    @"Trainee took:\na) 15 minutes or less to complete the operation\nb) 16-20 minutes to complete the operation\nc) 21-25 minutes to complete the operation\nd) 26-30 minutes to complete the operation\ne) 31-35 minutes to complete the operation\nf) 36-40 minutes to complete the operation\ng) 41-45 minutes to complete the operation.\nh) More than 45 minutes to complete the operation.",nil];
+    arrayOfResults = [[NSMutableArray alloc]initWithCapacity:arrayOfText.count];
+    for(int i =0; i < arrayOfText.count; i++){
+        arrayOfResults[i] =  @"YES";
+    }
 	// Do any additional setup after loading the view.
 }
 
@@ -132,8 +137,23 @@
     [[cell evaluationText]setText:[arrayOfText objectAtIndex:indexPath.item]];
     NSString *text = [NSString stringWithFormat:@"%d)",indexPath.item];
     [[cell evaluationLabel]setText:text];
-    [[cell evaluationScore]setText:@"_/5"];
+    if([[arrayOfResults objectAtIndex:indexPath.item] isEqualToString: @"YES"]){
+        [[cell evaluationResult] setTitle:@"✓" forState:UIControlStateNormal];
+        [cell evaluationResult].backgroundColor = [UIColor colorWithRed:0.0 green:255.0 blue:0.0 alpha:1.0f];
+    } else {
+        [[cell evaluationResult] setTitle:@"X" forState:UIControlStateNormal];
+        [cell evaluationResult].backgroundColor = [UIColor colorWithRed:255.0 green:0.0 blue:0.0 alpha:1.0f];
+    }
+    [cell evaluationResult].tag = indexPath.item;
     return cell;
+}
+- (IBAction)mark:(UIButton *)sender {
+    if([sender.titleLabel.text isEqualToString:(@"X")]){
+        arrayOfResults[sender.tag] = @"YES";
+    } else {
+        arrayOfResults[sender.tag] = @"NO";
+    }
+    [_evaluationCollection reloadData];
 }
 
 
