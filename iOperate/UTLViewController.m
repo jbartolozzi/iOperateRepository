@@ -13,6 +13,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
 @property (strong, nonatomic) IBOutlet UIButton *loginButton;
 @property (strong, nonatomic) IBOutlet UICollectionView *myCollectionView;
+@property (weak, nonatomic) IBOutlet UILabel *versionNumber;
 - (IBAction)userNameInput:(id)sender;
 - (IBAction)passwordInput:(id)sender;
 
@@ -28,6 +29,7 @@
     self.loginButton.enabled = NO;
     self.loginButton.hidden = YES;
 	// Do any additional setup after loading the view, typically from a nib.
+	self.versionNumber.text = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
 }
 
 - (void)didReceiveMemoryWarning
