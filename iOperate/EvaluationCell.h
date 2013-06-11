@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *evaluationText;
 @property (weak, nonatomic) IBOutlet UILabel *evaluationLabel;
 @property (weak, nonatomic) IBOutlet UIButton *evaluationResult;
+@property (weak, nonatomic) IBOutlet UITextView *evaluationComments;
 
 @end
