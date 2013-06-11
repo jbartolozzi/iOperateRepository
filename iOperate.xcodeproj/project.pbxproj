@@ -39,7 +39,6 @@
 		D62B3A8617419038006BFAE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D62B3A8517419038006BFAE8 /* main.m */; };
 		D62B3A8A17419038006BFAE8 /* UTLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D62B3A8917419038006BFAE8 /* UTLAppDelegate.m */; };
 		D62B3A8C17419038006BFAE8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D62B3A8B17419038006BFAE8 /* Default.png */; };
-		D62B3A8E17419038006BFAE8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D62B3A8D17419038006BFAE8 /* Default@2x.png */; };
 		D62B3A9017419038006BFAE8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D62B3A8F17419038006BFAE8 /* Default-568h@2x.png */; };
 		D62B3A9617419038006BFAE8 /* UTLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D62B3A9517419038006BFAE8 /* UTLViewController.m */; };
 		D66FFA45175FB6EE004C9AA4 /* EvaluationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66FFA44175FB6EE004C9AA4 /* EvaluationViewController.m */; };
@@ -328,7 +327,6 @@
 			files = (
 				D62B3A8417419038006BFAE8 /* InfoPlist.strings in Resources */,
 				D62B3A8C17419038006BFAE8 /* Default.png in Resources */,
-				D62B3A8E17419038006BFAE8 /* Default@2x.png in Resources */,
 				D62B3A9017419038006BFAE8 /* Default-568h@2x.png in Resources */,
 				1A8352E21742E27B000CA4D4 /* Icon-72@2x.png in Resources */,
 				1A8352E41742E27E000CA4D4 /* Icon-72.png in Resources */,
