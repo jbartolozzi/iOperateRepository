@@ -27,6 +27,7 @@
     
     [[self myCollectionView]setDataSource:self];
     [[self myCollectionView]setDelegate:self];
+	self.myCollectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wallpaper-630620.jpg"]];
     
     arrayOfImages = [[NSMutableArray alloc]initWithObjects:@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",nil];
     

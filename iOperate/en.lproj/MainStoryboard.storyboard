@@ -13,23 +13,23 @@
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="wallpaper-1231836.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="K2W-by-J5k">
+                            <imageView userInteractionEnabled="NO" contentMode="left" image="wallpaper-630620.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="K2W-by-J5k">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1061" id="0EM-ld-47I"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHN-1u-gGD">
+                            <button opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHN-1u-gGD">
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="3YX-qX-1TS"/>
-                                    <constraint firstAttribute="width" constant="71" id="J5j-ud-8E3"/>
+                                    <constraint firstAttribute="height" constant="41" id="PSs-RQ-s0D"/>
+                                    <constraint firstAttribute="width" constant="93" id="gn3-7S-mJb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="21"/>
                                 <state key="normal" title="Login">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -40,7 +40,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FCW-bg-Ubb">
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
                                     <action selector="passwordInput:" destination="FkD-QS-onY" eventType="editingDidEnd" id="Lw3-gz-zgq"/>
@@ -65,9 +65,17 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" text="Version 1.0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hak-hP-C3W">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" text="Version" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hak-hP-C3W">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="292" id="En8-bq-hva"/>
+                                    <constraint firstAttribute="width" constant="86" id="777-7R-fZL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" text="1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwz-qi-4cH">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="39" id="NZA-9D-zuj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -79,27 +87,31 @@
                             <bool key="isElement" value="YES"/>
                         </accessibility>
                         <constraints>
-                            <constraint firstItem="FHN-1u-gGD" firstAttribute="top" secondItem="zYm-4P-aJt" secondAttribute="top" constant="384" id="3LP-iP-ctq"/>
                             <constraint firstItem="FCW-bg-Ubb" firstAttribute="leading" secondItem="rdw-In-tjL" secondAttribute="leading" type="default" id="4Db-YN-TyA"/>
                             <constraint firstItem="K2W-by-J5k" firstAttribute="trailing" secondItem="zYm-4P-aJt" secondAttribute="trailing" type="default" id="6W5-fb-t03"/>
                             <constraint firstItem="K2W-by-J5k" firstAttribute="leading" secondItem="zYm-4P-aJt" secondAttribute="leading" type="default" id="7au-dD-6g9"/>
                             <constraint firstItem="FCW-bg-Ubb" firstAttribute="trailing" secondItem="rdw-In-tjL" secondAttribute="trailing" type="default" id="8yK-jA-qql"/>
+                            <constraint firstItem="FHN-1u-gGD" firstAttribute="centerX" secondItem="FCW-bg-Ubb" secondAttribute="centerX" type="default" id="9KC-Ql-Pco"/>
+                            <constraint firstItem="cwz-qi-4cH" firstAttribute="top" secondItem="hak-hP-C3W" secondAttribute="top" type="default" id="DtG-x9-xuL"/>
+                            <constraint firstItem="FHN-1u-gGD" firstAttribute="centerX" secondItem="K2W-by-J5k" secondAttribute="centerX" type="default" id="E1L-h6-Aa6"/>
                             <constraint firstItem="rdw-In-tjL" firstAttribute="top" secondItem="zYm-4P-aJt" secondAttribute="top" constant="277" id="FQ1-Sk-WE7"/>
-                            <constraint firstItem="K2W-by-J5k" firstAttribute="centerX" secondItem="rdw-In-tjL" secondAttribute="centerX" type="default" id="Fhn-8I-w22"/>
+                            <constraint firstAttribute="trailing" secondItem="hak-hP-C3W" secondAttribute="trailing" constant="62" id="HOH-Ae-RZi"/>
+                            <constraint firstAttribute="bottom" secondItem="cwz-qi-4cH" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Kfn-zW-LL2"/>
                             <constraint firstItem="K2W-by-J5k" firstAttribute="bottom" secondItem="zYm-4P-aJt" secondAttribute="bottom" type="default" id="RiF-17-p5P"/>
                             <constraint firstItem="LgA-QN-jUw" firstAttribute="leading" secondItem="zYm-4P-aJt" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="aFe-2c-bct"/>
-                            <constraint firstItem="LgA-QN-jUw" firstAttribute="top" secondItem="hak-hP-C3W" secondAttribute="top" type="default" id="iCu-Lk-MnT"/>
                             <constraint firstAttribute="bottom" secondItem="LgA-QN-jUw" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="m4P-iK-Z9U"/>
-                            <constraint firstAttribute="trailing" secondItem="hak-hP-C3W" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="mZt-Gj-u1Y"/>
                             <constraint firstItem="FCW-bg-Ubb" firstAttribute="top" secondItem="zYm-4P-aJt" secondAttribute="top" constant="334" id="pXH-PM-jOI"/>
+                            <constraint firstAttribute="trailing" secondItem="cwz-qi-4cH" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="suj-sx-8AN"/>
                             <constraint firstAttribute="bottom" secondItem="hak-hP-C3W" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="t5h-1K-ssi"/>
-                            <constraint firstItem="FHN-1u-gGD" firstAttribute="centerX" secondItem="FCW-bg-Ubb" secondAttribute="centerX" type="default" id="zta-0d-mAS"/>
+                            <constraint firstItem="LgA-QN-jUw" firstAttribute="top" secondItem="hak-hP-C3W" secondAttribute="top" type="default" id="v9n-fW-fFP"/>
+                            <constraint firstItem="FHN-1u-gGD" firstAttribute="top" secondItem="FCW-bg-Ubb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="zpK-9V-4Pc"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="FHN-1u-gGD" id="arC-j1-6cq"/>
                         <outlet property="passwordField" destination="FCW-bg-Ubb" id="z3X-Ag-MrH"/>
                         <outlet property="userNameField" destination="rdw-In-tjL" id="4Vd-oW-cQd"/>
+                        <outlet property="versionNumber" destination="cwz-qi-4cH" id="Ojv-iX-Fyf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSo-U7-2vf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -719,8 +731,7 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tdj-7Q-IKI">
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <collectionView opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tdj-7Q-IKI">
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KoX-TY-PwI">
                                     <size key="itemSize" width="115" height="140"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -764,11 +775,11 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="xf2-Hx-qmB" firstAttribute="leading" secondItem="NcC-Uz-HYi" secondAttribute="leading" type="default" id="Cci-Ln-sa8"/>
                                             <constraint firstItem="Yp3-hY-dFo" firstAttribute="leading" secondItem="NcC-Uz-HYi" secondAttribute="leading" constant="22" id="Ilm-cv-wWS"/>
-                                            <constraint firstItem="xf2-Hx-qmB" firstAttribute="trailing" secondItem="NcC-Uz-HYi" secondAttribute="trailing" type="default" id="W4T-m7-bFw"/>
-                                            <constraint firstItem="Yp3-hY-dFo" firstAttribute="top" secondItem="NcC-Uz-HYi" secondAttribute="top" constant="20" type="default" id="t3a-0F-RLL"/>
-                                            <constraint firstAttribute="bottom" secondItem="xf2-Hx-qmB" secondAttribute="bottom" constant="22" id="xnr-Et-Ghm"/>
+                                            <constraint firstAttribute="bottom" secondItem="xf2-Hx-qmB" secondAttribute="bottom" constant="44" id="NFt-hh-zpj"/>
+                                            <constraint firstItem="Yp3-hY-dFo" firstAttribute="top" secondItem="NcC-Uz-HYi" secondAttribute="top" type="default" id="aRh-TI-vcl"/>
+                                            <constraint firstItem="xf2-Hx-qmB" firstAttribute="trailing" secondItem="NcC-Uz-HYi" secondAttribute="trailing" type="default" id="f1e-qG-ZBb"/>
+                                            <constraint firstItem="xf2-Hx-qmB" firstAttribute="leading" secondItem="NcC-Uz-HYi" secondAttribute="leading" type="default" id="teV-4l-XG9"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="myButton" destination="Yp3-hY-dFo" id="eFW-7J-yJf"/>
@@ -818,7 +829,7 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleAspectFit" image="1.tif" translatesAutoresizingMaskIntoConstraints="NO" id="i4k-7T-Lr8">
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="1.tif" translatesAutoresizingMaskIntoConstraints="NO" id="i4k-7T-Lr8">
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="620" id="6Pc-uY-hvF"/>
@@ -1321,9 +1332,12 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="32w-PH-TGc">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <searchBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="32w-PH-TGc">
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1382,8 +1396,153 @@
         <image name="4.tif" width="1550" height="2075"/>
         <image name="arrowLeft.png" width="124" height="116"/>
         <image name="arrowRight.png" width="124" height="116"/>
-        <image name="wallpaper-1231836.jpg" width="1600" height="900"/>
+        <image name="wallpaper-630620.jpg" width="1920" height="1200"/>
     </resources>
+    <classes>
+        <class className="AdvancedCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdvancedCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="button" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="AdvancedCollectionViewViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdvancedCollectionViewViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
+            </relationships>
+        </class>
+        <class className="CollectionViewViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CollectionViewViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addSurgery:"/>
+                <relationship kind="action" name="buttonPress:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="myCollectionView" candidateClass="UICollectionView"/>
+            </relationships>
+        </class>
+        <class className="CustomCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="myButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="myDescriptionLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="EvaluationCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EvaluationCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="evaluationClicker" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="evaluationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="evaluationScore" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="evaluationText" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="EvaluationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EvaluationViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="evaluationCollection" candidateClass="UICollectionView"/>
+            </relationships>
+        </class>
+        <class className="MovieViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MovieViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="playMovie:"/>
+                <relationship kind="action" name="showInfoBox:"/>
+                <relationship kind="outlet" name="imageWindow" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="infoBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="popupButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="textWindow" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PhotoViewerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoViewerViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ButtonPress:" candidateClass="UIButton"/>
+                <relationship kind="action" name="Expand:" candidateClass="UIButton"/>
+                <relationship kind="action" name="activateTools:"/>
+                <relationship kind="action" name="buttonLeft:" candidateClass="UIButton"/>
+                <relationship kind="action" name="buttonPress:" candidateClass="UIButton"/>
+                <relationship kind="action" name="buttonRight:" candidateClass="UIButton"/>
+                <relationship kind="action" name="decreaseFontSize:"/>
+                <relationship kind="action" name="increaseFontSize:"/>
+                <relationship kind="action" name="panImage:" candidateClass="UIPanGestureRecognizer"/>
+                <relationship kind="action" name="swipeLeft:" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="action" name="swipeRight:" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="fullScreenCollection" candidateClass="UICollectionView"/>
+                <relationship kind="outlet" name="imageDisplay" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="myCollectionView" candidateClass="UICollectionView"/>
+                <relationship kind="outlet" name="rightButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollWindow" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="textFieldViewer" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="thumbnailCollectionView" candidateClass="UICollectionView"/>
+                <relationship kind="outlet" name="toolsView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="QuizCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuizCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="optionA" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="optionB" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="optionC" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="optionD" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="optionE" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="optionF" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="qBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="qTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="segControl" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="QuizViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuizViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="answerSelected:"/>
+                <relationship kind="action" name="goNext:"/>
+                <relationship kind="action" name="goPrev:"/>
+                <relationship kind="action" name="qFinish:"/>
+                <relationship kind="outlet" name="completeButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="completeMessage" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="completeScore" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="examCompleteView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="myCollectionView" candidateClass="UICollectionView"/>
+                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="prevButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="questionNum" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="quizView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="segControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="totalNum" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
+        </class>
+        <class className="UTLViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UTLViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="passwordInput:"/>
+                <relationship kind="action" name="sendLogin:"/>
+                <relationship kind="action" name="userNameInput:"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="myCollectionView" candidateClass="UICollectionView"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userNameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="versionNumber" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
