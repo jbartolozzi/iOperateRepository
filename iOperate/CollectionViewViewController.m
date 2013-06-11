@@ -50,7 +50,17 @@
     [[cell myDescriptionLabel]setText:[arrayOfDescriptions objectAtIndex:indexPath.item]];
     NSString *segueIdentifier = [arrayOfDescriptions objectAtIndex:indexPath.item];
     [[cell myButton]setTitle:segueIdentifier forState:normal];
-    return cell;
+    
+	cell.myButton.layer.cornerRadius = 8.0f;
+	cell.myButton.layer.masksToBounds = NO;
+	cell.myButton.layer.borderWidth = 1.0f;
+	
+	cell.myButton.layer.shadowColor = [UIColor blackColor].CGColor;
+	cell.myButton.layer.shadowOpacity = 0.2;
+	cell.myButton.layer.shadowRadius = 5;
+	cell.myButton.layer.shadowOffset = CGSizeMake(0.f, 10.0f);
+	
+	return cell;
 }
 
 - (void)didReceiveMemoryWarning
