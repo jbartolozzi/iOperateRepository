@@ -12,5 +12,10 @@
 @interface EvaluationCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UITextView *evaluationText;
 @property (weak, nonatomic) IBOutlet UILabel *evaluationLabel;
+<<<<<<< HEAD
+=======
+@property (weak, nonatomic) IBOutlet UIButton *evaluationResult;
+@property (weak, nonatomic) IBOutlet UITextView *evaluationComments;
+>>>>>>> c9c04bcb99a5d02c57cac74c21e6683674616310
 
 @end

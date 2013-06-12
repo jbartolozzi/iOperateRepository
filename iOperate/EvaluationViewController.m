@@ -11,6 +11,7 @@
 @interface EvaluationViewController (){
     NSMutableArray *arrayOfText;
     NSMutableArray *arrayOfResults;
+	NSMutableArray *arrayOfComments;
 }
 
 @end
@@ -110,9 +111,14 @@
                    @"Trainee asked for performance feedback immediately after the operation.",
                    @"Trainee took:\na) 15 minutes or less to complete the operation\nb) 16-20 minutes to complete the operation\nc) 21-25 minutes to complete the operation\nd) 26-30 minutes to complete the operation\ne) 31-35 minutes to complete the operation\nf) 36-40 minutes to complete the operation\ng) 41-45 minutes to complete the operation.\nh) More than 45 minutes to complete the operation.",nil];
     arrayOfResults = [[NSMutableArray alloc]initWithCapacity:arrayOfText.count];
+    arrayOfComments = [[NSMutableArray alloc]initWithCapacity:arrayOfText.count];
     for(int i =0; i < arrayOfText.count; i++){
         arrayOfResults[i] =  @"YES";
     }
+	for(int i =0; i < arrayOfText.count; i++){
+        arrayOfComments[i] =  @"...";
+    }
+	
 	// Do any additional setup after loading the view.
 }
 
@@ -145,7 +151,14 @@
         //[[cell evaluationResult] setTitle:@"X" forState:UIControlStateNormal];
         //[cell evaluationResult].backgroundColor = [UIColor colorWithRed:255.0 green:0.0 blue:0.0 alpha:1.0f];
     }
+<<<<<<< HEAD
     //[cell evaluationResult].tag = indexPath.item;
+=======
+    [cell evaluationResult].tag = indexPath.item;
+	arrayOfComments[indexPath.item] = [cell evaluationComments].text;
+    [[cell evaluationComments]setText:arrayOfComments[indexPath.item]];
+	
+>>>>>>> c9c04bcb99a5d02c57cac74c21e6683674616310
     return cell;
 }
 - (IBAction)mark:(UIButton *)sender {
@@ -166,6 +179,7 @@
     reusableview = footer;
     return reusableview;
 }
+
 
 
 @end

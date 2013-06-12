@@ -609,22 +609,22 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hXQ-Oo-Xez">
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="jV8-KW-2Wl">
-                                    <size key="itemSize" width="768" height="120"/>
+                                    <size key="itemSize" width="768" height="77"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="50" height="522"/>
                                     <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="l7G-Ge-18r" customClass="EvaluationCell">
-                                        <rect key="frame" x="0.0" y="10" width="768" height="120"/>
+                                        <rect key="frame" x="0.0" y="10" width="768" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="If4-Xo-0Sb">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="462" id="sQM-jA-fN9"/>
+                                                        <constraint firstAttribute="width" constant="544" id="dHp-BF-HRr"/>
                                                     </constraints>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -633,13 +633,14 @@
                                                 </textView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdZ-Ey-QCs">
                                                     <constraints>
+                                                        <constraint firstAttribute="width" constant="41" id="0cO-Cu-c22"/>
                                                         <constraint firstAttribute="height" constant="32" id="2KE-mH-5UG"/>
-                                                        <constraint firstAttribute="width" constant="41" id="o5p-sh-aiI"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="25"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+<<<<<<< HEAD
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O6s-ms-nS1">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="154" id="IGV-6M-ueo"/>
@@ -649,19 +650,62 @@
                                                         <segment title="✓"/>
                                                     </segments>
                                                 </segmentedControl>
+=======
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gle-t1-zoG">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="75" id="63w-aD-CR3"/>
+                                                        <constraint firstAttribute="height" constant="71" id="Ent-C0-s9g"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                                    <state key="normal" title="Button">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="selected">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="mark:" destination="L48-lL-F6i" eventType="touchUpInside" id="bhp-h9-pLf"/>
+                                                    </connections>
+                                                </button>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Comments" translatesAutoresizingMaskIntoConstraints="NO" id="Zag-fm-3Gy">
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="8DJ-m5-Zxw"/>
+                                                        <constraint firstAttribute="height" constant="75" id="gDQ-2M-cVO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+>>>>>>> c9c04bcb99a5d02c57cac74c21e6683674616310
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+<<<<<<< HEAD
                                             <constraint firstItem="If4-Xo-0Sb" firstAttribute="bottom" secondItem="l7G-Ge-18r" secondAttribute="bottom" type="default" id="BCW-PD-FDK"/>
                                             <constraint firstItem="O6s-ms-nS1" firstAttribute="top" secondItem="l7G-Ge-18r" secondAttribute="top" constant="38" id="ITm-Xf-wml"/>
                                             <constraint firstAttribute="trailing" secondItem="O6s-ms-nS1" secondAttribute="trailing" constant="39" id="baG-Aj-EZa"/>
                                             <constraint firstItem="pdZ-Ey-QCs" firstAttribute="leading" secondItem="l7G-Ge-18r" secondAttribute="leading" constant="20" type="default" id="dmM-WY-Xz7"/>
                                             <constraint firstItem="pdZ-Ey-QCs" firstAttribute="top" secondItem="l7G-Ge-18r" secondAttribute="top" constant="8" id="dro-Qb-R2n"/>
                                             <constraint firstItem="If4-Xo-0Sb" firstAttribute="top" secondItem="l7G-Ge-18r" secondAttribute="top" type="default" id="qAW-CR-CUC"/>
+=======
+                                            <constraint firstItem="If4-Xo-0Sb" firstAttribute="top" secondItem="l7G-Ge-18r" secondAttribute="top" type="default" id="HjW-8P-JQD"/>
+                                            <constraint firstItem="pdZ-Ey-QCs" firstAttribute="top" secondItem="l7G-Ge-18r" secondAttribute="top" constant="23" id="LQs-qL-e6j"/>
+                                            <constraint firstItem="gle-t1-zoG" firstAttribute="centerY" secondItem="If4-Xo-0Sb" secondAttribute="centerY" type="default" id="Mff-9Q-qwu"/>
+                                            <constraint firstAttribute="trailing" secondItem="Zag-fm-3Gy" secondAttribute="trailing" constant="13" id="PAK-7i-Yii"/>
+                                            <constraint firstItem="Zag-fm-3Gy" firstAttribute="leading" secondItem="gle-t1-zoG" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Pra-T1-O5P"/>
+                                            <constraint firstItem="If4-Xo-0Sb" firstAttribute="bottom" secondItem="l7G-Ge-18r" secondAttribute="bottom" type="default" id="gQZ-rd-IxB"/>
+                                            <constraint firstItem="pdZ-Ey-QCs" firstAttribute="leading" secondItem="l7G-Ge-18r" secondAttribute="leading" constant="20" type="default" id="i0D-NZ-s34"/>
+                                            <constraint firstItem="Zag-fm-3Gy" firstAttribute="centerY" secondItem="gle-t1-zoG" secondAttribute="centerY" type="default" id="liv-2F-Zkg"/>
+>>>>>>> c9c04bcb99a5d02c57cac74c21e6683674616310
                                             <constraint firstItem="If4-Xo-0Sb" firstAttribute="leading" secondItem="pdZ-Ey-QCs" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="rMi-Xc-j08"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="evaluationComments" destination="Zag-fm-3Gy" id="Mhj-ad-jIH"/>
                                             <outlet property="evaluationLabel" destination="pdZ-Ey-QCs" id="nhV-00-uBk"/>
                                             <outlet property="evaluationText" destination="If4-Xo-0Sb" id="Lev-Fs-1XP"/>
                                         </connections>
@@ -1436,6 +1480,7 @@
         <class className="EvaluationCell" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EvaluationCell.h"/>
             <relationships>
+<<<<<<< HEAD
                 <relationship kind="outlet" name="evaluationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="evaluationText" candidateClass="UITextView"/>
             </relationships>
@@ -1450,6 +1495,18 @@
         <class className="EvaluationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EvaluationViewController.h"/>
             <relationships>
+=======
+                <relationship kind="outlet" name="evaluationComments" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="evaluationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="evaluationResult" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="evaluationText" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="EvaluationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EvaluationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="mark:" candidateClass="UIButton"/>
+>>>>>>> c9c04bcb99a5d02c57cac74c21e6683674616310
                 <relationship kind="outlet" name="evaluationCollection" candidateClass="UICollectionView"/>
             </relationships>
         </class>
@@ -1472,9 +1529,22 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoViewerViewController.h"/>
             <relationships>
                 <relationship kind="action" name="ButtonPress:" candidateClass="UIButton"/>
+<<<<<<< HEAD
                 <relationship kind="action" name="activateTools:"/>
                 <relationship kind="action" name="decreaseFontSize:"/>
                 <relationship kind="action" name="increaseFontSize:"/>
+=======
+                <relationship kind="action" name="Expand:" candidateClass="UIButton"/>
+                <relationship kind="action" name="activateTools:"/>
+                <relationship kind="action" name="buttonLeft:" candidateClass="UIButton"/>
+                <relationship kind="action" name="buttonPress:" candidateClass="UIButton"/>
+                <relationship kind="action" name="buttonRight:" candidateClass="UIButton"/>
+                <relationship kind="action" name="decreaseFontSize:"/>
+                <relationship kind="action" name="increaseFontSize:"/>
+                <relationship kind="action" name="panImage:" candidateClass="UIPanGestureRecognizer"/>
+                <relationship kind="action" name="swipeLeft:" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="action" name="swipeRight:" candidateClass="UISwipeGestureRecognizer"/>
+>>>>>>> c9c04bcb99a5d02c57cac74c21e6683674616310
                 <relationship kind="outlet" name="fullScreenCollection" candidateClass="UICollectionView"/>
                 <relationship kind="outlet" name="imageDisplay" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>
