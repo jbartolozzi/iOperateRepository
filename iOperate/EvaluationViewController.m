@@ -144,21 +144,7 @@
     [[cell evaluationText]setText:[arrayOfText objectAtIndex:indexPath.item]];
     NSString *text = [NSString stringWithFormat:@"%d)",indexPath.item];
     [[cell evaluationLabel]setText:text];
-    if([[arrayOfResults objectAtIndex:indexPath.item] isEqualToString: @"YES"]){
-        //[[cell evaluationResult] setTitle:@"✓" forState:UIControlStateNormal];
-        //[cell evaluationResult].backgroundColor = [UIColor colorWithRed:0.0 green:255.0 blue:0.0 alpha:1.0f];
-    } else {
-        //[[cell evaluationResult] setTitle:@"X" forState:UIControlStateNormal];
-        //[cell evaluationResult].backgroundColor = [UIColor colorWithRed:255.0 green:0.0 blue:0.0 alpha:1.0f];
-    }
-<<<<<<< HEAD
-    //[cell evaluationResult].tag = indexPath.item;
-=======
-    [cell evaluationResult].tag = indexPath.item;
-	arrayOfComments[indexPath.item] = [cell evaluationComments].text;
-    [[cell evaluationComments]setText:arrayOfComments[indexPath.item]];
-	
->>>>>>> c9c04bcb99a5d02c57cac74c21e6683674616310
+    
     return cell;
 }
 - (IBAction)mark:(UIButton *)sender {
