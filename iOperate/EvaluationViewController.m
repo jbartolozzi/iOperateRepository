@@ -13,10 +13,31 @@
     NSMutableArray *arrayOfResults;
 	NSMutableArray *arrayOfComments;
 }
+@property (weak, nonatomic) IBOutlet UITextView *commentField;
 
 @end
 
 @implementation EvaluationViewController
+- (IBAction)openComments:(id)sender {
+	if (self.commentField.alpha < 1.0) {
+		[UIView animateWithDuration:0.5 animations:^{self.commentField.alpha = 1.0;}];
+		[self.commentField becomeFirstResponder];
+	}
+	else {
+		[UIView animateWithDuration:0.5 animations:^{self.commentField.alpha = 0.0;}];
+		[self.commentField resignFirstResponder];
+	}
+}
+- (IBAction)submitEvaluation:(id)sender {
+	UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Evaluation Complete:" message:@"Submit your responses?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes",nil];
+	[alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+	if (buttonIndex == 1) {
+		[self.navigationController popToRootViewControllerAnimated:YES];
+	}
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,7 +53,15 @@
     [super viewDidLoad];
     [[self evaluationCollection]setDataSource:self];
     [[self evaluationCollection]setDelegate:self];
-    self.evaluationCollection.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wallpaper-630620.jpg"]];
+	self.evaluationCollection.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
+	self.commentField.alpha = 0.0;
+	self.commentField.layer.cornerRadius = 8.0f;
+	self.commentField.layer.masksToBounds = NO;
+	self.commentField.layer.borderWidth = 1.0f;
+	self.commentField.layer.shadowColor = [UIColor blackColor].CGColor;
+	self.commentField.layer.shadowOpacity = 0.2;
+	self.commentField.layer.shadowRadius = 5;
+	self.commentField.layer.shadowOffset = CGSizeMake(10.f, 10.0f);
     arrayOfText = [[NSMutableArray alloc]initWithObjects:
                    @"Trainee patient’s history, including indications for the operation",
                    @"Trainee payed attention to the patient during induction of anesthesia, especially during intubation and was ready to help if needed.",
@@ -154,16 +183,6 @@
         arrayOfResults[sender.tag] = @"NO";
     }
     [_evaluationCollection reloadData];
-}
-
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
-    UICollectionReusableView *reusableview = nil;
-    EvaluationFooter *footer = [self.evaluationCollection dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"Footer" forIndexPath:indexPath];
-    NSString *comments = @"Comments: ";
-    footer.comments.text = comments;
-    reusableview = footer;
-    return reusableview;
 }
 
 

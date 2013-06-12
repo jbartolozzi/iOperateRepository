@@ -170,7 +170,7 @@
     }
     
 	if (allDone == YES) {
-		UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Exam Complete:" message:@"Submit your score?" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"Yes",nil];
+		UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Exam Complete:" message:@"Submit your score?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes",nil];
 		[alert show];
 	}
 	else {

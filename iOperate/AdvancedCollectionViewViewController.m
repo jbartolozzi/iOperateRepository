@@ -31,7 +31,7 @@
     [super viewDidLoad];
 	[[self collectionView]setDataSource:self];
 	[[self collectionView]setDelegate:self];
-    self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wallpaper-630620.jpg"]];
+    self.collectionView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
 	arrayOfLabels = [[NSMutableArray alloc]initWithObjects:@"Label 1",@"Label 2",@"Label 3",@"Label 4",nil];
 	arrayOfThumbs = [[NSMutableArray alloc]initWithObjects:@"1.tif",@"2.tif",@"3.tif",@"4.tif", nil];
 	arrayOfButtonImages = [[NSMutableArray alloc]initWithObjects:@"1.tif",@"2.tif",@"3.tif",@"4.tif",nil];
@@ -57,6 +57,13 @@
 	AdvancedCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
 	[[cell button] setImage:[UIImage imageNamed:[arrayOfButtonImages objectAtIndex:indexPath.item]] forState:UIControlStateNormal];
 	[[cell label]setText:[arrayOfLabels objectAtIndex:indexPath.item]];
+	
+	cell.button.layer.cornerRadius = 8.0f;
+	cell.button.layer.masksToBounds = YES;
+	cell.button.layer.shadowColor = [UIColor blackColor].CGColor;
+	cell.button.layer.shadowOpacity = 0.2;
+	cell.button.layer.shadowRadius = 5;
+	cell.button.layer.shadowOffset = CGSizeMake(0.f, 10.0f);
 	return cell;
 }
 

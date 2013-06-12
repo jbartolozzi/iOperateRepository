@@ -27,7 +27,7 @@
     
     [[self myCollectionView]setDataSource:self];
     [[self myCollectionView]setDelegate:self];
-	self.myCollectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wallpaper-630620.jpg"]];
+	self.myCollectionView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
     
     arrayOfImages = [[NSMutableArray alloc]initWithObjects:@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",nil];
     
@@ -53,7 +53,7 @@
     
 	cell.myButton.layer.cornerRadius = 8.0f;
 	cell.myButton.layer.masksToBounds = NO;
-	cell.myButton.layer.borderWidth = 1.0f;
+	cell.myButton.layer.borderWidth = 0.0f;
 	cell.myButton.layer.shadowColor = [UIColor blackColor].CGColor;
 	cell.myButton.layer.shadowOpacity = 0.2;
 	cell.myButton.layer.shadowRadius = 5;

@@ -82,13 +82,13 @@ typedef enum possibleMoveDirection {
 						   @"Test Page 15 Test Page 15 Test Page 15 Test Page 15 Test Page 15 Test Page 15 Test Page 15 Test Page 15",
 						   nil];
 	
-    NSComparator compareTags = ^(id a, id b)
+	/*NSComparator compareTags = ^(id a, id b)
     {
         if ([a tag] > [b tag]) {
         return (NSComparisonResult)NSOrderedDescending;
     } if ([a tag] < [b tag]){
         return (NSComparisonResult)NSOrderedAscending; } return (NSComparisonResult)NSOrderedSame;
-    };
+    };*/
 	
     //self.photoButtonsOrdered = [self.photoButtons sortedArrayUsingComparator:compareTags];
     [[self.textFieldViewer layer] setBorderColor:[[UIColor grayColor] CGColor]];
