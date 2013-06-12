@@ -31,7 +31,7 @@
     
     arrayOfImages = [[NSMutableArray alloc]initWithObjects:@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",nil];
     
-    arrayOfDescriptions = [[NSMutableArray alloc]initWithObjects:@"Test Page",@"Image Viewer",@"Evaluation", @"Quiz 1", nil];
+    arrayOfDescriptions = [[NSMutableArray alloc]initWithObjects:@"Image Viewer",@"Evaluation", @"Quiz 1", nil];
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
@@ -54,7 +54,6 @@
 	cell.myButton.layer.cornerRadius = 8.0f;
 	cell.myButton.layer.masksToBounds = NO;
 	cell.myButton.layer.borderWidth = 1.0f;
-	
 	cell.myButton.layer.shadowColor = [UIColor blackColor].CGColor;
 	cell.myButton.layer.shadowOpacity = 0.2;
 	cell.myButton.layer.shadowRadius = 5;

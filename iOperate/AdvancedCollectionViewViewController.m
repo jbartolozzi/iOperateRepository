@@ -31,6 +31,7 @@
     [super viewDidLoad];
 	[[self collectionView]setDataSource:self];
 	[[self collectionView]setDelegate:self];
+    self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wallpaper-630620.jpg"]];
 	arrayOfLabels = [[NSMutableArray alloc]initWithObjects:@"Label 1",@"Label 2",@"Label 3",@"Label 4",nil];
 	arrayOfThumbs = [[NSMutableArray alloc]initWithObjects:@"1.tif",@"2.tif",@"3.tif",@"4.tif", nil];
 	arrayOfButtonImages = [[NSMutableArray alloc]initWithObjects:@"1.tif",@"2.tif",@"3.tif",@"4.tif",nil];

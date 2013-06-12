@@ -49,6 +49,7 @@
     self.examCompleteView.hidden = YES;
 	[[self myCollectionView]setDataSource:self];
 	[[self myCollectionView]setDelegate:self];
+    self.myCollectionView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
 	
 	arrayOfSegStates = [[NSMutableArray alloc]initWithObjects:@"1",@"1",@"1", nil];
 	
@@ -110,9 +111,18 @@
 	[[cell optionD] setText:[arrayOfD objectAtIndex:indexPath.item]];
 	[[cell optionE] setText:[arrayOfE objectAtIndex:indexPath.item]];
 	[[cell optionF] setText:[arrayOfF objectAtIndex:indexPath.item]];
+    
 	self.questionNum.text = [NSString stringWithFormat:@"%d",indexPath.item + 1];
 	
-	
+	cell.layer.cornerRadius = 8.0f;
+	cell.layer.masksToBounds = NO;
+	cell.layer.borderWidth = 1.0f;
+	cell.layer.shadowColor = [UIColor blackColor].CGColor;
+	cell.layer.shadowOpacity = 0.2;
+	cell.layer.shadowRadius = 5;
+	cell.layer.shadowOffset = CGSizeMake(0.f, 10.0f);
+    
+    
     NSNumber *num = [arrayOfSegAnswers objectAtIndex:indexPath.item];
     self.segControl.selectedSegmentIndex = [num integerValue];
     

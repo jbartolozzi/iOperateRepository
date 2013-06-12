@@ -12,6 +12,5 @@
 @interface EvaluationCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UITextView *evaluationText;
 @property (weak, nonatomic) IBOutlet UILabel *evaluationLabel;
-@property (weak, nonatomic) IBOutlet UIButton *evaluationResult;
 
 @end

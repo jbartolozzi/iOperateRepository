@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+#import "QuartzCore/CALayer.h"
 #import "QuizCell.h"
 
 @interface QuizViewController : UIViewController <UICollectionViewDataSource,UICollectionViewDelegate>

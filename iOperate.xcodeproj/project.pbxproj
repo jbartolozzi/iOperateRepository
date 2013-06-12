@@ -37,6 +37,7 @@
 		C81044FF17679B5900DFC1DE /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C81044FE17679B5900DFC1DE /* Default-Portrait~ipad.png */; };
 		C810450117679BB000DFC1DE /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C810450017679BB000DFC1DE /* Default-Landscape~ipad.png */; };
 		C810450317679BB400DFC1DE /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C810450217679BB400DFC1DE /* Default-Landscape@2x~ipad.png */; };
+		C8A6AD2A1768D1A2002E1EBF /* EvaluationFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A6AD291768D1A2002E1EBF /* EvaluationFooter.m */; };
 		D62B3A7A17419038006BFAE8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62B3A7917419038006BFAE8 /* UIKit.framework */; };
 		D62B3A7C17419038006BFAE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62B3A7B17419038006BFAE8 /* Foundation.framework */; };
 		D62B3A7E17419038006BFAE8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62B3A7D17419038006BFAE8 /* CoreGraphics.framework */; };
@@ -107,6 +108,8 @@
 		C81044FE17679B5900DFC1DE /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		C810450017679BB000DFC1DE /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		C810450217679BB400DFC1DE /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		C8A6AD281768D1A2002E1EBF /* EvaluationFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluationFooter.h; sourceTree = "<group>"; };
+		C8A6AD291768D1A2002E1EBF /* EvaluationFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluationFooter.m; sourceTree = "<group>"; };
 		D62B3A7617419038006BFAE8 /* iOperate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOperate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62B3A7917419038006BFAE8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D62B3A7B17419038006BFAE8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -208,6 +211,8 @@
 				1AD4E5BC17568C780028E418 /* AdvancedCollectionViewViewController.h */,
 				1AD4E5BD17568C780028E418 /* AdvancedCollectionViewViewController.m */,
 				1A4A11011755200300B5A253 /* MainStoryboard.storyboard */,
+				C8A6AD281768D1A2002E1EBF /* EvaluationFooter.h */,
+				C8A6AD291768D1A2002E1EBF /* EvaluationFooter.m */,
 				1AB1B51D175D07E200F849DA /* QuizCell.h */,
 				1AB1B51E175D07E200F849DA /* QuizCell.m */,
 				1AB1B51A175D07A800F849DA /* QuizViewController.h */,
@@ -405,6 +410,7 @@
 				1AB1B51F175D07E200F849DA /* QuizCell.m in Sources */,
 				D66FFA45175FB6EE004C9AA4 /* EvaluationViewController.m in Sources */,
 				D66FFA48175FB765004C9AA4 /* EvaluationCell.m in Sources */,
+				C8A6AD2A1768D1A2002E1EBF /* EvaluationFooter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

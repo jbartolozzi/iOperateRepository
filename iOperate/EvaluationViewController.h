@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "QuartzCore/CALayer.h"
 #import "EvaluationCell.h"
+#import "EvaluationFooter.h"
 
 @interface EvaluationViewController : UIViewController <UICollectionViewDataSource,UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *evaluationCollection;

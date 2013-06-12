@@ -31,6 +31,7 @@
     [super viewDidLoad];
     [[self evaluationCollection]setDataSource:self];
     [[self evaluationCollection]setDelegate:self];
+    self.evaluationCollection.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wallpaper-630620.jpg"]];
     arrayOfText = [[NSMutableArray alloc]initWithObjects:
                    @"Trainee patient’s history, including indications for the operation",
                    @"Trainee payed attention to the patient during induction of anesthesia, especially during intubation and was ready to help if needed.",
@@ -138,13 +139,13 @@
     NSString *text = [NSString stringWithFormat:@"%d)",indexPath.item];
     [[cell evaluationLabel]setText:text];
     if([[arrayOfResults objectAtIndex:indexPath.item] isEqualToString: @"YES"]){
-        [[cell evaluationResult] setTitle:@"✓" forState:UIControlStateNormal];
-        [cell evaluationResult].backgroundColor = [UIColor colorWithRed:0.0 green:255.0 blue:0.0 alpha:1.0f];
+        //[[cell evaluationResult] setTitle:@"✓" forState:UIControlStateNormal];
+        //[cell evaluationResult].backgroundColor = [UIColor colorWithRed:0.0 green:255.0 blue:0.0 alpha:1.0f];
     } else {
-        [[cell evaluationResult] setTitle:@"X" forState:UIControlStateNormal];
-        [cell evaluationResult].backgroundColor = [UIColor colorWithRed:255.0 green:0.0 blue:0.0 alpha:1.0f];
+        //[[cell evaluationResult] setTitle:@"X" forState:UIControlStateNormal];
+        //[cell evaluationResult].backgroundColor = [UIColor colorWithRed:255.0 green:0.0 blue:0.0 alpha:1.0f];
     }
-    [cell evaluationResult].tag = indexPath.item;
+    //[cell evaluationResult].tag = indexPath.item;
     return cell;
 }
 - (IBAction)mark:(UIButton *)sender {
@@ -154,6 +155,16 @@
         arrayOfResults[sender.tag] = @"NO";
     }
     [_evaluationCollection reloadData];
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionReusableView *reusableview = nil;
+    EvaluationFooter *footer = [self.evaluationCollection dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"Footer" forIndexPath:indexPath];
+    NSString *comments = @"Comments: ";
+    footer.comments.text = comments;
+    reusableview = footer;
+    return reusableview;
 }
 
 
