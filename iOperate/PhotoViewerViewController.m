@@ -49,13 +49,15 @@ typedef enum possibleMoveDirection {
     self.imageDisplay.layer.shadowOpacity = 1;
     self.imageDisplay.layer.shadowRadius = 1.0;
     self.imageDisplay.clipsToBounds = NO;
+    //[[NSNotificationCenter defaultCenter] addObserver:self.textFieldViewer forKeyPath:UITextViewTextDidEndEditingNotification options:NSKeyValueObservingOptionNew context:nil];
+    //[self removeObserver:self.textFieldViewer forKeyPath:UI
 }
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)[[UIDevice currentDevice] orientation] duration:0.2];
-	
+	[[NSNotificationCenter defaultCenter] addObserver:self.textFieldViewer selector:@selector(edited:) name:@"UITextViewTextDidEndEditingNotification" object:_textFieldViewer.text];
+    
     [[self myCollectionView]setDataSource:self];
     [[self myCollectionView]setDelegate:self];
     [[self fullScreenCollection]setDataSource:self];
@@ -116,6 +118,11 @@ typedef enum possibleMoveDirection {
 	self.textFieldViewer.font = [UIFont fontWithName:self.textFieldViewer.font.fontName size:mainFontSize];
     //_myCollectionView.
 	
+}
+
+-(void)edited:(id)object
+{
+    arrayOfDescriptions[0] = @"what";
 }
 
 - (void)didReceiveMemoryWarning
@@ -443,7 +450,9 @@ typedef enum possibleMoveDirection {
         fullScreen = NO;
         [_myCollectionView reloadData];
         [sender setTitle:@"+" forState:UIControlStateNormal];
+  
     }
 }
+
 
 @end
