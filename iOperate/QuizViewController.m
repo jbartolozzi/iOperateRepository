@@ -117,10 +117,10 @@
 	cell.layer.cornerRadius = 8.0f;
 	cell.layer.masksToBounds = NO;
 	cell.layer.borderWidth = 1.0f;
-	cell.layer.shadowColor = [UIColor blackColor].CGColor;
+	/*cell.layer.shadowColor = [UIColor blackColor].CGColor;
 	cell.layer.shadowOpacity = 0.2;
 	cell.layer.shadowRadius = 5;
-	cell.layer.shadowOffset = CGSizeMake(0.f, 10.0f);
+	cell.layer.shadowOffset = CGSizeMake(0.f, 10.0f);*/
     
     
     NSNumber *num = [arrayOfSegAnswers objectAtIndex:indexPath.item];

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="FkD-QS-onY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="FkD-QS-onY">
     <dependencies>
         <development version="4600" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
@@ -18,6 +18,7 @@
                                     <constraint firstAttribute="height" constant="1061" id="0EM-ld-47I"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" image="bg-01.png" translatesAutoresizingMaskIntoConstraints="NO" id="piV-5U-mp4"/>
                             <button opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHN-1u-gGD">
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
@@ -88,24 +89,28 @@
                             <bool key="isElement" value="YES"/>
                         </accessibility>
                         <constraints>
+                            <constraint firstItem="piV-5U-mp4" firstAttribute="bottom" secondItem="zYm-4P-aJt" secondAttribute="bottom" type="default" id="0Yu-dF-eia"/>
+                            <constraint firstItem="FCW-bg-Ubb" firstAttribute="top" secondItem="zYm-4P-aJt" secondAttribute="top" constant="455" id="3eM-Ap-NBh"/>
                             <constraint firstItem="FCW-bg-Ubb" firstAttribute="leading" secondItem="rdw-In-tjL" secondAttribute="leading" type="default" id="4Db-YN-TyA"/>
                             <constraint firstItem="K2W-by-J5k" firstAttribute="trailing" secondItem="zYm-4P-aJt" secondAttribute="trailing" type="default" id="6W5-fb-t03"/>
                             <constraint firstItem="K2W-by-J5k" firstAttribute="leading" secondItem="zYm-4P-aJt" secondAttribute="leading" type="default" id="7au-dD-6g9"/>
                             <constraint firstItem="FCW-bg-Ubb" firstAttribute="trailing" secondItem="rdw-In-tjL" secondAttribute="trailing" type="default" id="8yK-jA-qql"/>
                             <constraint firstItem="FHN-1u-gGD" firstAttribute="centerX" secondItem="FCW-bg-Ubb" secondAttribute="centerX" type="default" id="9KC-Ql-Pco"/>
+                            <constraint firstItem="piV-5U-mp4" firstAttribute="leading" secondItem="zYm-4P-aJt" secondAttribute="leading" type="default" id="Aln-rC-5fG"/>
+                            <constraint firstItem="piV-5U-mp4" firstAttribute="top" secondItem="zYm-4P-aJt" secondAttribute="top" type="default" id="B9B-vC-r3K"/>
                             <constraint firstItem="cwz-qi-4cH" firstAttribute="top" secondItem="hak-hP-C3W" secondAttribute="top" type="default" id="DtG-x9-xuL"/>
-                            <constraint firstItem="FHN-1u-gGD" firstAttribute="centerX" secondItem="K2W-by-J5k" secondAttribute="centerX" type="default" id="E1L-h6-Aa6"/>
-                            <constraint firstItem="rdw-In-tjL" firstAttribute="top" secondItem="zYm-4P-aJt" secondAttribute="top" constant="277" id="FQ1-Sk-WE7"/>
-                            <constraint firstItem="FHN-1u-gGD" firstAttribute="top" secondItem="zYm-4P-aJt" secondAttribute="top" constant="397" id="Gkc-Hl-5Rc"/>
+                            <constraint firstItem="rdw-In-tjL" firstAttribute="top" secondItem="zYm-4P-aJt" secondAttribute="top" constant="398" id="E2S-fw-yel"/>
                             <constraint firstAttribute="trailing" secondItem="hak-hP-C3W" secondAttribute="trailing" constant="62" id="HOH-Ae-RZi"/>
+                            <constraint firstAttribute="bottom" secondItem="FHN-1u-gGD" secondAttribute="bottom" constant="445" id="KcZ-cG-Swk"/>
                             <constraint firstAttribute="bottom" secondItem="cwz-qi-4cH" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Kfn-zW-LL2"/>
                             <constraint firstItem="K2W-by-J5k" firstAttribute="bottom" secondItem="zYm-4P-aJt" secondAttribute="bottom" type="default" id="RiF-17-p5P"/>
                             <constraint firstItem="LgA-QN-jUw" firstAttribute="leading" secondItem="zYm-4P-aJt" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="aFe-2c-bct"/>
+                            <constraint firstItem="rdw-In-tjL" firstAttribute="centerX" secondItem="piV-5U-mp4" secondAttribute="centerX" type="default" id="b77-9L-pST"/>
                             <constraint firstAttribute="bottom" secondItem="LgA-QN-jUw" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="m4P-iK-Z9U"/>
-                            <constraint firstItem="FCW-bg-Ubb" firstAttribute="top" secondItem="zYm-4P-aJt" secondAttribute="top" constant="334" id="pXH-PM-jOI"/>
                             <constraint firstAttribute="trailing" secondItem="cwz-qi-4cH" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="suj-sx-8AN"/>
                             <constraint firstAttribute="bottom" secondItem="hak-hP-C3W" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="t5h-1K-ssi"/>
                             <constraint firstItem="LgA-QN-jUw" firstAttribute="top" secondItem="hak-hP-C3W" secondAttribute="top" type="default" id="v9n-fW-fFP"/>
+                            <constraint firstItem="piV-5U-mp4" firstAttribute="trailing" secondItem="zYm-4P-aJt" secondAttribute="trailing" type="default" id="wRK-fU-ed2"/>
                         </constraints>
                     </view>
                     <connections>
@@ -169,7 +174,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TM3-RW-eAW">
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="left" image="wallpaper-630620.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="WF8-GK-btS"/>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fAr-qO-cvd">
+                                    <collectionView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fAr-qO-cvd">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="791" id="DaR-jF-bv6"/>
                                         </constraints>
@@ -1217,51 +1222,6 @@
                                             <outlet property="scrollView" destination="38C-jv-5FL" id="Ind-ri-RhW"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3ON-OE-wWj">
-                                        <rect key="frame" x="438" y="50" width="300" height="110"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="110"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FRk-7K-vQV">
-                                        <rect key="frame" x="30" y="180" width="300" height="110"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="110"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Cam-Qs-NH6">
-                                        <rect key="frame" x="438" y="180" width="300" height="110"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="110"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0Ql-pR-R0w">
-                                        <rect key="frame" x="30" y="310" width="300" height="110"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="110"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="D8R-nN-z1E">
-                                        <rect key="frame" x="438" y="310" width="300" height="110"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="110"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
@@ -1319,6 +1279,7 @@
         <image name="4.tif" width="1550" height="2075"/>
         <image name="arrowLeft.png" width="124" height="116"/>
         <image name="arrowRight.png" width="124" height="116"/>
+        <image name="bg-01.png" width="1536" height="2048"/>
         <image name="wallpaper-630620.jpg" width="1920" height="1200"/>
     </resources>
     <classes>
