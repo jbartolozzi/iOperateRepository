@@ -12,8 +12,10 @@
     NSMutableArray *arrayOfText;
     NSMutableArray *arrayOfResults;
 	NSMutableArray *arrayOfComments;
+    //NSString *comments;
 }
 @property (weak, nonatomic) IBOutlet UITextView *commentField;
+@property (strong, nonatomic) NSString *comments;
 
 @end
 
@@ -47,12 +49,20 @@
     }
     return self;
 }
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [[self evaluationCollection]setDataSource:self];
     [[self evaluationCollection]setDelegate:self];
+    if(_comments == NULL){
+        _comments = @"Comments:";
+    }
+    self.commentField.text = _comments;
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(changedComment:)
+     name:UITextFieldTextDidChangeNotification
+     object:_commentField];
 	self.evaluationCollection.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
 	self.commentField.alpha = 0.0;
 	self.commentField.layer.cornerRadius = 8.0f;
@@ -142,7 +152,7 @@
     arrayOfResults = [[NSMutableArray alloc]initWithCapacity:arrayOfText.count];
     arrayOfComments = [[NSMutableArray alloc]initWithCapacity:arrayOfText.count];
     for(int i =0; i < arrayOfText.count; i++){
-        arrayOfResults[i] =  @"YES";
+        arrayOfResults[i] =  [NSNumber numberWithInt:1];
     }
 	for(int i =0; i < arrayOfText.count; i++){
         arrayOfComments[i] =  @"...";
@@ -173,6 +183,8 @@
     [[cell evaluationText]setText:[arrayOfText objectAtIndex:indexPath.item]];
     NSString *text = [NSString stringWithFormat:@"%d)",indexPath.item];
     [[cell evaluationLabel]setText:text];
+    [cell evaluationResult].selectedSegmentIndex= [[arrayOfResults objectAtIndex:indexPath.item] integerValue];
+    [[cell evaluationResult]setTag:indexPath.item];
     
     return cell;
 }
@@ -182,7 +194,19 @@
     } else {
         arrayOfResults[sender.tag] = @"NO";
     }
+    
     [_evaluationCollection reloadData];
+}
+- (IBAction)resultMarked:(UISegmentedControl *)sender {
+    if(sender.selectedSegmentIndex==0){
+        arrayOfResults[sender.tag] = [NSNumber numberWithInt:0];
+    } else{
+        arrayOfResults[sender.tag] = [NSNumber numberWithInt:1];
+    }
+    [_evaluationCollection reloadData];
+}
+-(void)changedComment:(UITextView *)sender{
+    _comments = [NSString stringWithString:sender.text];
 }
 
 

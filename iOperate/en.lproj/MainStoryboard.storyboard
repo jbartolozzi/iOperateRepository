@@ -566,6 +566,9 @@
                                                         <segment title="x"/>
                                                         <segment title="✓"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="resultMarked:" destination="L48-lL-F6i" eventType="valueChanged" id="bNd-So-850"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -587,7 +590,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Comments: " translatesAutoresizingMaskIntoConstraints="NO" id="RFt-Vr-Srv">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFt-Vr-Srv">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="176" id="PNV-f3-3mD"/>
@@ -1316,9 +1319,8 @@
         <class className="EvaluationCell" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EvaluationCell.h"/>
             <relationships>
-                <relationship kind="outlet" name="evaluationComments" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="evaluationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="evaluationResult" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="evaluationResult" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="evaluationText" candidateClass="UITextView"/>
             </relationships>
         </class>
@@ -1327,6 +1329,7 @@
             <relationships>
                 <relationship kind="action" name="mark:" candidateClass="UIButton"/>
                 <relationship kind="action" name="openComments:"/>
+                <relationship kind="action" name="resultMarked:" candidateClass="UISegmentedControl"/>
                 <relationship kind="action" name="submitEvaluation:"/>
                 <relationship kind="outlet" name="commentField" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="evaluationCollection" candidateClass="UICollectionView"/>
@@ -1402,9 +1405,6 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="UTLViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UTLViewController.h"/>
