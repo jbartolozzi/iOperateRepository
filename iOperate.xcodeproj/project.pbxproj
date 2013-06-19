@@ -19,10 +19,6 @@
 		1A8352E21742E27B000CA4D4 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8352E11742E27B000CA4D4 /* Icon-72@2x.png */; };
 		1A8352E41742E27E000CA4D4 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8352E31742E27E000CA4D4 /* Icon-72.png */; };
 		1A87B451174469D9000D927D /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A87B450174469D9000D927D /* 1.png */; };
-		1A8B098C174E6EAE00B082B7 /* tabLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8B098A174E6EAE00B082B7 /* tabLeft.png */; };
-		1A8B098D174E6EAE00B082B7 /* tabRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8B098B174E6EAE00B082B7 /* tabRight.png */; };
-		1A8B0990174E706900B082B7 /* tabLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8B098E174E706900B082B7 /* tabLeft.png */; };
-		1A8B0991174E706900B082B7 /* tabRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8B098F174E706900B082B7 /* tabRight.png */; };
 		1AB1B51C175D07A800F849DA /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB1B51B175D07A800F849DA /* QuizViewController.m */; };
 		1AB1B51F175D07E200F849DA /* QuizCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB1B51E175D07E200F849DA /* QuizCell.m */; };
 		1AD4E5BE17568C780028E418 /* AdvancedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4E5BB17568C780028E418 /* AdvancedCell.m */; };
@@ -37,6 +33,7 @@
 		C81044FF17679B5900DFC1DE /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C81044FE17679B5900DFC1DE /* Default-Portrait~ipad.png */; };
 		C810450117679BB000DFC1DE /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C810450017679BB000DFC1DE /* Default-Landscape~ipad.png */; };
 		C810450317679BB400DFC1DE /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C810450217679BB400DFC1DE /* Default-Landscape@2x~ipad.png */; };
+		C810A9711771FF6C0017C483 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C810A9701771FF6C0017C483 /* GraphViewController.m */; };
 		C87FF042176A7834007809E6 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C87FF041176A7834007809E6 /* libCorePlot-CocoaTouch.a */; };
 		C87FF044176A7864007809E6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C87FF043176A7864007809E6 /* QuartzCore.framework */; };
 		C87FF046176A7906007809E6 /* bg-01.png in Resources */ = {isa = PBXBuildFile; fileRef = C87FF045176A7906007809E6 /* bg-01.png */; };
@@ -86,10 +83,6 @@
 		1A8352E11742E27B000CA4D4 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		1A8352E31742E27E000CA4D4 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		1A87B450174469D9000D927D /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
-		1A8B098A174E6EAE00B082B7 /* tabLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabLeft.png; sourceTree = "<group>"; };
-		1A8B098B174E6EAE00B082B7 /* tabRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabRight.png; sourceTree = "<group>"; };
-		1A8B098E174E706900B082B7 /* tabLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabLeft.png; sourceTree = "<group>"; };
-		1A8B098F174E706900B082B7 /* tabRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabRight.png; sourceTree = "<group>"; };
 		1AB1B51A175D07A800F849DA /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizViewController.h; sourceTree = "<group>"; };
 		1AB1B51B175D07A800F849DA /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizViewController.m; sourceTree = "<group>"; };
 		1AB1B51D175D07E200F849DA /* QuizCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizCell.h; sourceTree = "<group>"; };
@@ -111,6 +104,8 @@
 		C81044FE17679B5900DFC1DE /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		C810450017679BB000DFC1DE /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		C810450217679BB400DFC1DE /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		C810A96F1771FF6C0017C483 /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
+		C810A9701771FF6C0017C483 /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
 		C87FEFF4176A7834007809E6 /* CorePlot-CocoaTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CorePlot-CocoaTouch.h"; sourceTree = "<group>"; };
 		C87FEFF5176A7834007809E6 /* CPTAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTAnimation.h; sourceTree = "<group>"; };
 		C87FEFF6176A7834007809E6 /* CPTAnimationOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTAnimationOperation.h; sourceTree = "<group>"; };
@@ -383,6 +378,8 @@
 				1AD4E5BC17568C780028E418 /* AdvancedCollectionViewViewController.h */,
 				1AD4E5BD17568C780028E418 /* AdvancedCollectionViewViewController.m */,
 				1A4A11011755200300B5A253 /* MainStoryboard.storyboard */,
+				C810A96F1771FF6C0017C483 /* GraphViewController.h */,
+				C810A9701771FF6C0017C483 /* GraphViewController.m */,
 				C8A6AD281768D1A2002E1EBF /* EvaluationFooter.h */,
 				C8A6AD291768D1A2002E1EBF /* EvaluationFooter.m */,
 				1AB1B51D175D07E200F849DA /* QuizCell.h */,
@@ -420,10 +417,6 @@
 				1AD55B7F174EC5CE0003071F /* arrowLeft.png */,
 				1AD55B80174EC5CE0003071F /* arrowRight.png */,
 				1A01413F174EB895005D6FAD /* Play_Icon.png */,
-				1A8B098E174E706900B082B7 /* tabLeft.png */,
-				1A8B098F174E706900B082B7 /* tabRight.png */,
-				1A8B098A174E6EAE00B082B7 /* tabLeft.png */,
-				1A8B098B174E6EAE00B082B7 /* tabRight.png */,
 				1AFEAF55174D6ACF00016663 /* background1.tif */,
 				1AFEAF56174D6ACF00016663 /* background2.tif */,
 				1ADBD82E1746CADC005F1CD9 /* mov2.m4v */,
@@ -531,10 +524,6 @@
 				1A52E78D1746AC3800626D92 /* mov1.mov in Resources */,
 				1AFEAF57174D6ACF00016663 /* background1.tif in Resources */,
 				1AFEAF58174D6ACF00016663 /* background2.tif in Resources */,
-				1A8B098C174E6EAE00B082B7 /* tabLeft.png in Resources */,
-				1A8B098D174E6EAE00B082B7 /* tabRight.png in Resources */,
-				1A8B0990174E706900B082B7 /* tabLeft.png in Resources */,
-				1A8B0991174E706900B082B7 /* tabRight.png in Resources */,
 				1A014140174EB895005D6FAD /* Play_Icon.png in Resources */,
 				1AD55B81174EC5CE0003071F /* arrowLeft.png in Resources */,
 				1AD55B82174EC5CE0003071F /* arrowRight.png in Resources */,
@@ -586,6 +575,7 @@
 				D66FFA45175FB6EE004C9AA4 /* EvaluationViewController.m in Sources */,
 				D66FFA48175FB765004C9AA4 /* EvaluationCell.m in Sources */,
 				C8A6AD2A1768D1A2002E1EBF /* EvaluationFooter.m in Sources */,
+				C810A9711771FF6C0017C483 /* GraphViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,7 +680,6 @@
 				INFOPLIST_FILE = "iOperate/iOperate-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/iOS\"",
 					"\"$(SRCROOT)/iOperate\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -719,7 +708,6 @@
 				INFOPLIST_FILE = "iOperate/iOperate-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/iOS\"",
 					"\"$(SRCROOT)/iOperate\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
