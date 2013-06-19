@@ -55,7 +55,7 @@ typedef enum possibleMoveDirection {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)[[UIDevice currentDevice] orientation] duration:0.2];
+    //[self willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)[[UIDevice currentDevice] orientation] duration:0.2];
 	[[NSNotificationCenter defaultCenter] addObserver:self.textFieldViewer selector:@selector(edited:) name:@"UITextViewTextDidEndEditingNotification" object:_textFieldViewer.text];
     
     [[self myCollectionView]setDataSource:self];
@@ -119,7 +119,33 @@ typedef enum possibleMoveDirection {
     //_myCollectionView.
 	
 }
-
+-(void) viewDidAppear:(BOOL)animated {
+    
+}
+-(void)viewDidLayoutSubviews{
+    if ( self.interfaceOrientation== UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight)
+    {
+		self.scrollWindow.frame = CGRectMake(0, 639, 1024, 109);
+        self.imageDisplay.frame = CGRectMake(20, 20, 505, 580);
+        self.textFieldViewer.frame = CGRectMake(538, 20, 466, 580);
+		
+		self.rightButton.enabled = NO;
+		self.leftButton.enabled = NO;
+		self.leftButton.alpha = 0.0;
+		self.rightButton.alpha = 0.0;
+    }
+    else
+    {
+		self.scrollWindow.frame = CGRectMake(0, 895, 768, 109);
+        self.imageDisplay.frame = CGRectMake(20, 11, 728, 558);
+        self.textFieldViewer.frame = CGRectMake(20, 577, 728, 300);
+		
+		self.leftButton.enabled = YES;
+		self.rightButton.enabled = YES;
+        self.leftButton.alpha = 1.0;;
+		self.rightButton.alpha = 1.0;
+    }
+}
 -(void)edited:(id)object
 {
     arrayOfDescriptions[0] = @"what";
