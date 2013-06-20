@@ -15,8 +15,8 @@
     //NSString *comments;
 }
 @property (weak, nonatomic) IBOutlet UITextView *commentField;
-@property (strong, nonatomic) NSString *comments;
-
+//@property (strong,nonatomic) NSString *comments;
+@property (strong, nonatomic)NSString *comments;
 @end
 
 @implementation EvaluationViewController
@@ -54,14 +54,17 @@
     [super viewDidLoad];
     [[self evaluationCollection]setDataSource:self];
     [[self evaluationCollection]setDelegate:self];
-    if(_comments == NULL){
+    /*if(_comments == NULL){
         _comments = @"Comments:";
+    }*/
+    NSString *storedComment = [self getStoredComments];
+    if(storedComment){
+        self.commentField.text = storedComment;
     }
-    self.commentField.text = _comments;
     [[NSNotificationCenter defaultCenter]
      addObserver:self
      selector:@selector(changedComment:)
-     name:UITextFieldTextDidChangeNotification
+     name:UITextViewTextDidEndEditingNotification
      object:_commentField];
 	self.evaluationCollection.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
 	self.commentField.alpha = 0.0;
@@ -205,10 +208,73 @@
     }
     [_evaluationCollection reloadData];
 }
--(void)changedComment:(UITextView *)sender{
-    _comments = [NSString stringWithString:sender.text];
+#define ALL_COMMENTS_KEY @"comments_ALL"
+-(void)synchronize{
+    //NSString *commentsFromUserDefaults = [[[NSUserDefaults standardUserDefaults] stringForKey:ALL_COMMENTS_KEY] mutableCopy];
+    //if(!commentsFromUserDefaults) commentsFromUserDefaults = [[NSString alloc]init];
+    //commentsFromUserDefaults = self.comments;
+    //commentsFromUserDefaults = [self asPropertyList];
+    [[NSUserDefaults standardUserDefaults] setObject:self.comments forKey:ALL_COMMENTS_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
-
-
+-(void)changedComment:(UITextView *)sender{
+    self.comments = _commentField.text;
+    [self synchronize];
+}
+-(NSString *)getStoredComments{
+    return [[NSUserDefaults standardUserDefaults] stringForKey:ALL_COMMENTS_KEY];
+}/*
++ (NSString *) returnComments{
+    NSString * resultComments = [[NSString alloc] init];
+    for (id plist in [[[NSUserDefaults standardUserDefaults] dictionaryForKey:ALL_RESULTS_KEY] allValues]){
+        resultComments = [[NSString alloc] initFromPropertyList:plist];
+    }
+}
+-(id)initFromPropertyList:(id)plist{
+    self = [self init];
+    if(self){
+        if([plist isKindOfClass:[NSDictionary class]]){
+            NSDictionary *resultsDictionary = (NSDictionary *)plist;
+            _comments = resultsDictionary[@"comments2"];
+        }
+    }
+    return self;
+}
+  */
+/*#define ALL_RESULTS_KEY @"comments_ALL"
+-(void)synchronize{
+    NSMutableDictionary *mutableCommentsFromUserDefaults = [[[NSUserDefaults standardUserDefaults] dictionaryForKey:ALL_RESULTS_KEY] mutableCopy];
+    if(!mutableCommentsFromUserDefaults) mutableCommentsFromUserDefaults = [[NSMutableDictionary alloc]init];
+    mutableCommentsFromUserDefaults[@"comments1"] = [self asPropertyList];
+    [[NSUserDefaults standardUserDefaults] setObject:mutableCommentsFromUserDefaults forKey:ALL_RESULTS_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+-(void)changedComment:(UITextView *)sender{
+    //_comments = [NSString stringWithString:sender.text];
+}
+-(void)setComments:(NSString *)comments{
+    _comments = comments;
+    [self synchronize];
+    
+}
+-(id)asPropertyList{
+    return @{ @"comments2" : self.comments};
+}
++ (NSString *) returnComments{
+    NSString * resultComments = [[NSString alloc] init];
+    for (id plist in [[[NSUserDefaults standardUserDefaults] dictionaryForKey:ALL_RESULTS_KEY] allValues]){
+        resultComments = [[NSString alloc] initFromPropertyList:plist];
+    }
+}
+-(id)initFromPropertyList:(id)plist{
+    self = [self init];
+    if(self){
+        if([plist isKindOfClass:[NSDictionary class]]){
+            NSDictionary *resultsDictionary = (NSDictionary *)plist;
+            _comments = resultsDictionary[@"comments2"];
+        }
+    }
+    return self;
+}*/
 
 @end
