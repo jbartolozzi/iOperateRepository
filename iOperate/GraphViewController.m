@@ -17,7 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    dataForPlot = [[NSMutableArray alloc]initWithObjects:@"1",@"2",@"3",@"4",@"5", nil];
+    [self createData];
     [self constructGraph];
 }
 
@@ -34,27 +34,54 @@
 
 -(NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)idx
 {
-    NSNumber *num;
-    num = [dataForPlot objectAtIndex:idx];
+    NSNumber *num = nil;
+    num = [[dataForPlot objectAtIndex:idx]valueForKey:(fieldEnum == CPTScatterPlotFieldX ? @"x":@"y")];
     return num;
 }
 
 -(void)constructGraph
 {
     // We need a hostview, you can create one in IB (and create an outlet) or just do this:
-    CPTGraphHostingView* hostView = [[CPTGraphHostingView alloc] initWithFrame:self.view.frame];
+    CPTGraphHostingView* hostView = [[CPTGraphHostingView alloc] initWithFrame:CGRectMake(25, 25, 700, 800)];
     [self.view addSubview: hostView];
     
     // Create a CPTGraph object and add to hostView
     CPTGraph* graph = [[CPTXYGraph alloc] initWithFrame:hostView.bounds];
+    
+    // Apply Theme
+    CPTTheme *theme =[CPTTheme themeNamed:kCPTSlateTheme];
+    [graph applyTheme:theme];
+    
+    // Enable Interaction
+    [[graph defaultPlotSpace] setAllowsUserInteraction:YES];
+    
+    // Apply Graph to Host View
     hostView.hostedGraph = graph;
+    
+    // Padding
+    graph.paddingBottom = 20.0;
+    graph.paddingLeft = 20.0;
+    graph.paddingRight = 20.0;
+    graph.paddingRight = 20.0;
     
     // Get the (default) plotspace from the graph so we can set its x/y ranges
     CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *) graph.defaultPlotSpace;
     
     // Note that these CPTPlotRange are defined by START and LENGTH (not START and END) !!
-    [plotSpace setYRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat( 0 ) length:CPTDecimalFromFloat( 16 )]];
-    [plotSpace setXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat( -4 ) length:CPTDecimalFromFloat( 8 )]];
+    [plotSpace setYRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0) length:CPTDecimalFromFloat(10)]];
+    [plotSpace setXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0) length:CPTDecimalFromFloat(10)]];
+    
+    // Axes
+    CPTXYAxisSet *axisSet = (CPTXYAxisSet *)graph.axisSet;
+    CPTXYAxis *x = axisSet.xAxis;
+    x.majorIntervalLength = CPTDecimalFromString(@"1");
+    x.orthogonalCoordinateDecimal = CPTDecimalFromString(@"0.0");
+    x.minorTicksPerInterval = 2;
+    CPTXYAxis *y = axisSet.yAxis;
+    y.majorIntervalLength = CPTDecimalFromString(@"1");
+    y.minorTicksPerInterval = 5;
+    y.orthogonalCoordinateDecimal = CPTDecimalFromString(@"0.0");
+   
     
     // Create the plot (we do not define actual x/y values yet, these will be supplied by the datasource...)
     CPTScatterPlot* plot = [[CPTScatterPlot alloc] initWithFrame:CGRectZero];
@@ -64,5 +91,16 @@
     
     // Finally, add the created plot to the default plot space of the CPTGraph object we created before
     [graph addPlot:plot toPlotSpace:graph.defaultPlotSpace];
+}
+
+-(void)createData
+{
+    NSMutableArray *contentArray = [NSMutableArray array];
+    for (NSUInteger i = 0; i < 10; i++) {
+        NSNumber *x = [NSNumber numberWithDouble:i];
+        NSNumber *y = [NSNumber numberWithDouble: (i * i)/2.0];
+        [contentArray addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x,@"x",y,@"y", nil]];
+    }
+    dataForPlot = contentArray;
 }
 @end

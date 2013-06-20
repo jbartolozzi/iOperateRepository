@@ -10,8 +10,9 @@
 #import "CorePlot-CocoaTouch.h"
 #import "CPTGraph.h"
 
-@interface GraphViewController : UIViewController <CPTPlotDataSource, CPTPlotSpaceDelegate> {
+@interface GraphViewController : UIViewController <CPTPlotDataSource, CPTPlotSpaceDelegate, CPTScatterPlotDelegate> {
     NSMutableArray *dataForPlot;
 }
 -(void)constructGraph;
+-(void)createData;
 @end
