@@ -22,8 +22,16 @@
 @implementation EvaluationViewController
 - (IBAction)openComments:(id)sender {
 	if (self.commentField.alpha < 1.0) {
-		[UIView animateWithDuration:0.5 animations:^{self.commentField.alpha = 1.0;}];
-		[self.commentField becomeFirstResponder];
+        if (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+            self.commentField.frame = CGRectMake(20, 180, self.commentField.frame.size.width, self.commentField.frame.size.height);
+            [UIView animateWithDuration:0.5 animations:^{self.commentField.alpha = 1.0;}];
+            [self.commentField becomeFirstResponder];
+        }
+        else {
+            self.commentField.frame = CGRectMake(20, 500, 728, 176);
+            [UIView animateWithDuration:0.5 animations:^{self.commentField.alpha = 1.0;}];
+            [self.commentField becomeFirstResponder];
+        }
 	}
 	else {
 		[UIView animateWithDuration:0.5 animations:^{self.commentField.alpha = 0.0;}];

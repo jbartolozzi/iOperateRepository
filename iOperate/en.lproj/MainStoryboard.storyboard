@@ -18,7 +18,11 @@
                                     <constraint firstAttribute="height" constant="1061" id="0EM-ld-47I"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" image="bg-01.png" translatesAutoresizingMaskIntoConstraints="NO" id="piV-5U-mp4"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" image="bg-01.png" translatesAutoresizingMaskIntoConstraints="NO" id="piV-5U-mp4">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1004" id="Bch-2X-arN"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHN-1u-gGD">
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
@@ -89,7 +93,7 @@
                             <bool key="isElement" value="YES"/>
                         </accessibility>
                         <constraints>
-                            <constraint firstItem="piV-5U-mp4" firstAttribute="bottom" secondItem="zYm-4P-aJt" secondAttribute="bottom" type="default" id="0Yu-dF-eia"/>
+                            <constraint firstItem="piV-5U-mp4" firstAttribute="centerX" secondItem="FCW-bg-Ubb" secondAttribute="centerX" type="default" id="0nL-BB-boo"/>
                             <constraint firstItem="FCW-bg-Ubb" firstAttribute="top" secondItem="zYm-4P-aJt" secondAttribute="top" constant="455" id="3eM-Ap-NBh"/>
                             <constraint firstItem="FCW-bg-Ubb" firstAttribute="leading" secondItem="rdw-In-tjL" secondAttribute="leading" type="default" id="4Db-YN-TyA"/>
                             <constraint firstItem="K2W-by-J5k" firstAttribute="trailing" secondItem="zYm-4P-aJt" secondAttribute="trailing" type="default" id="6W5-fb-t03"/>
@@ -97,15 +101,14 @@
                             <constraint firstItem="FCW-bg-Ubb" firstAttribute="trailing" secondItem="rdw-In-tjL" secondAttribute="trailing" type="default" id="8yK-jA-qql"/>
                             <constraint firstItem="FHN-1u-gGD" firstAttribute="centerX" secondItem="FCW-bg-Ubb" secondAttribute="centerX" type="default" id="9KC-Ql-Pco"/>
                             <constraint firstItem="piV-5U-mp4" firstAttribute="leading" secondItem="zYm-4P-aJt" secondAttribute="leading" type="default" id="Aln-rC-5fG"/>
-                            <constraint firstItem="piV-5U-mp4" firstAttribute="top" secondItem="zYm-4P-aJt" secondAttribute="top" type="default" id="B9B-vC-r3K"/>
                             <constraint firstItem="cwz-qi-4cH" firstAttribute="top" secondItem="hak-hP-C3W" secondAttribute="top" type="default" id="DtG-x9-xuL"/>
                             <constraint firstItem="rdw-In-tjL" firstAttribute="top" secondItem="zYm-4P-aJt" secondAttribute="top" constant="398" id="E2S-fw-yel"/>
                             <constraint firstAttribute="trailing" secondItem="hak-hP-C3W" secondAttribute="trailing" constant="62" id="HOH-Ae-RZi"/>
                             <constraint firstAttribute="bottom" secondItem="FHN-1u-gGD" secondAttribute="bottom" constant="445" id="KcZ-cG-Swk"/>
                             <constraint firstAttribute="bottom" secondItem="cwz-qi-4cH" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Kfn-zW-LL2"/>
+                            <constraint firstItem="piV-5U-mp4" firstAttribute="top" secondItem="zYm-4P-aJt" secondAttribute="top" constant="-5" id="QBw-Fs-39P"/>
                             <constraint firstItem="K2W-by-J5k" firstAttribute="bottom" secondItem="zYm-4P-aJt" secondAttribute="bottom" type="default" id="RiF-17-p5P"/>
                             <constraint firstItem="LgA-QN-jUw" firstAttribute="leading" secondItem="zYm-4P-aJt" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="aFe-2c-bct"/>
-                            <constraint firstItem="rdw-In-tjL" firstAttribute="centerX" secondItem="piV-5U-mp4" secondAttribute="centerX" type="default" id="b77-9L-pST"/>
                             <constraint firstAttribute="bottom" secondItem="LgA-QN-jUw" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="m4P-iK-Z9U"/>
                             <constraint firstAttribute="trailing" secondItem="cwz-qi-4cH" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="suj-sx-8AN"/>
                             <constraint firstAttribute="bottom" secondItem="hak-hP-C3W" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="t5h-1K-ssi"/>
@@ -1373,16 +1376,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoViewerViewController.h"/>
             <relationships>
                 <relationship kind="action" name="ButtonPress:" candidateClass="UIButton"/>
-                <relationship kind="action" name="Expand:" candidateClass="UIButton"/>
                 <relationship kind="action" name="activateTools:"/>
-                <relationship kind="action" name="buttonLeft:" candidateClass="UIButton"/>
-                <relationship kind="action" name="buttonPress:" candidateClass="UIButton"/>
-                <relationship kind="action" name="buttonRight:" candidateClass="UIButton"/>
                 <relationship kind="action" name="decreaseFontSize:"/>
                 <relationship kind="action" name="increaseFontSize:"/>
-                <relationship kind="action" name="panImage:" candidateClass="UIPanGestureRecognizer"/>
-                <relationship kind="action" name="swipeLeft:" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="action" name="swipeRight:" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="fullScreenCollection" candidateClass="UICollectionView"/>
                 <relationship kind="outlet" name="imageDisplay" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>
@@ -1436,9 +1432,6 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="UTLViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UTLViewController.h"/>
