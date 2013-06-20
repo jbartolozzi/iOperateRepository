@@ -529,24 +529,35 @@
                                     <segment title="Sine"/>
                                     <segment title="Cosine"/>
                                     <segment title="Square Root"/>
+                                    <segment title="Inv. Sine"/>
+                                    <segment title="Inv. Cosine"/>
+                                    <segment title="Tangent"/>
                                 </segments>
                                 <connections>
                                     <action selector="setGraph:" destination="XNu-H8-Jhv" eventType="valueChanged" id="BuN-kc-6x2"/>
                                 </connections>
                             </segmentedControl>
+                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="0.5" minimumValue="0.10000000000000001" maximumValue="0.90000000000000002" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="dvl-CL-qg3">
+                                <connections>
+                                    <action selector="stepperChanged:" destination="XNu-H8-Jhv" eventType="valueChanged" id="Ioj-F1-dvC"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="JZT-qv-Zij" secondAttribute="bottom" constant="64" id="1Ov-HZ-vcT"/>
                             <constraint firstItem="ZeR-ee-IbH" firstAttribute="leading" secondItem="0sD-cm-Au0" secondAttribute="leading" type="default" id="Dhv-eT-De8"/>
                             <constraint firstItem="ZeR-ee-IbH" firstAttribute="top" secondItem="0sD-cm-Au0" secondAttribute="top" type="default" id="Hfc-ZS-Mrj"/>
+                            <constraint firstItem="dvl-CL-qg3" firstAttribute="centerX" secondItem="JZT-qv-Zij" secondAttribute="centerX" type="default" id="IH6-1z-PM3"/>
                             <constraint firstItem="ZeR-ee-IbH" firstAttribute="trailing" secondItem="0sD-cm-Au0" secondAttribute="trailing" type="default" id="LQ1-CY-2ll"/>
                             <constraint firstItem="JZT-qv-Zij" firstAttribute="centerX" secondItem="ZeR-ee-IbH" secondAttribute="centerX" type="default" id="UjU-5B-9CW"/>
-                            <constraint firstAttribute="bottom" secondItem="JZT-qv-Zij" secondAttribute="bottom" constant="56" id="lUk-E5-8lh"/>
+                            <constraint firstAttribute="bottom" secondItem="dvl-CL-qg3" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Wx4-qZ-uCz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Graphs" id="ivT-Xi-9uW"/>
                     <connections>
                         <outlet property="segmentControl" destination="JZT-qv-Zij" id="BRm-Ju-gDv"/>
+                        <outlet property="stepper" destination="dvl-CL-qg3" id="peX-1u-nxX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GNb-vf-YTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1375,7 +1386,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GraphViewController.h"/>
             <relationships>
                 <relationship kind="action" name="setGraph:"/>
+                <relationship kind="action" name="stepperChanged:"/>
                 <relationship kind="outlet" name="segmentControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="stepper" candidateClass="UIStepper"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
