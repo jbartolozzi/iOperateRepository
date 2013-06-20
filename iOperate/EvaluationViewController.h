@@ -11,8 +11,13 @@
 #import "QuartzCore/CALayer.h"
 #import "EvaluationCell.h"
 #import "EvaluationFooter.h"
+#import <Foundation/Foundation.h>
+
 
 @interface EvaluationViewController : UIViewController <UICollectionViewDataSource,UICollectionViewDelegate>
+//+ (NSString *)returnComments;
+
 @property (weak, nonatomic) IBOutlet UICollectionView *evaluationCollection;
+
 
 @end
