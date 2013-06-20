@@ -46,7 +46,7 @@
 		<string>armv7</string>
 	</array>
 	<key>UIStatusBarHidden~ipad</key>
-	<false/>
+	<true/>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
