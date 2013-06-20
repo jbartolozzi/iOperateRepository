@@ -13,6 +13,8 @@
 @interface GraphViewController : UIViewController <CPTPlotDataSource, CPTPlotSpaceDelegate, CPTScatterPlotDelegate> {
     NSMutableArray *dataForPlot;
 }
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 -(void)constructGraph;
 -(void)createData;
+- (IBAction)setGraph:(id)sender;
 @end

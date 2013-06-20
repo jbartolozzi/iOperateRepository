@@ -23,6 +23,36 @@
 
 @implementation UTLViewController
 
+-(void)viewDidLayoutSubviews
+{
+    if (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight)
+    {
+        self.userNameField.frame = CGRectMake(410, 161, 204, 30);
+        self.passwordField.frame = CGRectMake(410, 218, 204, 30);
+        self.loginButton.frame = CGRectMake(466, 269, 93, 41);
+    }
+    else {
+        self.userNameField.frame = CGRectMake(282, 330, 204, 30);
+        self.passwordField.frame = CGRectMake(282, 387, 204, 30);
+        self.loginButton.frame = CGRectMake(338, 438, 93, 41);
+    }
+}
+
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
+    {
+        self.userNameField.frame = CGRectMake(410, 161, 204, 30);
+        self.passwordField.frame = CGRectMake(410, 218, 204, 30);
+        self.loginButton.frame = CGRectMake(466, 269, 93, 41);
+    }
+    else {
+        self.userNameField.frame = CGRectMake(282, 330, 204, 30);
+        self.passwordField.frame = CGRectMake(282, 387, 204, 30);
+        self.loginButton.frame = CGRectMake(338, 438, 93, 41);
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -72,7 +102,6 @@
                             options:UIViewAnimationOptionCurveLinear
                          animations:^{ self.loginButton.alpha = 1.0;}
                          completion:(nil)];
-
     }
 }
 

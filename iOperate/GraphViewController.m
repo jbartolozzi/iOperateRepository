@@ -8,7 +8,14 @@
 
 #import "GraphViewController.h"
 
-@interface GraphViewController ()
+@interface GraphViewController () {
+    CPTGraphHostingView* hostView;
+    CPTGraph* graph;
+    CPTScatterPlot* plot;
+    CPTXYPlotSpace *plotSpace;
+    CPTXYAxis *xAx;
+    CPTXYAxis *yAx;
+}
 
 @end
 
@@ -42,15 +49,20 @@
 -(void)constructGraph
 {
     // We need a hostview, you can create one in IB (and create an outlet) or just do this:
-    CPTGraphHostingView* hostView = [[CPTGraphHostingView alloc] initWithFrame:CGRectMake(25, 25, 700, 800)];
+    hostView = [[CPTGraphHostingView alloc] initWithFrame:CGRectMake(10, 10, 748, 800)];
+    hostView.clipsToBounds = YES;
+    [[hostView layer] setCornerRadius:50];
     [self.view addSubview: hostView];
     
     // Create a CPTGraph object and add to hostView
-    CPTGraph* graph = [[CPTXYGraph alloc] initWithFrame:hostView.bounds];
+    graph = [[CPTXYGraph alloc] initWithFrame:hostView.bounds];
     
     // Apply Theme
-    CPTTheme *theme =[CPTTheme themeNamed:kCPTSlateTheme];
+    CPTTheme *theme =[CPTTheme themeNamed:kCPTPlainWhiteTheme];
     [graph applyTheme:theme];
+    graph.fill = [CPTFill fillWithColor:[[CPTColor colorWithComponentRed:1.0 green:1.0 blue:1.0 alpha:1.0]colorWithAlphaComponent:1.0]];
+    graph.plotAreaFrame.fill = [CPTFill fillWithColor:[CPTColor clearColor]];
+    graph.plotAreaFrame.borderLineStyle = nil;
     
     // Enable Interaction
     [[graph defaultPlotSpace] setAllowsUserInteraction:YES];
@@ -59,13 +71,13 @@
     hostView.hostedGraph = graph;
     
     // Padding
-    graph.paddingBottom = 20.0;
-    graph.paddingLeft = 20.0;
-    graph.paddingRight = 20.0;
-    graph.paddingRight = 20.0;
+    graph.paddingBottom = 0.0;
+    graph.paddingLeft = 0.0;
+    graph.paddingRight = 0.0;
+    graph.paddingTop = 0.0;
     
     // Get the (default) plotspace from the graph so we can set its x/y ranges
-    CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *) graph.defaultPlotSpace;
+    plotSpace = (CPTXYPlotSpace *) graph.defaultPlotSpace;
     
     // Note that these CPTPlotRange are defined by START and LENGTH (not START and END) !!
     [plotSpace setYRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0) length:CPTDecimalFromFloat(10)]];
@@ -73,34 +85,123 @@
     
     // Axes
     CPTXYAxisSet *axisSet = (CPTXYAxisSet *)graph.axisSet;
-    CPTXYAxis *x = axisSet.xAxis;
-    x.majorIntervalLength = CPTDecimalFromString(@"1");
-    x.orthogonalCoordinateDecimal = CPTDecimalFromString(@"0.0");
-    x.minorTicksPerInterval = 2;
-    CPTXYAxis *y = axisSet.yAxis;
-    y.majorIntervalLength = CPTDecimalFromString(@"1");
-    y.minorTicksPerInterval = 5;
-    y.orthogonalCoordinateDecimal = CPTDecimalFromString(@"0.0");
+    xAx = axisSet.xAxis;
+    xAx.majorIntervalLength = CPTDecimalFromString(@"1");
+    xAx.orthogonalCoordinateDecimal = CPTDecimalFromString(@"0.0");
+    xAx.minorTicksPerInterval = 2;
+    yAx = axisSet.yAxis;
+    yAx.majorIntervalLength = CPTDecimalFromString(@"1");
+    yAx.minorTicksPerInterval = 5;
+    yAx.orthogonalCoordinateDecimal = CPTDecimalFromString(@"0.0");
    
     
     // Create the plot (we do not define actual x/y values yet, these will be supplied by the datasource...)
-    CPTScatterPlot* plot = [[CPTScatterPlot alloc] initWithFrame:CGRectZero];
+    plot = [[CPTScatterPlot alloc] initWithFrame:CGRectZero];
+    plot.interpolation = CPTScatterPlotInterpolationCurved;
+    
+    // Line Style
+    CPTMutableLineStyle *lineStyle = [CPTMutableLineStyle lineStyle];
+    lineStyle.lineWidth = 1.75;
+    lineStyle.lineColor = [[CPTColor colorWithComponentRed:(51.0/256.0) green:(204.0/256.0) blue:(255.0/256.0) alpha:1.0]colorWithAlphaComponent:7.0];
+    plot.dataLineStyle = lineStyle;
+    
+    // Plot Symbols
+    CPTPlotSymbol *symbol = [CPTPlotSymbol ellipsePlotSymbol];
+    symbol.fill = [CPTFill fillWithColor:[[CPTColor cyanColor] colorWithAlphaComponent:1.0]];
+    symbol.size = CGSizeMake(10.0, 10.0);
+    plot.plotSymbol = symbol;
+    
     
     // Let's keep it simple and let this class act as datasource (therefore we implemtn <CPTPlotDataSource>)
     plot.dataSource = self;
     
     // Finally, add the created plot to the default plot space of the CPTGraph object we created before
     [graph addPlot:plot toPlotSpace:graph.defaultPlotSpace];
+    
+    [self resizePlotSpace];
+   
+}
+
+-(void)resizePlotSpace
+{
+    // Scale Plot Space
+    [plotSpace scaleToFitPlots:[graph allPlots]];
+    CPTMutablePlotRange *xRange = [plotSpace.xRange mutableCopy];
+    CPTMutablePlotRange *yRange = [plotSpace.yRange mutableCopy];
+    
+    // Expand the ranges to put some space around the plot
+    [xRange expandRangeByFactor:CPTDecimalFromDouble(1.2)];
+    [yRange expandRangeByFactor:CPTDecimalFromDouble(1.2)];
+    plotSpace.xRange = xRange;
+    plotSpace.yRange = yRange;
+    
+    [xRange expandRangeByFactor:CPTDecimalFromDouble(1.025)];
+    xRange.location = plotSpace.xRange.location;
+    [yRange expandRangeByFactor:CPTDecimalFromDouble(1.05)];
+    xAx.visibleAxisRange = xRange;
+    yAx.visibleAxisRange = yRange;
+    
+    [xRange expandRangeByFactor:CPTDecimalFromDouble(3.0)];
+    [yRange expandRangeByFactor:CPTDecimalFromDouble(3.0)];
+    plotSpace.globalXRange = xRange;
+    plotSpace.globalYRange = yRange;
 }
 
 -(void)createData
 {
     NSMutableArray *contentArray = [NSMutableArray array];
-    for (NSUInteger i = 0; i < 10; i++) {
+    for (float i = 0; i < 10; i+= .5) {
         NSNumber *x = [NSNumber numberWithDouble:i];
-        NSNumber *y = [NSNumber numberWithDouble: (i * i)/2.0];
+        NSNumber *y = [NSNumber numberWithDouble: sin(i)];
         [contentArray addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x,@"x",y,@"y", nil]];
     }
     dataForPlot = contentArray;
+    
+}
+
+- (IBAction)setGraph:(id)sender {
+    NSMutableArray *contentArray = [NSMutableArray array];
+    if (self.segmentControl.selectedSegmentIndex == 0) {
+        for (float i = 0; i < 10; i+= .5) {
+            NSNumber *x = [NSNumber numberWithDouble:i];
+            NSNumber *y = [NSNumber numberWithDouble: sin(i)];
+            [contentArray addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x,@"x",y,@"y", nil]];
+        }
+        dataForPlot = contentArray;
+        [graph reloadData];
+        [self resizePlotSpace];
+        
+    }
+    else if(self.segmentControl.selectedSegmentIndex == 1) {
+        for (float i = 0; i < 10; i+= .5) {
+            NSNumber *x = [NSNumber numberWithDouble:i];
+            NSNumber *y = [NSNumber numberWithDouble: cos(i)];
+            [contentArray addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x,@"x",y,@"y", nil]];
+        }
+        dataForPlot = contentArray;
+        [graph reloadData];
+        [self resizePlotSpace];
+        
+    }
+    else if(self.segmentControl.selectedSegmentIndex == 2) {
+        for (float i = 0; i < 10; i+= .5) {
+            NSNumber *x = [NSNumber numberWithDouble:i];
+            NSNumber *y = [NSNumber numberWithDouble: sqrt(i)];
+            [contentArray addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x,@"x",y,@"y", nil]];
+        }
+        dataForPlot = contentArray;
+        [graph reloadData];
+        [self resizePlotSpace];
+    }
+}
+
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+        hostView.frame = CGRectMake(10, 10, 1000, 500);
+    }
+    else {
+        hostView.frame = CGRectMake(10, 10, 748, 800);
+    }
 }
 @end
