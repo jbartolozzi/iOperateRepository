@@ -19,4 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIStepper *stepper;
 - (IBAction)stepperChanged:(id)sender;
 - (IBAction)setGraph:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIStepper *stepperDistance;
+- (IBAction)changeDistance:(id)sender;
+
 @end

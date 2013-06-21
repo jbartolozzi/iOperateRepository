@@ -521,9 +521,9 @@
                                     <constraint firstAttribute="height" constant="1010" id="Ti3-Lp-kwi"/>
                                 </constraints>
                             </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JZT-qv-Zij">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JZT-qv-Zij">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="528" id="noG-3g-o1A"/>
+                                    <constraint firstAttribute="width" constant="700" id="zsN-JU-WTW"/>
                                 </constraints>
                                 <segments>
                                     <segment title="Sine"/>
@@ -537,27 +537,35 @@
                                     <action selector="setGraph:" destination="XNu-H8-Jhv" eventType="valueChanged" id="BuN-kc-6x2"/>
                                 </connections>
                             </segmentedControl>
-                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="0.5" minimumValue="0.10000000000000001" maximumValue="0.90000000000000002" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="dvl-CL-qg3">
+                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minimumValue="0.10000000000000001" maximumValue="0.90000000000000002" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="dvl-CL-qg3">
                                 <connections>
                                     <action selector="stepperChanged:" destination="XNu-H8-Jhv" eventType="valueChanged" id="Ioj-F1-dvC"/>
+                                </connections>
+                            </stepper>
+                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Plp-Np-QLO">
+                                <connections>
+                                    <action selector="changeDistance:" destination="XNu-H8-Jhv" eventType="valueChanged" id="OBc-js-PnW"/>
                                 </connections>
                             </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="JZT-qv-Zij" secondAttribute="bottom" constant="64" id="1Ov-HZ-vcT"/>
+                            <constraint firstAttribute="trailing" secondItem="Plp-Np-QLO" secondAttribute="trailing" constant="252" id="4xi-UR-sfL"/>
+                            <constraint firstAttribute="bottom" secondItem="JZT-qv-Zij" secondAttribute="bottom" constant="68" id="5MM-MC-NpD"/>
                             <constraint firstItem="ZeR-ee-IbH" firstAttribute="leading" secondItem="0sD-cm-Au0" secondAttribute="leading" type="default" id="Dhv-eT-De8"/>
                             <constraint firstItem="ZeR-ee-IbH" firstAttribute="top" secondItem="0sD-cm-Au0" secondAttribute="top" type="default" id="Hfc-ZS-Mrj"/>
-                            <constraint firstItem="dvl-CL-qg3" firstAttribute="centerX" secondItem="JZT-qv-Zij" secondAttribute="centerX" type="default" id="IH6-1z-PM3"/>
                             <constraint firstItem="ZeR-ee-IbH" firstAttribute="trailing" secondItem="0sD-cm-Au0" secondAttribute="trailing" type="default" id="LQ1-CY-2ll"/>
-                            <constraint firstItem="JZT-qv-Zij" firstAttribute="centerX" secondItem="ZeR-ee-IbH" secondAttribute="centerX" type="default" id="UjU-5B-9CW"/>
+                            <constraint firstAttribute="bottom" secondItem="Plp-Np-QLO" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="O0u-rW-KzA"/>
                             <constraint firstAttribute="bottom" secondItem="dvl-CL-qg3" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Wx4-qZ-uCz"/>
+                            <constraint firstItem="dvl-CL-qg3" firstAttribute="leading" secondItem="0sD-cm-Au0" secondAttribute="leading" constant="271" id="bNo-O0-ykS"/>
+                            <constraint firstItem="JZT-qv-Zij" firstAttribute="centerX" secondItem="ZeR-ee-IbH" secondAttribute="centerX" type="default" id="rgn-Yq-U0T"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Graphs" id="ivT-Xi-9uW"/>
                     <connections>
                         <outlet property="segmentControl" destination="JZT-qv-Zij" id="BRm-Ju-gDv"/>
                         <outlet property="stepper" destination="dvl-CL-qg3" id="peX-1u-nxX"/>
+                        <outlet property="stepperDistance" destination="Plp-Np-QLO" id="tdJ-ai-7Og"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GNb-vf-YTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1385,10 +1393,12 @@
         <class className="GraphViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GraphViewController.h"/>
             <relationships>
+                <relationship kind="action" name="changeDistance:"/>
                 <relationship kind="action" name="setGraph:"/>
                 <relationship kind="action" name="stepperChanged:"/>
                 <relationship kind="outlet" name="segmentControl" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="stepper" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="stepperDistance" candidateClass="UIStepper"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
