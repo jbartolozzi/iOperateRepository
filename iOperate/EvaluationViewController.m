@@ -7,19 +7,31 @@
 //
 
 #import "EvaluationViewController.h"
+#import "TestResult.h"
 
 @interface EvaluationViewController (){
     NSMutableArray *arrayOfText;
     NSMutableArray *arrayOfResults;
 	NSMutableArray *arrayOfComments;
+    int totalQuestions;
+    int correctAnswers;
     //NSString *comments;
 }
 @property (weak, nonatomic) IBOutlet UITextView *commentField;
 //@property (strong,nonatomic) NSString *comments;
 @property (strong, nonatomic)NSString *comments;
+@property (strong, nonatomic) TestResult *evalResult;
+@property (nonatomic) float grade;
+@property (strong, nonatomic) IBOutlet UITextView *resultsDisplay;
 @end
 
 @implementation EvaluationViewController
+- (TestResult *)evalResult{
+    if(!_evalResult){
+        _evalResult = [[TestResult alloc] init];
+    }
+    return _evalResult;
+}
 - (IBAction)openComments:(id)sender {
 	if (self.commentField.alpha < 1.0) {
         if (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
@@ -39,12 +51,26 @@
 	}
 }
 - (IBAction)submitEvaluation:(id)sender {
-	UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Evaluation Complete:" message:@"Submit your responses?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes",nil];
-	[alert show];
+    _grade = (float)correctAnswers/(float)totalQuestions;
+    self.evalResult.grade = self.grade;
+    NSString *displayText = @"";
+    for (TestResult *result in [TestResult allTestResults]){
+        displayText = [displayText stringByAppendingFormat:@"Grade: %f (%@, %0g)\n", result.grade,result.end, round(result.duration)]; 
+    }
+    self.resultsDisplay.text = displayText;
+	/*UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Evaluation Complete:" message:@"Submit your responses?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes",nil];
+	[alert show];*/
+}
+- (IBAction)beginEval:(UIButton *)sender {
+    self.evalResult = nil;
+    //need to reset everything
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
 	if (buttonIndex == 1) {
+        _grade = (float)correctAnswers/(float)totalQuestions;
+        self.evalResult.grade = self.grade;
+        
 		[self.navigationController popToRootViewControllerAnimated:YES];
 	}
 }
@@ -168,6 +194,9 @@
 	for(int i =0; i < arrayOfText.count; i++){
         arrayOfComments[i] =  @"...";
     }
+    totalQuestions = arrayOfText.count;
+    correctAnswers = totalQuestions;
+    _grade = 1.0f;
 	
 	// Do any additional setup after loading the view.
 }
@@ -211,8 +240,10 @@
 - (IBAction)resultMarked:(UISegmentedControl *)sender {
     if(sender.selectedSegmentIndex==0){
         arrayOfResults[sender.tag] = [NSNumber numberWithInt:0];
+        correctAnswers--;
     } else{
         arrayOfResults[sender.tag] = [NSNumber numberWithInt:1];
+        correctAnswers++;
     }
     [_evaluationCollection reloadData];
 }
@@ -249,40 +280,6 @@
     return self;
 }
   */
-/*#define ALL_RESULTS_KEY @"comments_ALL"
--(void)synchronize{
-    NSMutableDictionary *mutableCommentsFromUserDefaults = [[[NSUserDefaults standardUserDefaults] dictionaryForKey:ALL_RESULTS_KEY] mutableCopy];
-    if(!mutableCommentsFromUserDefaults) mutableCommentsFromUserDefaults = [[NSMutableDictionary alloc]init];
-    mutableCommentsFromUserDefaults[@"comments1"] = [self asPropertyList];
-    [[NSUserDefaults standardUserDefaults] setObject:mutableCommentsFromUserDefaults forKey:ALL_RESULTS_KEY];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
--(void)changedComment:(UITextView *)sender{
-    //_comments = [NSString stringWithString:sender.text];
-}
--(void)setComments:(NSString *)comments{
-    _comments = comments;
-    [self synchronize];
-    
-}
--(id)asPropertyList{
-    return @{ @"comments2" : self.comments};
-}
-+ (NSString *) returnComments{
-    NSString * resultComments = [[NSString alloc] init];
-    for (id plist in [[[NSUserDefaults standardUserDefaults] dictionaryForKey:ALL_RESULTS_KEY] allValues]){
-        resultComments = [[NSString alloc] initFromPropertyList:plist];
-    }
-}
--(id)initFromPropertyList:(id)plist{
-    self = [self init];
-    if(self){
-        if([plist isKindOfClass:[NSDictionary class]]){
-            NSDictionary *resultsDictionary = (NSDictionary *)plist;
-            _comments = resultsDictionary[@"comments2"];
-        }
-    }
-    return self;
-}*/
+
 
 @end
