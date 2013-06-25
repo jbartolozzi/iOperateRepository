@@ -7,6 +7,7 @@
 //
 
 #import "QuizViewController.h"
+#import "TestResult.h"
 
 @interface QuizViewController () {
 	NSIndexPath *globalPath;
@@ -27,10 +28,18 @@
 @property (weak, nonatomic) IBOutlet UILabel *completeMessage;
 @property (weak, nonatomic) IBOutlet UILabel *completeScore;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segControl;
+@property (strong, nonatomic) TestResult *evalResult;
+@property (strong, nonatomic) IBOutlet UITextView *resultsDisplay;
 
 @end
 
 @implementation QuizViewController
+- (TestResult *)evalResult{
+    if(!_evalResult){
+        _evalResult = [[TestResult alloc] init];
+    }
+    return _evalResult;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,6 +58,12 @@
     self.examCompleteView.hidden = YES;
 	[[self myCollectionView]setDataSource:self];
 	[[self myCollectionView]setDelegate:self];
+    self.evalResult = nil;
+    NSString *displayText = @"";
+    for (TestResult *result in [TestResult allTestResults]){
+        displayText = [displayText stringByAppendingFormat:@"Grade: %f (%@, %0g)\n", result.grade,result.end, round(result.duration)];
+    }
+    self.resultsDisplay.text = displayText;
     self.myCollectionView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
 	
 	arrayOfSegStates = [[NSMutableArray alloc]initWithObjects:@"1",@"1",@"1", nil];
@@ -195,6 +210,7 @@
         }
 		NSString *message = [NSString stringWithFormat:@"%d",total];
 		
+        
 		
 		if (total < 65) {
 			self.quizView.hidden = YES;
@@ -202,6 +218,8 @@
             self.completeMessage.text = @"Failure!";
             self.examCompleteView.hidden = NO;
             self.completeScore.text = [message stringByAppendingString:@"%"];
+            
+            self.evalResult.grade = 1.0/3.0;
 			
 		}
 		else if (total > 65 && total < 95) {
@@ -210,6 +228,8 @@
 			self.examCompleteView.hidden = NO;
             self.completeMessage.text = @"You Passed!";
 			self.completeScore.text = [message stringByAppendingString:@"%"];
+            
+            self.evalResult.grade = 2.0/3.0;
 		}
         else if (total == 100) {
             self.examCompleteView.backgroundColor = [UIColor colorWithRed:0.0 green:(102.0/255.0) blue:(51.0/255) alpha:1.0f];
@@ -217,6 +237,8 @@
             self.examCompleteView.hidden = NO;
             self.completeMessage.text = @"Perfect!";
             self.completeScore.text = [message stringByAppendingString:@"%"];
+            
+            self.evalResult.grade = 1.0;
         }
 	}
 }
