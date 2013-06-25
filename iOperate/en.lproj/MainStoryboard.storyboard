@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="FkD-QS-onY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="FkD-QS-onY">
     <dependencies>
         <development version="4600" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
@@ -521,32 +521,51 @@
                                     <constraint firstAttribute="height" constant="1010" id="Ti3-Lp-kwi"/>
                                 </constraints>
                             </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JZT-qv-Zij">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JZT-qv-Zij">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="528" id="noG-3g-o1A"/>
+                                    <constraint firstAttribute="width" constant="700" id="zsN-JU-WTW"/>
                                 </constraints>
                                 <segments>
                                     <segment title="Sine"/>
                                     <segment title="Cosine"/>
                                     <segment title="Square Root"/>
+                                    <segment title="Inv. Sine"/>
+                                    <segment title="Inv. Cosine"/>
+                                    <segment title="Tangent"/>
                                 </segments>
                                 <connections>
                                     <action selector="setGraph:" destination="XNu-H8-Jhv" eventType="valueChanged" id="BuN-kc-6x2"/>
                                 </connections>
                             </segmentedControl>
+                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minimumValue="0.10000000000000001" maximumValue="0.90000000000000002" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="dvl-CL-qg3">
+                                <connections>
+                                    <action selector="stepperChanged:" destination="XNu-H8-Jhv" eventType="valueChanged" id="Ioj-F1-dvC"/>
+                                </connections>
+                            </stepper>
+                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Plp-Np-QLO">
+                                <connections>
+                                    <action selector="changeDistance:" destination="XNu-H8-Jhv" eventType="valueChanged" id="OBc-js-PnW"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Plp-Np-QLO" secondAttribute="trailing" constant="252" id="4xi-UR-sfL"/>
+                            <constraint firstAttribute="bottom" secondItem="JZT-qv-Zij" secondAttribute="bottom" constant="68" id="5MM-MC-NpD"/>
                             <constraint firstItem="ZeR-ee-IbH" firstAttribute="leading" secondItem="0sD-cm-Au0" secondAttribute="leading" type="default" id="Dhv-eT-De8"/>
                             <constraint firstItem="ZeR-ee-IbH" firstAttribute="top" secondItem="0sD-cm-Au0" secondAttribute="top" type="default" id="Hfc-ZS-Mrj"/>
                             <constraint firstItem="ZeR-ee-IbH" firstAttribute="trailing" secondItem="0sD-cm-Au0" secondAttribute="trailing" type="default" id="LQ1-CY-2ll"/>
-                            <constraint firstItem="JZT-qv-Zij" firstAttribute="centerX" secondItem="ZeR-ee-IbH" secondAttribute="centerX" type="default" id="UjU-5B-9CW"/>
-                            <constraint firstAttribute="bottom" secondItem="JZT-qv-Zij" secondAttribute="bottom" constant="56" id="lUk-E5-8lh"/>
+                            <constraint firstAttribute="bottom" secondItem="Plp-Np-QLO" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="O0u-rW-KzA"/>
+                            <constraint firstAttribute="bottom" secondItem="dvl-CL-qg3" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Wx4-qZ-uCz"/>
+                            <constraint firstItem="dvl-CL-qg3" firstAttribute="leading" secondItem="0sD-cm-Au0" secondAttribute="leading" constant="271" id="bNo-O0-ykS"/>
+                            <constraint firstItem="JZT-qv-Zij" firstAttribute="centerX" secondItem="ZeR-ee-IbH" secondAttribute="centerX" type="default" id="rgn-Yq-U0T"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Graphs" id="ivT-Xi-9uW"/>
                     <connections>
                         <outlet property="segmentControl" destination="JZT-qv-Zij" id="BRm-Ju-gDv"/>
+                        <outlet property="stepper" destination="dvl-CL-qg3" id="peX-1u-nxX"/>
+                        <outlet property="stepperDistance" destination="Plp-Np-QLO" id="tdJ-ai-7Og"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GNb-vf-YTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -640,7 +659,6 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qx-Au-qSr">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="3MJ-aT-xuy"/>
                                     <constraint firstAttribute="width" constant="104" id="6Ss-1t-8zT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="24"/>
@@ -655,21 +673,53 @@
                                     <action selector="submitEvaluation:" destination="L48-lL-F6i" eventType="touchUpInside" id="PcV-ey-zta"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y35-V4-OIi">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="0Y2-ml-PK6"/>
+                                    <constraint firstAttribute="height" constant="55" id="mgh-FC-WJ2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="24"/>
+                                <state key="normal" title="Begin">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="beginEval:" destination="L48-lL-F6i" eventType="touchUpInside" id="hnh-E6-8Gu"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4t4-3A-rAd">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="9Be-kP-62q"/>
+                                    <constraint firstAttribute="width" constant="240" id="m4d-xT-SWa"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="y35-V4-OIi" firstAttribute="leading" secondItem="zem-Y3-c89" secondAttribute="leading" constant="274" id="02j-tR-Viy"/>
                             <constraint firstItem="6Of-2C-ZcF" firstAttribute="top" secondItem="zem-Y3-c89" secondAttribute="top" type="default" id="4Py-A0-aPE"/>
+                            <constraint firstItem="y35-V4-OIi" firstAttribute="bottom" secondItem="0qx-Au-qSr" secondAttribute="bottom" type="default" id="EHB-6B-32t"/>
+                            <constraint firstItem="0qx-Au-qSr" firstAttribute="leading" secondItem="y35-V4-OIi" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="LBx-uA-HQU"/>
                             <constraint firstAttribute="trailing" secondItem="RFt-Vr-Srv" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Lys-Mi-18N"/>
                             <constraint firstAttribute="bottom" secondItem="RFt-Vr-Srv" secondAttribute="bottom" constant="284" id="P0v-Sw-IsF"/>
                             <constraint firstItem="hXQ-Oo-Xez" firstAttribute="trailing" secondItem="zem-Y3-c89" secondAttribute="trailing" type="default" id="RAF-XR-aEY"/>
                             <constraint firstItem="6Of-2C-ZcF" firstAttribute="trailing" secondItem="zem-Y3-c89" secondAttribute="trailing" type="default" id="Tam-0K-Efr"/>
                             <constraint firstItem="hXQ-Oo-Xez" firstAttribute="top" secondItem="zem-Y3-c89" secondAttribute="top" type="default" id="VXQ-ov-zUZ"/>
+                            <constraint firstAttribute="bottom" secondItem="y35-V4-OIi" secondAttribute="bottom" constant="25" id="ZhC-Nt-hlI"/>
                             <constraint firstItem="6Of-2C-ZcF" firstAttribute="leading" secondItem="zem-Y3-c89" secondAttribute="leading" type="default" id="aE1-fc-9mY"/>
+                            <constraint firstAttribute="bottom" secondItem="4t4-3A-rAd" secondAttribute="bottom" constant="7" id="cTW-Ud-L3c"/>
                             <constraint firstItem="6Of-2C-ZcF" firstAttribute="bottom" secondItem="zem-Y3-c89" secondAttribute="bottom" type="default" id="giL-AO-jda"/>
                             <constraint firstItem="RFt-Vr-Srv" firstAttribute="leading" secondItem="zem-Y3-c89" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="jnt-MH-kf2"/>
-                            <constraint firstItem="0qx-Au-qSr" firstAttribute="top" secondItem="hXQ-Oo-Xez" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="vwQ-Cd-oo8"/>
-                            <constraint firstItem="0qx-Au-qSr" firstAttribute="centerX" secondItem="RFt-Vr-Srv" secondAttribute="centerX" type="default" id="yCL-AC-ymR"/>
+                            <constraint firstItem="y35-V4-OIi" firstAttribute="top" secondItem="0qx-Au-qSr" secondAttribute="top" type="default" id="sFz-lc-0mL"/>
                             <constraint firstItem="hXQ-Oo-Xez" firstAttribute="leading" secondItem="zem-Y3-c89" secondAttribute="leading" type="default" id="zH9-js-muw"/>
+                            <constraint firstItem="4t4-3A-rAd" firstAttribute="leading" secondItem="zem-Y3-c89" secondAttribute="leading" type="default" id="zIi-Ov-Kep"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Evaluation" id="Tas-mW-JpZ">
@@ -682,6 +732,7 @@
                     <connections>
                         <outlet property="commentField" destination="RFt-Vr-Srv" id="Cuh-pm-Vh6"/>
                         <outlet property="evaluationCollection" destination="hXQ-Oo-Xez" id="dRP-zx-yyA"/>
+                        <outlet property="resultsDisplay" destination="4t4-3A-rAd" id="ihd-ac-cFC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nr1-1t-xRr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1378,8 +1429,12 @@
         <class className="GraphViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GraphViewController.h"/>
             <relationships>
+                <relationship kind="action" name="changeDistance:"/>
                 <relationship kind="action" name="setGraph:"/>
+                <relationship kind="action" name="stepperChanged:"/>
                 <relationship kind="outlet" name="segmentControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="stepper" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="stepperDistance" candidateClass="UIStepper"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">

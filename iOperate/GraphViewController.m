@@ -9,6 +9,7 @@
 #import "GraphViewController.h"
 
 @interface GraphViewController () {
+    int distance;
     CPTGraphHostingView* hostView;
     CPTGraph* graph;
     CPTScatterPlot* plot;
@@ -86,12 +87,12 @@
     // Axes
     CPTXYAxisSet *axisSet = (CPTXYAxisSet *)graph.axisSet;
     xAx = axisSet.xAxis;
-    xAx.majorIntervalLength = CPTDecimalFromString(@"1");
+    xAx.majorIntervalLength = CPTDecimalFromString(@"10");
     xAx.orthogonalCoordinateDecimal = CPTDecimalFromString(@"0.0");
-    xAx.minorTicksPerInterval = 2;
+    xAx.minorTicksPerInterval = 10;
     yAx = axisSet.yAxis;
-    yAx.majorIntervalLength = CPTDecimalFromString(@"1");
-    yAx.minorTicksPerInterval = 5;
+    yAx.majorIntervalLength = CPTDecimalFromString(@"10");
+    yAx.minorTicksPerInterval = 10;
     yAx.orthogonalCoordinateDecimal = CPTDecimalFromString(@"0.0");
    
     
@@ -150,7 +151,7 @@
 -(void)createData
 {
     NSMutableArray *contentArray = [NSMutableArray array];
-    for (float i = 0; i < 10; i+= .5) {
+    for (float i = 0; i < 10; i+= 1.0 - self.stepper.value) {
         NSNumber *x = [NSNumber numberWithDouble:i];
         NSNumber *y = [NSNumber numberWithDouble: sin(i)];
         [contentArray addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x,@"x",y,@"y", nil]];
@@ -159,10 +160,14 @@
     
 }
 
+- (IBAction)stepperChanged:(id)sender {
+    [self setGraph:nil];
+}
+
 - (IBAction)setGraph:(id)sender {
     NSMutableArray *contentArray = [NSMutableArray array];
     if (self.segmentControl.selectedSegmentIndex == 0) {
-        for (float i = 0; i < 10; i+= .5) {
+        for (float i = 0; i < distance; i+= 1.0 - self.stepper.value) {
             NSNumber *x = [NSNumber numberWithDouble:i];
             NSNumber *y = [NSNumber numberWithDouble: sin(i)];
             [contentArray addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x,@"x",y,@"y", nil]];
@@ -173,7 +178,7 @@
         
     }
     else if(self.segmentControl.selectedSegmentIndex == 1) {
-        for (float i = 0; i < 10; i+= .5) {
+        for (float i = 0; i < distance; i+= 1.0 - self.stepper.value) {
             NSNumber *x = [NSNumber numberWithDouble:i];
             NSNumber *y = [NSNumber numberWithDouble: cos(i)];
             [contentArray addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x,@"x",y,@"y", nil]];
@@ -184,7 +189,7 @@
         
     }
     else if(self.segmentControl.selectedSegmentIndex == 2) {
-        for (float i = 0; i < 10; i+= .5) {
+        for (float i = 0; i < distance; i+= 1.0 - self.stepper.value) {
             NSNumber *x = [NSNumber numberWithDouble:i];
             NSNumber *y = [NSNumber numberWithDouble: sqrt(i)];
             [contentArray addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x,@"x",y,@"y", nil]];
@@ -193,6 +198,37 @@
         [graph reloadData];
         [self resizePlotSpace];
     }
+    else if(self.segmentControl.selectedSegmentIndex == 3) {
+        for (float i = 0; i < distance; i+= 1.0 - self.stepper.value) {
+            NSNumber *x = [NSNumber numberWithDouble:i];
+            NSNumber *y = [NSNumber numberWithDouble: asin(i)];
+            [contentArray addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x,@"x",y,@"y", nil]];
+        }
+        dataForPlot = contentArray;
+        [graph reloadData];
+        [self resizePlotSpace];
+    }
+    else if(self.segmentControl.selectedSegmentIndex == 4) {
+        for (float i = 0; i < distance; i+= 1.0 - self.stepper.value) {
+            NSNumber *x = [NSNumber numberWithDouble:i];
+            NSNumber *y = [NSNumber numberWithDouble: acos(i)];
+            [contentArray addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x,@"x",y,@"y", nil]];
+        }
+        dataForPlot = contentArray;
+        [graph reloadData];
+        [self resizePlotSpace];
+    }
+    else if(self.segmentControl.selectedSegmentIndex == 5) {
+        for (float i = 0; i < distance; i+= 1.0 - self.stepper.value) {
+            NSNumber *x = [NSNumber numberWithDouble:i];
+            NSNumber *y = [NSNumber numberWithDouble: tan(i)];
+            [contentArray addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:x,@"x",y,@"y", nil]];
+        }
+        dataForPlot = contentArray;
+        [graph reloadData];
+        [self resizePlotSpace];
+    }
+    
 }
 
 -(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
@@ -203,5 +239,21 @@
     else {
         hostView.frame = CGRectMake(10, 10, 748, 800);
     }
+}
+
+-(void)viewDidLayoutSubviews
+{
+    if (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+        hostView.frame = CGRectMake(10, 10, 1000, 500);
+    }
+    else {
+        hostView.frame = CGRectMake(10, 10, 748, 800);
+    }
+}
+
+- (IBAction)changeDistance:(id)sender {
+    distance = self.stepperDistance.value;
+    [self setGraph:nil];
+    
 }
 @end

@@ -68,6 +68,7 @@
 		D680812E17553F7100366BAC /* 13.tif in Resources */ = {isa = PBXBuildFile; fileRef = D680811F17553F7100366BAC /* 13.tif */; };
 		D680812F17553F7100366BAC /* 14.tif in Resources */ = {isa = PBXBuildFile; fileRef = D680812017553F7100366BAC /* 14.tif */; };
 		D680813017553F7100366BAC /* 15.tif in Resources */ = {isa = PBXBuildFile; fileRef = D680812117553F7100366BAC /* 15.tif */; };
+		D6F2A5121774E0B700B9D8B0 /* TestResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F2A5111774E0B700B9D8B0 /* TestResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -231,6 +232,8 @@
 		D680811F17553F7100366BAC /* 13.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 13.tif; sourceTree = "<group>"; };
 		D680812017553F7100366BAC /* 14.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 14.tif; sourceTree = "<group>"; };
 		D680812117553F7100366BAC /* 15.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 15.tif; sourceTree = "<group>"; };
+		D6F2A5101774E0B700B9D8B0 /* TestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestResult.h; sourceTree = "<group>"; };
+		D6F2A5111774E0B700B9D8B0 /* TestResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +375,8 @@
 		D62B3A7F17419038006BFAE8 /* iOperate */ = {
 			isa = PBXGroup;
 			children = (
+				D6F2A5101774E0B700B9D8B0 /* TestResult.h */,
+				D6F2A5111774E0B700B9D8B0 /* TestResult.m */,
 				C87FEFF3176A7834007809E6 /* CorePlotHeaders */,
 				C87FF041176A7834007809E6 /* libCorePlot-CocoaTouch.a */,
 				1AD4E5BA17568C780028E418 /* AdvancedCell.h */,
@@ -582,6 +587,7 @@
 				C8A6AD2A1768D1A2002E1EBF /* EvaluationFooter.m in Sources */,
 				C810A9711771FF6C0017C483 /* GraphViewController.m in Sources */,
 				C804D90317738B6600A7F07E /* QuizCollectionView.m in Sources */,
+				D6F2A5121774E0B700B9D8B0 /* TestResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
