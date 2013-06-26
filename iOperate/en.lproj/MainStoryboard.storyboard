@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="FkD-QS-onY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="FkD-QS-onY">
     <dependencies>
         <development version="4600" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
@@ -118,6 +118,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSo-U7-2vf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4910" y="-1966"/>
+        </scene>
+        <!--Bar Graph View Controller - Quiz 1 Score-->
+        <scene sceneID="Yf8-To-z2y">
+            <objects>
+                <viewController id="hqh-RP-Alx" customClass="BarGraphViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IPR-w8-b6n">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="left" image="wallpaper-630620.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NyF-Go-EfA">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1010" id="uQe-Qu-Lva"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NyF-Go-EfA" firstAttribute="leading" secondItem="IPR-w8-b6n" secondAttribute="leading" type="default" id="3iV-No-vdo"/>
+                            <constraint firstItem="NyF-Go-EfA" firstAttribute="trailing" secondItem="IPR-w8-b6n" secondAttribute="trailing" type="default" id="idb-EC-eUp"/>
+                            <constraint firstItem="NyF-Go-EfA" firstAttribute="centerY" secondItem="IPR-w8-b6n" secondAttribute="centerY" type="default" id="zev-WJ-LgW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Quiz 1 Score" id="Fkt-o4-9qy">
+                        <barButtonItem key="rightBarButtonItem" title="Averages" id="xvH-Up-It3">
+                            <connections>
+                                <segue destination="NXx-sn-hnX" kind="push" id="edI-hw-avu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A2i-KP-PwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1691" y="-5054"/>
+        </scene>
+        <!--Bar Graph2 View Controller - Quiz Score Averages-->
+        <scene sceneID="op6-ve-wQo">
+            <objects>
+                <viewController id="NXx-sn-hnX" customClass="BarGraph2ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oYX-9J-Z2S">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="left" image="wallpaper-630620.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="QWt-ki-AAt">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1010" id="Ztr-Vj-jfk"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QWt-ki-AAt" firstAttribute="bottom" secondItem="oYX-9J-Z2S" secondAttribute="bottom" type="default" id="ZP7-E0-gwp"/>
+                            <constraint firstItem="QWt-ki-AAt" firstAttribute="leading" secondItem="oYX-9J-Z2S" secondAttribute="leading" type="default" id="peH-Tu-qCz"/>
+                            <constraint firstItem="QWt-ki-AAt" firstAttribute="trailing" secondItem="oYX-9J-Z2S" secondAttribute="trailing" type="default" id="ssH-Lm-NXe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Quiz Score Averages" id="unO-ac-UTh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l0n-zI-qEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-893" y="-5055"/>
         </scene>
         <!--Quiz View Controller - Quiz 1-->
         <scene sceneID="xou-S7-o7u">
@@ -446,6 +506,15 @@
                                             <action selector="goPrev:" destination="6Oy-Zg-6Cr" eventType="touchUpInside" id="Bnx-Ml-5dZ"/>
                                         </connections>
                                     </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7T9-XD-1zr">
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="drM-Ly-lWi"/>
+                                            <constraint firstAttribute="width" constant="240" id="p7r-xD-3sK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="amk-cI-qmh" firstAttribute="centerY" secondItem="ZIE-HG-fjP" secondAttribute="centerY" type="default" id="13Z-1j-01l"/>
@@ -453,6 +522,8 @@
                                     <constraint firstItem="amk-cI-qmh" firstAttribute="top" secondItem="TM3-RW-eAW" secondAttribute="top" constant="813" id="3kn-r7-0uf"/>
                                     <constraint firstItem="5l2-iu-BHp" firstAttribute="baseline" secondItem="Wty-ny-aFa" secondAttribute="baseline" type="default" id="3lM-bb-Zrw"/>
                                     <constraint firstItem="fAr-qO-cvd" firstAttribute="centerX" secondItem="DCy-y5-6Yj" secondAttribute="centerX" type="default" id="79L-Oo-NSb"/>
+                                    <constraint firstItem="7T9-XD-1zr" firstAttribute="bottom" secondItem="TM3-RW-eAW" secondAttribute="bottom" type="default" id="A0X-nD-T5d"/>
+                                    <constraint firstItem="7T9-XD-1zr" firstAttribute="leading" secondItem="2wz-dt-Gfz" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Bo4-k6-eDA"/>
                                     <constraint firstItem="fAr-qO-cvd" firstAttribute="trailing" secondItem="TM3-RW-eAW" secondAttribute="trailing" type="default" id="EgM-6r-exH"/>
                                     <constraint firstItem="2wz-dt-Gfz" firstAttribute="leading" secondItem="TM3-RW-eAW" secondAttribute="leading" type="default" id="GsL-xC-bcp"/>
                                     <constraint firstItem="DCy-y5-6Yj" firstAttribute="top" secondItem="fAr-qO-cvd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="L2g-3x-gky"/>
@@ -500,6 +571,7 @@
                         <outlet property="prevButton" destination="2wz-dt-Gfz" id="0os-HN-IRT"/>
                         <outlet property="questionNum" destination="Wty-ny-aFa" id="pgA-Dw-GOh"/>
                         <outlet property="quizView" destination="TM3-RW-eAW" id="BMb-xI-nf1"/>
+                        <outlet property="resultsDisplay" destination="7T9-XD-1zr" id="XRk-GW-oax"/>
                         <outlet property="segControl" destination="DCy-y5-6Yj" id="pXc-wx-dnp"/>
                         <outlet property="totalNum" destination="5l2-iu-BHp" id="CXk-mh-NUV"/>
                     </connections>
@@ -513,7 +585,7 @@
             <objects>
                 <viewController id="XNu-H8-Jhv" customClass="GraphViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0sD-cm-Au0">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="left" image="wallpaper-630620.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ZeR-ee-IbH">
@@ -839,7 +911,7 @@
                         <segue destination="L48-lL-F6i" kind="push" identifier="Evaluation" id="4QC-ub-Jv6"/>
                         <segue destination="49K-et-Ltx" kind="push" identifier="Image Viewer" id="Jwh-ZU-FpO"/>
                         <segue destination="6Oy-Zg-6Cr" kind="push" identifier="Quiz 1" id="RHe-Xu-5W3"/>
-                        <segue destination="XNu-H8-Jhv" kind="push" identifier="Graph" id="vxz-o0-k9r"/>
+                        <segue destination="hqh-RP-Alx" kind="push" identifier="Graphs" id="6nm-Wh-i16"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edF-6W-JmF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1377,149 +1449,6 @@
         <image name="arrowRight.png" width="124" height="116"/>
         <image name="wallpaper-630620.jpg" width="1920" height="1200"/>
     </resources>
-    <classes>
-        <class className="AdvancedCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdvancedCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="button" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="AdvancedCollectionViewViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdvancedCollectionViewViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
-            </relationships>
-        </class>
-        <class className="CollectionViewViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CollectionViewViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addSurgery:"/>
-                <relationship kind="action" name="buttonPress:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="myCollectionView" candidateClass="UICollectionView"/>
-            </relationships>
-        </class>
-        <class className="CustomCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="myButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="myDescriptionLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="EvaluationCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EvaluationCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="evaluationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="evaluationResult" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="evaluationText" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="EvaluationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EvaluationViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="beginEval:" candidateClass="UIButton"/>
-                <relationship kind="action" name="mark:" candidateClass="UIButton"/>
-                <relationship kind="action" name="openComments:"/>
-                <relationship kind="action" name="resultMarked:" candidateClass="UISegmentedControl"/>
-                <relationship kind="action" name="submitEvaluation:"/>
-                <relationship kind="outlet" name="commentField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="evaluationCollection" candidateClass="UICollectionView"/>
-                <relationship kind="outlet" name="resultsDisplay" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="GraphViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GraphViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="changeDistance:"/>
-                <relationship kind="action" name="setGraph:"/>
-                <relationship kind="action" name="stepperChanged:"/>
-                <relationship kind="outlet" name="segmentControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="stepper" candidateClass="UIStepper"/>
-                <relationship kind="outlet" name="stepperDistance" candidateClass="UIStepper"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PhotoViewerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoViewerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="ButtonPress:" candidateClass="UIButton"/>
-                <relationship kind="action" name="activateTools:"/>
-                <relationship kind="action" name="decreaseFontSize:"/>
-                <relationship kind="action" name="increaseFontSize:"/>
-                <relationship kind="outlet" name="fullScreenCollection" candidateClass="UICollectionView"/>
-                <relationship kind="outlet" name="imageDisplay" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="myCollectionView" candidateClass="UICollectionView"/>
-                <relationship kind="outlet" name="rightButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="scrollWindow" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="textFieldViewer" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="thumbnailCollectionView" candidateClass="UICollectionView"/>
-                <relationship kind="outlet" name="toolsView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="QuizCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuizCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="optionA" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="optionB" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="optionC" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="optionD" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="optionE" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="optionF" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="qBox" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="qTitle" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="segControl" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-        <class className="QuizCollectionView" superclassName="UICollectionView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuizCollectionView.h"/>
-        </class>
-        <class className="QuizViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuizViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="answerSelected:"/>
-                <relationship kind="action" name="goNext:"/>
-                <relationship kind="action" name="goPrev:"/>
-                <relationship kind="action" name="qFinish:"/>
-                <relationship kind="outlet" name="completeButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="completeMessage" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="completeScore" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="examCompleteView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="myCollectionView" candidateClass="UICollectionView"/>
-                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="prevButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="questionNum" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="quizView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="segControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="totalNum" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UTLViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UTLViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="passwordInput:"/>
-                <relationship kind="action" name="sendLogin:"/>
-                <relationship kind="action" name="userNameInput:"/>
-                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="myCollectionView" candidateClass="UICollectionView"/>
-                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="userNameField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="versionNumber" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

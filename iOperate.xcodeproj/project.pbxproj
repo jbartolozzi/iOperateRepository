@@ -35,10 +35,12 @@
 		C810450117679BB000DFC1DE /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C810450017679BB000DFC1DE /* Default-Landscape~ipad.png */; };
 		C810450317679BB400DFC1DE /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C810450217679BB400DFC1DE /* Default-Landscape@2x~ipad.png */; };
 		C810A9711771FF6C0017C483 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C810A9701771FF6C0017C483 /* GraphViewController.m */; };
+		C86D12B7177AA86B00E671D0 /* BarGraph2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D12B6177AA86B00E671D0 /* BarGraph2ViewController.m */; };
 		C87FF042176A7834007809E6 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C87FF041176A7834007809E6 /* libCorePlot-CocoaTouch.a */; };
 		C87FF044176A7864007809E6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C87FF043176A7864007809E6 /* QuartzCore.framework */; };
 		C87FF046176A7906007809E6 /* bg-01.png in Resources */ = {isa = PBXBuildFile; fileRef = C87FF045176A7906007809E6 /* bg-01.png */; };
 		C8A6AD2A1768D1A2002E1EBF /* EvaluationFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A6AD291768D1A2002E1EBF /* EvaluationFooter.m */; };
+		C8F672D0177A353000B68AC0 /* BarGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F672CF177A353000B68AC0 /* BarGraphViewController.m */; };
 		D62B3A7A17419038006BFAE8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62B3A7917419038006BFAE8 /* UIKit.framework */; };
 		D62B3A7C17419038006BFAE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62B3A7B17419038006BFAE8 /* Foundation.framework */; };
 		D62B3A7E17419038006BFAE8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62B3A7D17419038006BFAE8 /* CoreGraphics.framework */; };
@@ -110,6 +112,8 @@
 		C810450217679BB400DFC1DE /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		C810A96F1771FF6C0017C483 /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
 		C810A9701771FF6C0017C483 /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
+		C86D12B5177AA86B00E671D0 /* BarGraph2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarGraph2ViewController.h; sourceTree = "<group>"; };
+		C86D12B6177AA86B00E671D0 /* BarGraph2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarGraph2ViewController.m; sourceTree = "<group>"; };
 		C87FEFF4176A7834007809E6 /* CorePlot-CocoaTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CorePlot-CocoaTouch.h"; sourceTree = "<group>"; };
 		C87FEFF5176A7834007809E6 /* CPTAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTAnimation.h; sourceTree = "<group>"; };
 		C87FEFF6176A7834007809E6 /* CPTAnimationOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTAnimationOperation.h; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 		C87FF045176A7906007809E6 /* bg-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-01.png"; sourceTree = "<group>"; };
 		C8A6AD281768D1A2002E1EBF /* EvaluationFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluationFooter.h; sourceTree = "<group>"; };
 		C8A6AD291768D1A2002E1EBF /* EvaluationFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluationFooter.m; sourceTree = "<group>"; };
+		C8F672CE177A353000B68AC0 /* BarGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarGraphViewController.h; sourceTree = "<group>"; };
+		C8F672CF177A353000B68AC0 /* BarGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarGraphViewController.m; sourceTree = "<group>"; };
 		D62B3A7617419038006BFAE8 /* iOperate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOperate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62B3A7917419038006BFAE8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D62B3A7B17419038006BFAE8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -386,6 +392,10 @@
 				1AD4E5BC17568C780028E418 /* AdvancedCollectionViewViewController.h */,
 				1AD4E5BD17568C780028E418 /* AdvancedCollectionViewViewController.m */,
 				1A4A11011755200300B5A253 /* MainStoryboard.storyboard */,
+				C8F672CE177A353000B68AC0 /* BarGraphViewController.h */,
+				C8F672CF177A353000B68AC0 /* BarGraphViewController.m */,
+				C86D12B5177AA86B00E671D0 /* BarGraph2ViewController.h */,
+				C86D12B6177AA86B00E671D0 /* BarGraph2ViewController.m */,
 				C804D90117738B6600A7F07E /* QuizCollectionView.h */,
 				C804D90217738B6600A7F07E /* QuizCollectionView.m */,
 				C810A96F1771FF6C0017C483 /* GraphViewController.h */,
@@ -588,6 +598,8 @@
 				C810A9711771FF6C0017C483 /* GraphViewController.m in Sources */,
 				C804D90317738B6600A7F07E /* QuizCollectionView.m in Sources */,
 				D6F2A5121774E0B700B9D8B0 /* TestResult.m in Sources */,
+				C8F672D0177A353000B68AC0 /* BarGraphViewController.m in Sources */,
+				C86D12B7177AA86B00E671D0 /* BarGraph2ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
