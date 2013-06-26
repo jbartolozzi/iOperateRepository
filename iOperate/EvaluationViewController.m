@@ -54,7 +54,7 @@
     _grade = (float)correctAnswers/(float)totalQuestions;
     self.evalResult.grade = self.grade;
     NSString *displayText = @"";
-    for (TestResult *result in [TestResult allTestResults]){
+    for (TestResult *result in [TestResult allTestResults:@"TestResult_All"]){
         displayText = [displayText stringByAppendingFormat:@"Grade: %f (%@, %0g)\n", result.grade,result.end, round(result.duration)]; 
     }
     self.resultsDisplay.text = displayText;
