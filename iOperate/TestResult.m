@@ -51,7 +51,7 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 -(id)asPropertyList{
-    return @{ START_KEY: self.start, END_KEY: self.end, GRADE_KEY:@(230948.0)};
+    return @{ START_KEY: self.start, END_KEY: self.end, GRADE_KEY:@(self.grade)};
 }
 - (id) init{
     self = [super init];
