@@ -18,9 +18,9 @@
 # define START_KEY @"StartDate"
 # define END_KEY @"EndDate"
 # define GRADE_KEY @"Grade"
-+ (NSArray *) allTestResults{
++ (NSArray *) allTestResults:(NSString *) name{
     NSMutableArray *allTestResults =[[NSMutableArray alloc] init];
-    for (id plist in [[[NSUserDefaults standardUserDefaults]dictionaryForKey:ALL_RESULTS_KEY] allValues]){
+    for (id plist in [[[NSUserDefaults standardUserDefaults]dictionaryForKey:name] allValues]){
         TestResult *result = [[TestResult alloc]initFromPropertyList:plist];
         [allTestResults addObject:result];
     }
@@ -35,6 +35,7 @@
             _start = resultDictionary[START_KEY];
             _end = resultDictionary [END_KEY];
             _grade = [resultDictionary [GRADE_KEY] floatValue];
+           // _type = @"TestResult_All";
             if(!_start||!_end){
                 self = nil;
             }
@@ -43,20 +44,21 @@
     return self;
 }
 -(void)synchronize{
-    NSMutableDictionary *mutableTestResultsFromUserDefaults = [[[NSUserDefaults standardUserDefaults] dictionaryForKey:ALL_RESULTS_KEY] mutableCopy];
+    NSMutableDictionary *mutableTestResultsFromUserDefaults = [[[NSUserDefaults standardUserDefaults] dictionaryForKey:self.type] mutableCopy];
     if(!mutableTestResultsFromUserDefaults) mutableTestResultsFromUserDefaults = [[NSMutableDictionary alloc]init];
     mutableTestResultsFromUserDefaults[[self.start description]] = [self asPropertyList];
-    [[NSUserDefaults standardUserDefaults] setObject:mutableTestResultsFromUserDefaults forKey:ALL_RESULTS_KEY];
+    [[NSUserDefaults standardUserDefaults] setObject:mutableTestResultsFromUserDefaults forKey:self.type];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 -(id)asPropertyList{
-    return @{ START_KEY: self.start, END_KEY: self.end, GRADE_KEY:@(self.grade)};
+    return @{ START_KEY: self.start, END_KEY: self.end, GRADE_KEY:@(230948.0)};
 }
 - (id) init{
     self = [super init];
     if (self){
         _start = [NSDate date];
         _end = _start;
+        _type = @"TestResult_All";
     }
     return self;
 }
@@ -69,6 +71,7 @@
     self.end= [NSDate date];
     [self synchronize];
 }
+
 /*#define ALL_RESULTS_KEY @"comments_ALL"
  
  -(void)changedComment:(UITextView *)sender{

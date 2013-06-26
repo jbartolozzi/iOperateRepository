@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface TestResult : NSObject
-+ (NSArray *) allTestResults;
++ (NSArray *) allTestResults:(NSString*)name;
 
 @property(readonly, nonatomic)NSDate *start;
 @property(readonly, nonatomic)NSDate *end;
 @property(readonly, nonatomic)NSTimeInterval duration;
 @property(nonatomic) float grade;
+@property(weak, nonatomic) NSString *type;
 @end
