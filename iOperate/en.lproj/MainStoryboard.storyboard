@@ -119,7 +119,7 @@
             </objects>
             <point key="canvasLocation" x="-4910" y="-1966"/>
         </scene>
-        <!--Bar Graph View Controller-->
+        <!--Bar Graph View Controller - Quiz 1 Score-->
         <scene sceneID="Yf8-To-z2y">
             <objects>
                 <viewController id="hqh-RP-Alx" customClass="BarGraphViewController" sceneMemberID="viewController">
@@ -136,15 +136,48 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="NyF-Go-EfA" firstAttribute="leading" secondItem="IPR-w8-b6n" secondAttribute="leading" type="default" id="3iV-No-vdo"/>
-                            <constraint firstItem="NyF-Go-EfA" firstAttribute="centerY" secondItem="IPR-w8-b6n" secondAttribute="centerY" type="default" id="AbX-8s-mni"/>
                             <constraint firstItem="NyF-Go-EfA" firstAttribute="trailing" secondItem="IPR-w8-b6n" secondAttribute="trailing" type="default" id="idb-EC-eUp"/>
+                            <constraint firstItem="NyF-Go-EfA" firstAttribute="centerY" secondItem="IPR-w8-b6n" secondAttribute="centerY" type="default" id="zev-WJ-LgW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Fkt-o4-9qy"/>
+                    <navigationItem key="navigationItem" title="Quiz 1 Score" id="Fkt-o4-9qy">
+                        <barButtonItem key="rightBarButtonItem" title="Averages" id="xvH-Up-It3">
+                            <connections>
+                                <segue destination="NXx-sn-hnX" kind="push" id="edI-hw-avu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A2i-KP-PwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1691" y="-5054"/>
+        </scene>
+        <!--Bar Graph2 View Controller - Quiz Score Averages-->
+        <scene sceneID="op6-ve-wQo">
+            <objects>
+                <viewController id="NXx-sn-hnX" customClass="BarGraph2ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oYX-9J-Z2S">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="left" image="wallpaper-630620.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="QWt-ki-AAt">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1010" id="Ztr-Vj-jfk"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QWt-ki-AAt" firstAttribute="bottom" secondItem="oYX-9J-Z2S" secondAttribute="bottom" type="default" id="ZP7-E0-gwp"/>
+                            <constraint firstItem="QWt-ki-AAt" firstAttribute="leading" secondItem="oYX-9J-Z2S" secondAttribute="leading" type="default" id="peH-Tu-qCz"/>
+                            <constraint firstItem="QWt-ki-AAt" firstAttribute="trailing" secondItem="oYX-9J-Z2S" secondAttribute="trailing" type="default" id="ssH-Lm-NXe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Quiz Score Averages" id="unO-ac-UTh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l0n-zI-qEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-893" y="-5055"/>
         </scene>
         <!--Quiz View Controller - Quiz 1-->
         <scene sceneID="xou-S7-o7u">
@@ -552,7 +585,7 @@
             <objects>
                 <viewController id="XNu-H8-Jhv" customClass="GraphViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0sD-cm-Au0">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="left" image="wallpaper-630620.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ZeR-ee-IbH">
@@ -586,25 +619,11 @@
                                     <action selector="changeDistance:" destination="XNu-H8-Jhv" eventType="valueChanged" id="OBc-js-PnW"/>
                                 </connections>
                             </stepper>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwT-3S-MSI">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="hqh-RP-Alx" kind="push" id="mvE-TC-1Jc"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Plp-Np-QLO" secondAttribute="trailing" constant="252" id="4xi-UR-sfL"/>
                             <constraint firstAttribute="bottom" secondItem="JZT-qv-Zij" secondAttribute="bottom" constant="68" id="5MM-MC-NpD"/>
-                            <constraint firstItem="qwT-3S-MSI" firstAttribute="centerY" secondItem="Plp-Np-QLO" secondAttribute="centerY" type="default" id="5sP-yi-esv"/>
                             <constraint firstItem="ZeR-ee-IbH" firstAttribute="leading" secondItem="0sD-cm-Au0" secondAttribute="leading" type="default" id="Dhv-eT-De8"/>
                             <constraint firstItem="ZeR-ee-IbH" firstAttribute="top" secondItem="0sD-cm-Au0" secondAttribute="top" type="default" id="Hfc-ZS-Mrj"/>
                             <constraint firstItem="ZeR-ee-IbH" firstAttribute="trailing" secondItem="0sD-cm-Au0" secondAttribute="trailing" type="default" id="LQ1-CY-2ll"/>
@@ -612,7 +631,6 @@
                             <constraint firstAttribute="bottom" secondItem="dvl-CL-qg3" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Wx4-qZ-uCz"/>
                             <constraint firstItem="dvl-CL-qg3" firstAttribute="leading" secondItem="0sD-cm-Au0" secondAttribute="leading" constant="271" id="bNo-O0-ykS"/>
                             <constraint firstItem="JZT-qv-Zij" firstAttribute="centerX" secondItem="ZeR-ee-IbH" secondAttribute="centerX" type="default" id="rgn-Yq-U0T"/>
-                            <constraint firstAttribute="trailing" secondItem="qwT-3S-MSI" secondAttribute="trailing" constant="120" id="vhS-aE-SaA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Graphs" id="ivT-Xi-9uW"/>
@@ -893,7 +911,7 @@
                         <segue destination="L48-lL-F6i" kind="push" identifier="Evaluation" id="4QC-ub-Jv6"/>
                         <segue destination="49K-et-Ltx" kind="push" identifier="Image Viewer" id="Jwh-ZU-FpO"/>
                         <segue destination="6Oy-Zg-6Cr" kind="push" identifier="Quiz 1" id="RHe-Xu-5W3"/>
-                        <segue destination="XNu-H8-Jhv" kind="push" identifier="Graph" id="vxz-o0-k9r"/>
+                        <segue destination="hqh-RP-Alx" kind="push" identifier="Graphs" id="6nm-Wh-i16"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edF-6W-JmF" userLabel="First Responder" sceneMemberID="firstResponder"/>

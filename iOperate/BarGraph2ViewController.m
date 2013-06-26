@@ -1,18 +1,18 @@
 //
-//  BarGraphViewController.m
+//  BarGraph2ViewController.m
 //  iOperate
 //
-//  Created by James Bartolozzi on 6/25/13.
+//  Created by James Bartolozzi on 6/26/13.
 //  Copyright (c) 2013 SIG Center. All rights reserved.
 //
 
-#import "BarGraphViewController.h"
+#import "BarGraph2ViewController.h"
 
-@interface BarGraphViewController ()
+@interface BarGraph2ViewController ()
 
 @end
 
-@implementation BarGraphViewController
+@implementation BarGraph2ViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +27,6 @@
 {
     [super viewDidLoad];
     [self generateData];
-    [self setDate];
     [self constructGraph1];
 	// Do any additional setup after loading the view.
 }
@@ -133,32 +132,21 @@
     CPTXYAxisSet *axisSet = (CPTXYAxisSet *)graph.axisSet;
     xAxis          = axisSet.xAxis;
     {
-        xAxis.majorIntervalLength         = CPTDecimalFromFloat(1);
-        xAxis.minorTicksPerInterval       = 1;
-        NSDateFormatter *dateFormatter    = [[NSDateFormatter alloc] init];
-        dateFormatter.dateStyle           = kCFDateFormatterLongStyle;
-        CPTTimeFormatter *timeFormatter   = [[CPTTimeFormatter alloc] initWithDateFormatter:dateFormatter];
-        timeFormatter.referenceDate       = refDate;
-        xAxis.labelFormatter              = timeFormatter;
-        xAxis.labelRotation               = M_PI / 4;
-        /*
-        xAxis.majorIntervalLength         = CPTDecimalFromInteger(1);
-        xAxis.minorTicksPerInterval       = 9;
-        xAxis.orthogonalCoordinateDecimal = CPTDecimalFromInteger(0);
-        xAxis.majorGridLineStyle          = majorGridLineStyle;
-        xAxis.minorGridLineStyle          = minorGridLineStyle;
-        xAxis.axisLineStyle               = nil;
-        xAxis.majorTickLineStyle          = nil;
-        xAxis.minorTickLineStyle          = nil;
-        //xAxis.labelFormatter              = nil;
-        yAxis.labelOffset                 = 10.0;
-        yAxis.labelRotation               = M_PI / 2;
-        yAxis.labelingPolicy              = CPTAxisLabelingPolicyAutomatic;
-        
-        xAxis.title = @"Date";
-        xAxis.titleOffset = 30.0f;
-         */
-        
+         xAxis.majorIntervalLength         = CPTDecimalFromInteger(1);
+         xAxis.minorTicksPerInterval       = 1;
+         xAxis.orthogonalCoordinateDecimal = CPTDecimalFromInteger(1);
+         xAxis.majorGridLineStyle          = majorGridLineStyle;
+         xAxis.minorGridLineStyle          = minorGridLineStyle;
+         xAxis.axisLineStyle               = nil;
+         xAxis.majorTickLineStyle          = nil;
+         xAxis.minorTickLineStyle          = nil;
+         //xAxis.labelFormatter              = nil;
+         yAxis.labelOffset                 = 10.0;
+         yAxis.labelRotation               = M_PI / 2;
+         yAxis.labelingPolicy              = CPTAxisLabelingPolicyAutomatic;
+         
+         xAxis.title = @"Quiz Number";
+         xAxis.titleOffset = 30.0f;
     }
     
     yAxis = axisSet.yAxis;
@@ -199,6 +187,24 @@
     
     [graph addPlot:barPlot];
     
+    // Create second bar plot
+    CPTBarPlot *barPlot2 = [CPTBarPlot tubularBarPlotWithColor:[CPTColor blueColor] horizontalBars:NO];
+    
+    barPlot2.lineStyle    = barLineStyle;
+    barPlot2.fill         = [CPTFill fillWithColor:[CPTColor colorWithComponentRed:1.0f green:1.0f blue:0.5f alpha:0.5f]];
+    barPlot2.barBasesVary = YES;
+    
+    barPlot2.barWidth = CPTDecimalFromFloat(1.0f); // bar is full (100%) width
+    //	barPlot2.barOffset = -0.125f; // shifted left by 12.5%
+    barPlot2.barCornerRadius = 2.0f;
+    barPlot2.barsAreHorizontal = NO;
+    barPlot2.delegate   = self;
+    barPlot2.dataSource = self;
+    barPlot2.identifier = @"Bar Plot 2";
+    barPlot2.barOffsetScale = 1.275;
+    
+    [graph addPlot:barPlot2];
+    
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform"];
     [animation setDuration:.5];
     CATransform3D transform = CATransform3DMakeTranslation(0, 0, 10);
@@ -217,41 +223,44 @@
     barPlotSpace.xRange = barRange;
     barPlotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0f) length:CPTDecimalFromFloat(100.0f)];
     
-    /* Add legend
-    CPTLegend *theLegend = [CPTLegend legendWithGraph:graph];
-    theLegend.fill            = [CPTFill fillWithColor:[CPTColor colorWithGenericGray:0.15]];
-    theLegend.borderLineStyle = barLineStyle;
-    theLegend.cornerRadius    = 10.0;
-    theLegend.swatchSize      = CGSizeMake(16.0, 16.0);
-    CPTMutableTextStyle *whiteTextStyle = [CPTMutableTextStyle textStyle];
-    whiteTextStyle.color    = [CPTColor whiteColor];
-    whiteTextStyle.fontSize = 12.0;
-    theLegend.textStyle     = whiteTextStyle;
-    theLegend.rowMargin     = 10.0;
-    theLegend.numberOfRows  = 1;
-    theLegend.paddingLeft   = 12.0;
-    theLegend.paddingTop    = 12.0;
-    theLegend.paddingRight  = 12.0;
-    theLegend.paddingBottom = 12.0;
+    // Add legend
+     CPTLegend *theLegend = [CPTLegend legendWithGraph:graph];
+     theLegend.fill            = [CPTFill fillWithColor:[CPTColor colorWithGenericGray:0.15]];
+     theLegend.borderLineStyle = barLineStyle;
+     theLegend.cornerRadius    = 10.0;
+    theLegend.numberOfRows    = 2;
+     theLegend.swatchSize      = CGSizeMake(16.0, 16.0);
+     CPTMutableTextStyle *whiteTextStyle2 = [CPTMutableTextStyle textStyle];
+     whiteTextStyle2.color    = [CPTColor whiteColor];
+     whiteTextStyle2.fontSize = 12.0;
+     theLegend.textStyle     = whiteTextStyle2;
+     theLegend.rowMargin     = 10.0;
+     theLegend.numberOfRows  = 1;
+     theLegend.paddingLeft   = 12.0;
+     theLegend.paddingTop    = 12.0;
+     theLegend.paddingRight  = 12.0;
+     theLegend.paddingBottom = 12.0;
     
-    graph.legend             = theLegend;
-    graph.legendAnchor       = CPTRectAnchorBottom;
-    graph.legendDisplacement = CGPointMake(0.0, 5.0);
-    */
+#if HORIZONTAL
+    NSArray *plotPoint = [NSArray arrayWithObjects:[NSNumber numberWithInteger:95], [NSNumber numberWithInteger:0], nil];
+#else
+    NSArray *plotPoint = [NSArray arrayWithObjects:[NSNumber numberWithInteger:0], [NSNumber numberWithInteger:95], nil];
+#endif
+    CPTPlotSpaceAnnotation *legendAnnotation = [[CPTPlotSpaceAnnotation alloc] initWithPlotSpace:barPlotSpace anchorPlotPoint:plotPoint];
+    legendAnnotation.contentLayer = theLegend;
+    
+#if HORIZONTAL
+    legendAnnotation.contentAnchorPoint = CGPointMake(1.0, 0.0);
+#else
+    legendAnnotation.contentAnchorPoint = CGPointMake(0.0, 1.0);
+#endif
+    [graph.plotAreaFrame.plotArea addAnnotation:legendAnnotation];
+
+     
+     graph.legend             = theLegend;
+     graph.legendAnchor       = CPTRectAnchorBottom;
+     graph.legendDisplacement = CGPointMake(0.0, 5.0);
+
 }
 
--(void)setDate
-{
-    dateComponents = [[NSDateComponents alloc] init];
-    
-    [dateComponents setMonth:10];
-    [dateComponents setDay:29];
-    [dateComponents setYear:2009];
-    [dateComponents setHour:12];
-    [dateComponents setMinute:0];
-    [dateComponents setSecond:0];
-    NSCalendar *gregorian = [[NSCalendar alloc]
-                             initWithCalendarIdentifier:NSGregorianCalendar];
-    refDate = [gregorian dateFromComponents:dateComponents];
-}
 @end

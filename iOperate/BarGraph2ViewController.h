@@ -1,17 +1,16 @@
 //
-//  BarGraphViewController.h
+//  BarGraph2ViewController.h
 //  iOperate
 //
-//  Created by James Bartolozzi on 6/25/13.
+//  Created by James Bartolozzi on 6/26/13.
 //  Copyright (c) 2013 SIG Center. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "CorePlot-CocoaTouch.h"
 
-
-@interface BarGraphViewController : UIViewController <CPTPlotSpaceDelegate, CPTPlotDataSource, CPTBarPlotDelegate> {
-
+@interface BarGraph2ViewController : UIViewController <CPTPlotSpaceDelegate, CPTPlotDataSource, CPTBarPlotDelegate> {
+    
     NSArray *plotData;
     CPTGraphHostingView* hostView;
     CPTGraph* graph;
@@ -21,6 +20,6 @@
     CPTXYAxis *yAxis;
     NSDateComponents *dateComponents;
     NSDate *refDate;
-
 }
+
 @end
