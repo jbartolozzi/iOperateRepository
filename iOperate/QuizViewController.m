@@ -34,10 +34,12 @@
 @end
 
 @implementation QuizViewController
+#define TEST_NAME @"QuizResult_All"
 - (TestResult *)evalResult{
     if(!_evalResult){
         _evalResult = [[TestResult alloc] init];
     }
+    _evalResult.type = TEST_NAME;
     return _evalResult;
 }
 
@@ -60,7 +62,7 @@
 	[[self myCollectionView]setDelegate:self];
     self.evalResult = nil;
     NSString *displayText = @"";
-    for (TestResult *result in [TestResult allTestResults:@"TestResult_All"]){
+    for (TestResult *result in [TestResult allTestResults:TEST_NAME]){
         displayText = [displayText stringByAppendingFormat:@"Grade: %f (%@, %0g)\n", result.grade,result.end, round(result.duration)];
     }
     self.resultsDisplay.text = displayText;
