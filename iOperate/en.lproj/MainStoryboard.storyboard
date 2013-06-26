@@ -1418,8 +1418,14 @@
         <class className="EvaluationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EvaluationViewController.h"/>
             <relationships>
+                <relationship kind="action" name="beginEval:" candidateClass="UIButton"/>
+                <relationship kind="action" name="mark:" candidateClass="UIButton"/>
+                <relationship kind="action" name="openComments:"/>
+                <relationship kind="action" name="resultMarked:" candidateClass="UISegmentedControl"/>
+                <relationship kind="action" name="submitEvaluation:"/>
                 <relationship kind="outlet" name="commentField" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="evaluationCollection" candidateClass="UICollectionView"/>
+                <relationship kind="outlet" name="resultsDisplay" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="GraphViewController" superclassName="UIViewController">
