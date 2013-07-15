@@ -31,7 +31,7 @@
     
     arrayOfImages = [[NSMutableArray alloc]initWithObjects:@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",@"1.png",nil];
     
-    arrayOfDescriptions = [[NSMutableArray alloc]initWithObjects:@"Image Viewer",@"Evaluation", @"Quiz 1",@"Graphs", nil];
+    arrayOfDescriptions = [[NSMutableArray alloc]initWithObjects:@"Opthamology",@"Gastrology", @"Otorhinolaryngology",@"Fetal", nil];
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
@@ -48,8 +48,9 @@
     CustomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     [[cell myButton] setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:indexPath.item]]forState:UIControlStateNormal];
     [[cell myDescriptionLabel]setText:[arrayOfDescriptions objectAtIndex:indexPath.item]];
-    NSString *segueIdentifier = [arrayOfDescriptions objectAtIndex:indexPath.item];
+    NSString *segueIdentifier = [NSString stringWithFormat:@"%d",indexPath.item];//[arrayOfDescriptions objectAtIndex:indexPath.item];
     [[cell myButton]setTitle:segueIdentifier forState:normal];
+    [[cell myButton]setTag:indexPath.item];
     
 	cell.myButton.layer.cornerRadius = 8.0f;
 	cell.myButton.layer.masksToBounds = NO;
@@ -83,7 +84,7 @@
 
 - (IBAction)buttonPress:(UIButton *)sender {
     
-    NSString *segueIdentifier = sender.titleLabel.text;
+    NSString *segueIdentifier = [NSString stringWithFormat:@"%d",sender.tag];
     //NSString *segueIdentifier =  sender.description;
     [self performSegueWithIdentifier:segueIdentifier sender:sender];
 }
