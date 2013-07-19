@@ -8,12 +8,16 @@
 
 #import "UTLViewController.h"
 
-@interface UTLViewController ()
+@interface UTLViewController () {
+	int attempts;
+}
+
 @property (strong, nonatomic) IBOutlet UITextField *userNameField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
 @property (strong, nonatomic) IBOutlet UIButton *loginButton;
 @property (strong, nonatomic) IBOutlet UICollectionView *myCollectionView;
 @property (weak, nonatomic) IBOutlet UILabel *versionNumber;
+@property (weak, nonatomic) IBOutlet UIButton *helpButton;
 - (IBAction)userNameInput:(id)sender;
 - (IBAction)passwordInput:(id)sender;
 
@@ -35,6 +39,7 @@
         self.userNameField.frame = CGRectMake(282, 330, 204, 30);
         self.passwordField.frame = CGRectMake(282, 387, 204, 30);
         self.loginButton.frame = CGRectMake(338, 438, 93, 41);
+		//self.accountButton.frame = CGRectMake(237, 532, 294, 41);
     }
 }
 
@@ -56,8 +61,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.loginButton.enabled = NO;
-    self.loginButton.hidden = YES;
+	attempts = 0;
+    self.loginButton.enabled = YES;
+    self.loginButton.hidden = NO;
+	self.helpButton.enabled = NO;
+	self.helpButton.alpha = 0.0;
 	// Do any additional setup after loading the view, typically from a nib.
 	self.versionNumber.text = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
 }
@@ -69,49 +77,43 @@
 
 - (IBAction)userNameInput:(id)sender {
     self.userName = self.userNameField.text;
-    self.loginButton.enabled = YES;
-    if ([self.userName length] == 0 || [self.password length] == 0) {
-        self.loginButton.enabled = NO;
-        self.loginButton.hidden = YES;
-    }
-    else {
-        self.loginButton.enabled = YES;
-        self.loginButton.hidden = NO;
-        self.loginButton.alpha = 0.0;
-        [UIView animateWithDuration:0.3
-                              delay:0.0
-                            options:UIViewAnimationOptionCurveLinear
-                         animations:^{ self.loginButton.alpha = 1.0;}
-                         completion:(nil)];
-    }
 }
 
 - (IBAction)passwordInput:(id)sender {
     self.password = self.passwordField.text;
-    self.loginButton.enabled = YES;
-    if ([self.userName length] == 0 || [self.password length] == 0) {
-        self.loginButton.enabled = NO;
-        self.loginButton.hidden = YES;
-    }
-    else {
-        self.loginButton.enabled = YES;
-        self.loginButton.hidden = NO;
-        self.loginButton.alpha = 0.0;
-        [UIView animateWithDuration:0.3
-                              delay:0.0
-                            options:UIViewAnimationOptionCurveLinear
-                         animations:^{ self.loginButton.alpha = 1.0;}
-                         completion:(nil)];
-    }
 }
 
 - (IBAction)sendLogin:(id)sender {
-    /*NSString *userNameString = self.userName;
-    NSString *passwordString = self.password;
-    if ([userNameString length] == 0 || [passwordString length] == 0) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error:" message:@"Username or Password Blank" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil, nil];
-        [alert show];
-    }*/
+	[self.userNameField resignFirstResponder];
+	[self.passwordField resignFirstResponder];
+    if ([self.userName  isEqualToString: @"s"] && [self.password  isEqualToString: @"p"]) {
+		[self performSegueWithIdentifier:@"student" sender:sender];
+	}
+	else if ([self.userName isEqualToString:@"p"] && [self.password isEqualToString:@"p"]) {
+		
+	}
+	
+	else {
+		UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Error"
+													message:@"Invalid Username/Password."
+													delegate:self
+													cancelButtonTitle:@"Ok"
+													otherButtonTitles:nil,nil];
+		[message show];
+		self.passwordField.text = @"";
+		self.passwordField.placeholder = @"Password";
+		attempts++;
+	}
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	if (attempts > 2)
+	{
+		self.helpButton.enabled = YES;
+		[UIView animateWithDuration:1.0 animations:^{self.loginButton.frame = CGRectMake(self.loginButton.frame.origin.x - (338-292), self.loginButton.frame.origin.y, self.loginButton.frame.size.width, self.loginButton.frame.size.height);}];
+		[UIView animateWithDuration:1.0 animations:^{self.helpButton.alpha = 1.0;}];
+	}
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
