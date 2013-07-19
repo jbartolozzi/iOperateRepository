@@ -31,6 +31,17 @@
 	// Do any additional setup after loading the view.
 }
 
+-(void)viewDidLayoutSubviews
+{
+    // Layout for Graph Host View
+    if (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+        hostView.frame = CGRectMake(10, 10, 1000, 500);
+    }
+    else {
+        hostView.frame = CGRectMake(10, 10, 748, 800);
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -84,9 +95,11 @@
     }
 }
 
+
+// This is the method that makes the graphs
 -(void)constructGraph1
 {
-    hostView = [[CPTGraphHostingView alloc] initWithFrame:CGRectMake(20, 20, 728, 920)];
+    
     hostView.clipsToBounds = YES;
     [[hostView layer] setCornerRadius:10];
     [self.view addSubview: hostView];

@@ -38,6 +38,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewDidLayoutSubviews
+{
+    // Layout for Graph Host View
+    if (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+        hostView.frame = CGRectMake(10, 10, 1000, 500);
+    }
+    else {
+        hostView.frame = CGRectMake(10, 10, 748, 800);
+    }
+}
+
 -(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot
 {
     return plotData.count;

@@ -395,6 +395,22 @@ typedef enum possibleMoveDirection {
     [[cell myButton] setTag:indexPath.item];
     return cell;
 }
+- (IBAction)pinchPhotos:(UIPinchGestureRecognizer *)sender {
+    if(sender.velocity>1.0){
+        [UIView animateWithDuration:.5 animations:^{[_fullScreenCollection setAlpha:1.0f];}];
+        [UIView animateWithDuration:.3 animations:^{[_myCollectionView setAlpha:0.0f];}];
+        //[_fullScreenCollection setAlpha:1.0f];
+        fullScreen = YES;
+        [_fullScreenCollection reloadData];
+    } else if (sender.velocity<-1.0){
+        [UIView animateWithDuration:.3 animations:^{[_fullScreenCollection setAlpha:0.0f];}];
+        [UIView animateWithDuration:.5 animations:^{[_myCollectionView setAlpha:1.0f];}];
+        
+        fullScreen = NO;
+        [_myCollectionView reloadData];
+        
+    }
+}
 
 - (IBAction)buttonPress:(UIButton *)sender {
     
@@ -402,6 +418,7 @@ typedef enum possibleMoveDirection {
     //NSString *segueIdentifier =  sender.description;
     [self performSegueWithIdentifier:segueIdentifier sender:sender];
 }
+
 - (IBAction)panImage:(UIPanGestureRecognizer *)sender {
     //[_imageOne setCenter: CGPointMake(_imageOne.center.x+[sender translationInView:self.view].x, _imageOne.center.y+[sender translationInView:self.view].y)];
     //[sender tr]
