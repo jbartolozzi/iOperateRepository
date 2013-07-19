@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *helpButton;
 - (IBAction)userNameInput:(id)sender;
 - (IBAction)passwordInput:(id)sender;
+- (IBAction)openHelp:(id)sender;
 
 - (IBAction)sendLogin:(id)sender;
 
@@ -83,6 +84,11 @@
     self.password = self.passwordField.text;
 }
 
+- (IBAction)openHelp:(id)sender {
+	NSURL *url = [ [ NSURL alloc ] initWithString: @"http://www.james-bartolozzi.com" ];
+	[[UIApplication sharedApplication] openURL:url];
+}
+
 - (IBAction)sendLogin:(id)sender {
 	[self.userNameField resignFirstResponder];
 	[self.passwordField resignFirstResponder];
@@ -90,12 +96,12 @@
 		[self performSegueWithIdentifier:@"student" sender:sender];
 	}
 	else if ([self.userName isEqualToString:@"p"] && [self.password isEqualToString:@"p"]) {
-		
+		[self performSegueWithIdentifier:@"prof" sender:sender];
 	}
 	
 	else {
-		UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Error"
-													message:@"Invalid Username/Password."
+		UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Invalid Username/Password."
+													message:nil
 													delegate:self
 													cancelButtonTitle:@"Ok"
 													otherButtonTitles:nil,nil];
