@@ -19,6 +19,9 @@
 }
 @property (weak, nonatomic) IBOutlet UICollectionView *thumbnailCollectionView;
 @property (weak, nonatomic) IBOutlet UITextView *textFieldViewer;
+@property (strong, nonatomic) IBOutlet UIScrollView *imageScrollView;
+@property (strong, nonatomic) IBOutlet UIImageView *imageInScroll;
+
 @property (strong, nonatomic) IBOutlet UIImageView *imageDisplay;/*
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *photoButtons;
 
@@ -62,6 +65,7 @@ typedef enum possibleMoveDirection {
     [[self myCollectionView]setDelegate:self];
     [[self fullScreenCollection]setDataSource:self];
     [[self fullScreenCollection]setDelegate:self];
+    [[self imageScrollView]setDelegate:self];
     imageCenter = self.view.center.x;
     fullScreen = NO;
     arrayOfImages = [[NSMutableArray alloc]initWithObjects:@"1.tif",@"2.tif",@"3.tif",@"4.tif",@"5.tif",@"6.tif",@"7.tif",@"8.tif",@"9.tif",@"10.tif",@"11.tif",@"12.tif",@"13.tif",@"14.tif",@"15.tif",nil];
@@ -184,6 +188,7 @@ typedef enum possibleMoveDirection {
     //sender.alpha = 1.0;
     self.textFieldViewer.text = sender.titleLabel.text;
     [_imageDisplay setImage:buttonImage];
+    [_imageInScroll setImage:buttonImage];
 	
 	if (sender.tag == 8) {
 		[self playMovie];
@@ -394,8 +399,9 @@ typedef enum possibleMoveDirection {
     [[cell myButton].imageView setContentMode:UIViewContentModeScaleAspectFit];
     [[cell myButton] setTag:indexPath.item];
     return cell;
-}
+}/*
 - (IBAction)pinchPhotos:(UIPinchGestureRecognizer *)sender {
+    //[self imageDisplay].image
     if(sender.velocity>1.0){
         [UIView animateWithDuration:.5 animations:^{[_fullScreenCollection setAlpha:1.0f];}];
         [UIView animateWithDuration:.3 animations:^{[_myCollectionView setAlpha:0.0f];}];
@@ -408,8 +414,12 @@ typedef enum possibleMoveDirection {
         
         fullScreen = NO;
         [_myCollectionView reloadData];
-        
+  
     }
+}*/
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.imageInScroll;
 }
 
 - (IBAction)buttonPress:(UIButton *)sender {
