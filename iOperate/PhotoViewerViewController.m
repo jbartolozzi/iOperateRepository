@@ -22,7 +22,8 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *imageScrollView;
 @property (strong, nonatomic) IBOutlet UIImageView *imageInScroll;
 
-@property (strong, nonatomic) IBOutlet UIImageView *imageDisplay;/*
+//@property (strong, nonatomic) IBOutlet UIImageView *imageScrollView;
+/*
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *photoButtons;
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *photoButtonsOrdered;
@@ -47,11 +48,11 @@ typedef enum possibleMoveDirection {
 } moveDirection;
 
 - (void)awakeFromNib {
-    self.imageDisplay.layer.shadowColor = [UIColor purpleColor].CGColor;
-    self.imageDisplay.layer.shadowOffset = CGSizeMake(0, 1);
-    self.imageDisplay.layer.shadowOpacity = 1;
-    self.imageDisplay.layer.shadowRadius = 1.0;
-    self.imageDisplay.clipsToBounds = NO;
+    self.imageScrollView.layer.shadowColor = [UIColor purpleColor].CGColor;
+    self.imageScrollView.layer.shadowOffset = CGSizeMake(0, 1);
+    self.imageScrollView.layer.shadowOpacity = 1;
+    self.imageScrollView.layer.shadowRadius = 1.0;
+    //self.imageScrollView.clipsToBounds = NO;
     //[[NSNotificationCenter defaultCenter] addObserver:self.textFieldViewer forKeyPath:UITextViewTextDidEndEditingNotification options:NSKeyValueObservingOptionNew context:nil];
     //[self removeObserver:self.textFieldViewer forKeyPath:UI
 }
@@ -104,16 +105,16 @@ typedef enum possibleMoveDirection {
 	
 	
 	// Shadows for Image View
-	self.imageDisplay.layer.shadowColor = [UIColor grayColor].CGColor;
-    self.imageDisplay.layer.shadowOffset = CGSizeMake(2, 2);
-    self.imageDisplay.layer.shadowOpacity = 1;
-    self.imageDisplay.layer.shadowRadius = 10.0;
-    self.imageDisplay.clipsToBounds = NO;
+	self.imageScrollView.layer.shadowColor = [UIColor grayColor].CGColor;
+    self.imageScrollView.layer.shadowOffset = CGSizeMake(2, 2);
+    self.imageScrollView.layer.shadowOpacity = 1;
+    self.imageScrollView.layer.shadowRadius = 10.0;
+    //self.imageScrollView.clipsToBounds = NO;
 	self.toolsView.layer.shadowColor = [UIColor grayColor].CGColor;
     self.toolsView.layer.shadowOffset = CGSizeMake(2, 2);
     self.toolsView.layer.shadowOpacity = 1;
     self.toolsView.layer.shadowRadius = 10.0;
-    self.toolsView.clipsToBounds = NO;
+    //self.toolsView.clipsToBounds = NO;
 	[[self.toolsView layer] setBorderColor:[[UIColor blackColor] CGColor]];
     [[self.toolsView layer] setBorderWidth:0.1];
     [[self.toolsView layer] setCornerRadius:8];
@@ -130,7 +131,7 @@ typedef enum possibleMoveDirection {
     if ( self.interfaceOrientation== UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight)
     {
 		self.scrollWindow.frame = CGRectMake(0, 639, 1024, 109);
-        self.imageDisplay.frame = CGRectMake(20, 20, 505, 580);
+        self.imageScrollView.frame = CGRectMake(20, 20, 505, 580);
         self.textFieldViewer.frame = CGRectMake(538, 20, 466, 580);
 		
 		self.rightButton.enabled = NO;
@@ -141,7 +142,7 @@ typedef enum possibleMoveDirection {
     else
     {
 		self.scrollWindow.frame = CGRectMake(0, 895, 768, 109);
-        self.imageDisplay.frame = CGRectMake(20, 11, 728, 558);
+        self.imageScrollView.frame = CGRectMake(20, 11, 728, 558);
         self.textFieldViewer.frame = CGRectMake(20, 577, 728, 300);
 		
 		self.leftButton.enabled = YES;
@@ -187,8 +188,8 @@ typedef enum possibleMoveDirection {
     }*/
     //sender.alpha = 1.0;
     self.textFieldViewer.text = sender.titleLabel.text;
-    [_imageDisplay setImage:buttonImage];
     [_imageInScroll setImage:buttonImage];
+    //[_imageInScroll setImage:buttonImage];
 	
 	if (sender.tag == 8) {
 		[self playMovie];
@@ -254,7 +255,7 @@ typedef enum possibleMoveDirection {
     if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
     {
 		self.scrollWindow.frame = CGRectMake(0, 639, 1024, 109);
-        self.imageDisplay.frame = CGRectMake(20, 20, 505, 580);
+        self.imageScrollView.frame = CGRectMake(20, 20, 505, 580);
         self.textFieldViewer.frame = CGRectMake(538, 20, 466, 580);
 		
 		self.rightButton.enabled = NO;
@@ -265,7 +266,7 @@ typedef enum possibleMoveDirection {
     else
     {
 		self.scrollWindow.frame = CGRectMake(0, 895, 768, 109);
-        self.imageDisplay.frame = CGRectMake(20, 11, 728, 558);
+        self.imageScrollView.frame = CGRectMake(20, 11, 728, 558);
         self.textFieldViewer.frame = CGRectMake(20, 577, 728, 300);
 		
 		self.leftButton.enabled = YES;
@@ -307,7 +308,7 @@ typedef enum possibleMoveDirection {
     [[cell myButton]setContentMode:UIViewContentModeScaleAspectFit];*/
     //CustomCell *cell = [self.myCollectionView [self.myCollectionView indexPathsForSelectedItems] objectAtIndex:currentButtonNum];
 	if (inDirection == LEFT) {
-		[_imageDisplay setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:currentButtonNum]]];
+		[_imageInScroll setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:currentButtonNum]]];
 		
 		// Animate Button
 		[UIView animateWithDuration:0.1 animations:^{
@@ -319,16 +320,16 @@ typedef enum possibleMoveDirection {
 		
 		// Animate Image
 		if (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
-			[UIView animateWithDuration:0.5 animations:^{self.imageDisplay.frame = CGRectMake(-1000, 20, 505, 580);}];
-			//[self.imageDisplay setImage:button.imageView.image];
-            [_imageDisplay setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:currentButtonNum]]];
-			[UIView animateWithDuration:0.5 animations:^{self.imageDisplay.frame = CGRectMake(20, 20, 505, 580);}];
+			[UIView animateWithDuration:0.5 animations:^{self.imageScrollView.frame = CGRectMake(-1000, 20, 505, 580);}];
+			//[self.imageScrollView setImage:button.imageView.image];
+            [_imageInScroll setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:currentButtonNum]]];
+			[UIView animateWithDuration:0.5 animations:^{self.imageScrollView.frame = CGRectMake(20, 20, 505, 580);}];
 		}
 		else {
-			[UIView animateWithDuration:0.5 animations:^{self.imageDisplay.frame = CGRectMake(-1000, 11, 620, 558);}];
-			//[self.imageDisplay setImage:button.imageView.image];
-            [_imageDisplay setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:currentButtonNum]]];
-			[UIView animateWithDuration:0.5 animations:^{self.imageDisplay.frame = CGRectMake(74, 11, 620, 558);}];
+			[UIView animateWithDuration:0.5 animations:^{self.imageScrollView.frame = CGRectMake(-1000, 11, 620, 558);}];
+			//[self.imageScrollView setImage:button.imageView.image];
+            [_imageInScroll setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:currentButtonNum]]];
+			[UIView animateWithDuration:0.5 animations:^{self.imageScrollView.frame = CGRectMake(74, 11, 620, 558);}];
 		}
 		
 		
@@ -340,7 +341,7 @@ typedef enum possibleMoveDirection {
 		[UIView animateWithDuration:0.5 animations:^{self.textFieldViewer.alpha = 1.0;}];
 	}
 	else if (inDirection == RIGHT) {
-		[_imageDisplay setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:currentButtonNum]]];
+		[_imageInScroll setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:currentButtonNum]]];
 		[UIView animateWithDuration:0.1 animations:^{
 			DirectionButton.frame = CGRectMake(DirectionButton.frame.origin.x - 10, DirectionButton.frame.origin.y,DirectionButton.frame.size.width, DirectionButton.frame.size.height);
 		}];
@@ -350,14 +351,14 @@ typedef enum possibleMoveDirection {
 		
 		
 		if (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
-			[UIView animateWithDuration:0.5 animations:^{self.imageDisplay.frame = CGRectMake(+1000, 20, 505, 580);}];
-            [_imageDisplay setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:currentButtonNum]]];
-			[UIView animateWithDuration:0.5 animations:^{self.imageDisplay.frame = CGRectMake(20, 20, 505, 580);}];
+			[UIView animateWithDuration:0.5 animations:^{self.imageScrollView.frame = CGRectMake(+1000, 20, 505, 580);}];
+            [_imageInScroll setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:currentButtonNum]]];
+			[UIView animateWithDuration:0.5 animations:^{self.imageScrollView.frame = CGRectMake(20, 20, 505, 580);}];
 		}
 		else {
-			[UIView animateWithDuration:0.5 animations:^{self.imageDisplay.frame = CGRectMake(+1000, 11, 620, 558);}];
-            [_imageDisplay setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:currentButtonNum]]];
-			[UIView animateWithDuration:0.5 animations:^{self.imageDisplay.frame = CGRectMake(74, 11, 620, 558);}];
+			[UIView animateWithDuration:0.5 animations:^{self.imageScrollView.frame = CGRectMake(+1000, 11, 620, 558);}];
+            [_imageInScroll setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:currentButtonNum]]];
+			[UIView animateWithDuration:0.5 animations:^{self.imageScrollView.frame = CGRectMake(74, 11, 620, 558);}];
 		}
 		
 		
@@ -401,7 +402,7 @@ typedef enum possibleMoveDirection {
     return cell;
 }/*
 - (IBAction)pinchPhotos:(UIPinchGestureRecognizer *)sender {
-    //[self imageDisplay].image
+    //[self imageScrollView].image
     if(sender.velocity>1.0){
         [UIView animateWithDuration:.5 animations:^{[_fullScreenCollection setAlpha:1.0f];}];
         [UIView animateWithDuration:.3 animations:^{[_myCollectionView setAlpha:0.0f];}];
@@ -435,7 +436,7 @@ typedef enum possibleMoveDirection {
     CGPoint translation = [sender translationInView:self.view];
     float addX = translation.x+imageCenter;
     //float addY = y;
-    [_imageDisplay setCenter:CGPointMake(addX, _imageDisplay.center.y)];
+    [_imageScrollView setCenter:CGPointMake(addX, _imageScrollView.center.y)];
     if(sender.state ==UIGestureRecognizerStateEnded){
         float velX = [sender velocityInView:self.view].x;
         
@@ -452,14 +453,14 @@ typedef enum possibleMoveDirection {
         }
         if((velX<=200&&velX>=-200)||currentButtonNum==arrayOfImages.count-1 || currentButtonNum==0){
             if (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
-                [UIView animateWithDuration:0.5 animations:^{self.imageDisplay.frame = CGRectMake(20, 20, 505, 580);}];
+                [UIView animateWithDuration:0.5 animations:^{self.imageScrollView.frame = CGRectMake(20, 20, 505, 580);}];
             }
             else {
-                [UIView animateWithDuration:0.5 animations:^{self.imageDisplay.frame = CGRectMake(74, 11, 620, 558);}];
+                [UIView animateWithDuration:0.5 animations:^{self.imageScrollView.frame = CGRectMake(74, 11, 620, 558);}];
                
             }
         }
-        imageCenter = _imageDisplay.center.x;
+        imageCenter = _imageScrollView.center.x;
         //y = _imageOne.center.y;
     }
     //if([sender )
