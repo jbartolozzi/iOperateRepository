@@ -5,6 +5,52 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.9"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Yvl-KU-qV3">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="DVn-4S-F5C" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XJg-12-Bm9">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="G6y-z9-K3D" kind="relationship" relationship="rootViewController" id="inP-Nw-Lz9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v8d-qE-n7g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4827" y="-3407"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="O8G-EG-7Bg">
+            <objects>
+                <viewController id="G6y-z9-K3D" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MQd-k3-Gzz">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="left" ambiguous="YES" image="wallpaper-630620.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cZi-Nd-MC2">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1061"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1061" id="ZvZ-bI-yK5"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="R4x-gA-RIp">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="QwR-nA-h2k">
+                            <connections>
+                                <segue destination="FkD-QS-onY" kind="modal" id="pKx-0o-1PD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3b1-Pn-EKF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3960" y="-3354"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="7Hm-LP-kAW">
             <objects>
@@ -99,6 +145,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="openHelp:" destination="FkD-QS-onY" eventType="touchUpInside" id="8iK-Oi-FHh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -134,6 +183,7 @@
                         <outlet property="userNameField" destination="rdw-In-tjL" id="4Vd-oW-cQd"/>
                         <outlet property="versionNumber" destination="cwz-qi-4cH" id="Ojv-iX-Fyf"/>
                         <segue destination="PKY-oN-i9J" kind="modal" identifier="student" id="nbp-yO-CG3"/>
+                        <segue destination="DVn-4S-F5C" kind="modal" identifier="prof" id="8jY-hp-UHW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSo-U7-2vf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1527,163 +1577,15 @@
         <image name="arrowRight.png" width="29.760992050170898" height="27.84092903137207"/>
         <image name="wallpaper-630620.jpg" width="1920" height="1200"/>
     </resources>
-    <classes>
-        <class className="AdvancedCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdvancedCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="button" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="AdvancedCollectionViewViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdvancedCollectionViewViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
-            </relationships>
-        </class>
-        <class className="BarGraph2ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BarGraph2ViewController.h"/>
-        </class>
-        <class className="BarGraphViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BarGraphViewController.h"/>
-        </class>
-        <class className="CollectionViewViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CollectionViewViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addSurgery:"/>
-                <relationship kind="action" name="buttonPress:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="myCollectionView" candidateClass="UICollectionView"/>
-            </relationships>
-        </class>
-        <class className="CustomCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="myButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="myDescriptionLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="EvaluationCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EvaluationCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="evaluationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="evaluationResult" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="evaluationText" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="EvaluationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EvaluationViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="commentField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="evaluationCollection" candidateClass="UICollectionView"/>
-                <relationship kind="outlet" name="resultsDisplay" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="GraphViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GraphViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="changeDistance:"/>
-                <relationship kind="action" name="setGraph:"/>
-                <relationship kind="action" name="stepperChanged:"/>
-                <relationship kind="outlet" name="segmentControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="stepper" candidateClass="UIStepper"/>
-                <relationship kind="outlet" name="stepperDistance" candidateClass="UIStepper"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PhotoViewerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoViewerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="ButtonPress:" candidateClass="UIButton"/>
-                <relationship kind="action" name="activateTools:"/>
-                <relationship kind="action" name="decreaseFontSize:"/>
-                <relationship kind="action" name="increaseFontSize:"/>
-                <relationship kind="outlet" name="fullScreenCollection" candidateClass="UICollectionView"/>
-                <relationship kind="outlet" name="imageDisplay" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="myCollectionView" candidateClass="UICollectionView"/>
-                <relationship kind="outlet" name="rightButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="scrollWindow" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="textFieldViewer" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="thumbnailCollectionView" candidateClass="UICollectionView"/>
-                <relationship kind="outlet" name="toolsView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="QuizCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuizCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="optionA" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="optionB" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="optionC" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="optionD" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="optionE" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="optionF" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="qBox" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="qTitle" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="segControl" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-        <class className="QuizCollectionView" superclassName="UICollectionView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuizCollectionView.h"/>
-        </class>
-        <class className="QuizViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuizViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="answerSelected:"/>
-                <relationship kind="action" name="goNext:"/>
-                <relationship kind="action" name="goPrev:"/>
-                <relationship kind="action" name="qFinish:"/>
-                <relationship kind="outlet" name="completeButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="completeMessage" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="completeScore" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="examCompleteView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="myCollectionView" candidateClass="UICollectionView"/>
-                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="prevButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="questionNum" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="quizView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="resultsDisplay" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="segControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="totalNum" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
-        <class className="UTLViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UTLViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="passwordInput:"/>
-                <relationship kind="action" name="sendLogin:"/>
-                <relationship kind="action" name="userNameInput:"/>
-                <relationship kind="outlet" name="helpButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="myCollectionView" candidateClass="UICollectionView"/>
-                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="userNameField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="versionNumber" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="1ud-JP-Agu"/>
-        <segue reference="F2b-u6-ZfJ"/>
-        <segue reference="FlC-S5-pAa"/>
+        <segue reference="1ao-Id-9th"/>
+        <segue reference="RHe-Xu-5W3"/>
+        <segue reference="6nm-Wh-i16"/>
+        <segue reference="4QC-ub-Jv6"/>
     </inferredMetricsTieBreakers>
 </document>
