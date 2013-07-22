@@ -48,10 +48,10 @@ typedef enum possibleMoveDirection {
 } moveDirection;
 
 - (void)awakeFromNib {
-    self.imageScrollView.layer.shadowColor = [UIColor purpleColor].CGColor;
+    /*self.imageScrollView.layer.shadowColor = [UIColor purpleColor].CGColor;
     self.imageScrollView.layer.shadowOffset = CGSizeMake(0, 1);
     self.imageScrollView.layer.shadowOpacity = 1;
-    self.imageScrollView.layer.shadowRadius = 1.0;
+    self.imageScrollView.layer.shadowRadius = 1.0;*/
     //self.imageScrollView.clipsToBounds = NO;
     //[[NSNotificationCenter defaultCenter] addObserver:self.textFieldViewer forKeyPath:UITextViewTextDidEndEditingNotification options:NSKeyValueObservingOptionNew context:nil];
     //[self removeObserver:self.textFieldViewer forKeyPath:UI
@@ -105,10 +105,10 @@ typedef enum possibleMoveDirection {
 	
 	
 	// Shadows for Image View
-	self.imageScrollView.layer.shadowColor = [UIColor grayColor].CGColor;
+	/*self.imageScrollView.layer.shadowColor = [UIColor grayColor].CGColor;
     self.imageScrollView.layer.shadowOffset = CGSizeMake(2, 2);
     self.imageScrollView.layer.shadowOpacity = 1;
-    self.imageScrollView.layer.shadowRadius = 10.0;
+    self.imageScrollView.layer.shadowRadius = 10.0;*/
     //self.imageScrollView.clipsToBounds = NO;
 	self.toolsView.layer.shadowColor = [UIColor grayColor].CGColor;
     self.toolsView.layer.shadowOffset = CGSizeMake(2, 2);
