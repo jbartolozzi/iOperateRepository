@@ -2,7 +2,7 @@
 //  UTLViewController.m
 //  iOperate
 //
-//  Created by Max Gilbert on 5/13/13.
+//  Created by Max Gilbert & James Bartolozzi on 5/13/13.
 //  Copyright (c) 2013 SIG Center. All rights reserved.
 //
 
@@ -10,6 +10,7 @@
 
 @interface UTLViewController () {
 	int attempts;
+    BOOL helpShown;
 }
 
 @property (strong, nonatomic) IBOutlet UITextField *userNameField;
@@ -50,12 +51,31 @@
     {
         self.userNameField.frame = CGRectMake(410, 161, 204, 30);
         self.passwordField.frame = CGRectMake(410, 218, 204, 30);
-        self.loginButton.frame = CGRectMake(466, 269, 93, 41);
+        
+        if (helpShown)
+        {
+            self.loginButton.frame = CGRectMake(425, 278, 93, 41);
+            self.helpButton.frame = CGRectMake(527, 278, 73, 44);
+        }
+        else
+        {
+            self.loginButton.frame = CGRectMake(466, 277, 93, 41);
+        }
+        
     }
     else {
         self.userNameField.frame = CGRectMake(282, 330, 204, 30);
         self.passwordField.frame = CGRectMake(282, 387, 204, 30);
-        self.loginButton.frame = CGRectMake(338, 438, 93, 41);
+        
+        if (helpShown)
+        {
+            self.loginButton.frame = CGRectMake(292, 438, 93, 41);
+            self.helpButton.frame = CGRectMake(394, 438, 73, 44);
+        }
+        else
+        {
+            self.loginButton.frame = CGRectMake(338, 438, 93, 41);
+        }
     }
 }
 
@@ -117,6 +137,7 @@
 	if (attempts > 2)
 	{
 		self.helpButton.enabled = YES;
+        helpShown = YES;
 		[UIView animateWithDuration:1.0 animations:^{self.loginButton.frame = CGRectMake(self.loginButton.frame.origin.x - (338-292), self.loginButton.frame.origin.y, self.loginButton.frame.size.width, self.loginButton.frame.size.height);}];
 		[UIView animateWithDuration:1.0 animations:^{self.helpButton.alpha = 1.0;}];
 	}
