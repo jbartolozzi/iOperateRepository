@@ -7,6 +7,14 @@
 //  THIS IS A BIG CHANGE
 
 #import "PhotoViewerViewController.h"
+#define PORTRAIT_WIDTH 600;
+#define PORTRAIT_HEIGHT 550;
+#define PORTRAIT_X 84;
+#define PORTRAIT_Y 569;
+#define LANDSCAPE_WIDTH 600;
+#define LANDSCAPE_HEIGHT 550;
+#define LANDSCAPE_X 84;
+#define LANDSCAPE_Y 569;
 
 @interface PhotoViewerViewController (){
 	MPMoviePlayerController *moviePlayerController;
@@ -48,10 +56,10 @@ typedef enum possibleMoveDirection {
 } moveDirection;
 
 - (void)awakeFromNib {
-    /*self.imageScrollView.layer.shadowColor = [UIColor purpleColor].CGColor;
+    self.imageScrollView.layer.shadowColor = [UIColor purpleColor].CGColor;
     self.imageScrollView.layer.shadowOffset = CGSizeMake(0, 1);
     self.imageScrollView.layer.shadowOpacity = 1;
-    self.imageScrollView.layer.shadowRadius = 1.0;*/
+    self.imageScrollView.layer.shadowRadius = 1.0;
     //self.imageScrollView.clipsToBounds = NO;
     //[[NSNotificationCenter defaultCenter] addObserver:self.textFieldViewer forKeyPath:UITextViewTextDidEndEditingNotification options:NSKeyValueObservingOptionNew context:nil];
     //[self removeObserver:self.textFieldViewer forKeyPath:UI
@@ -105,10 +113,10 @@ typedef enum possibleMoveDirection {
 	
 	
 	// Shadows for Image View
-	/*self.imageScrollView.layer.shadowColor = [UIColor grayColor].CGColor;
+	self.imageScrollView.layer.shadowColor = [UIColor grayColor].CGColor;
     self.imageScrollView.layer.shadowOffset = CGSizeMake(2, 2);
     self.imageScrollView.layer.shadowOpacity = 1;
-    self.imageScrollView.layer.shadowRadius = 10.0;*/
+    self.imageScrollView.layer.shadowRadius = 10.0;
     //self.imageScrollView.clipsToBounds = NO;
 	self.toolsView.layer.shadowColor = [UIColor grayColor].CGColor;
     self.toolsView.layer.shadowOffset = CGSizeMake(2, 2);
@@ -142,7 +150,8 @@ typedef enum possibleMoveDirection {
     else
     {
 		self.scrollWindow.frame = CGRectMake(0, 895, 768, 109);
-        self.imageScrollView.frame = CGRectMake(20, 11, 728, 558);
+        self.imageScrollView.frame = CGRectMake(84, 20, 684, 569);
+       // self.imageScrollView.frame = CGRectMake(20, 11, 728, 558);
         self.textFieldViewer.frame = CGRectMake(20, 577, 728, 300);
 		
 		self.leftButton.enabled = YES;
@@ -181,14 +190,14 @@ typedef enum possibleMoveDirection {
 }
 
 - (IBAction)ButtonPress:(UIButton*)sender {
-    UIImage* buttonImage = sender.imageView.image;
+   // UIImage* buttonImage = sender.imageView.image;
     /*for (int i = 0; i < [self.photoButtons count]; i++) {
         UIButton *element = [self.photoButtons objectAtIndex:i];
         element.alpha = 0.5;
     }*/
     //sender.alpha = 1.0;
-    self.textFieldViewer.text = sender.titleLabel.text;
-    [_imageInScroll setImage:buttonImage];
+   // self.textFieldViewer.text = sender.titleLabel.text;
+   // [_imageInScroll setImage:buttonImage];
     //[_imageInScroll setImage:buttonImage];
 	
 	if (sender.tag == 8) {
@@ -196,6 +205,7 @@ typedef enum possibleMoveDirection {
 	}
     
     currentButtonNum = sender.tag;
+    [_imageInScroll setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:currentButtonNum]]];
     [_myCollectionView reloadData];
 }
 
@@ -266,7 +276,7 @@ typedef enum possibleMoveDirection {
     else
     {
 		self.scrollWindow.frame = CGRectMake(0, 895, 768, 109);
-        self.imageScrollView.frame = CGRectMake(20, 11, 728, 558);
+        self.imageScrollView.frame = CGRectMake(84, 20, 684, 569);
         self.textFieldViewer.frame = CGRectMake(20, 577, 728, 300);
 		
 		self.leftButton.enabled = YES;
@@ -385,10 +395,17 @@ typedef enum possibleMoveDirection {
 {
     static NSString *CellIdentifier = @"Cell";
     CustomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
-    [[cell myButton] setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:indexPath.item]]forState:UIControlStateNormal];
-    [[cell myDescriptionLabel]setText:[arrayOfDescriptions objectAtIndex:indexPath.item]];
-    NSString *segueIdentifier = [arrayOfDescriptions objectAtIndex:indexPath.item];
-    [[cell myButton]setTitle:segueIdentifier forState:normal];
+    //[[cell myButton] setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:indexPath.item]]forState:UIControlStateNormal];
+    if(collectionView == _myCollectionView){
+    [[cell myButton] setImage:[UIImage imageNamed:@"1.png"]forState:UIControlStateNormal];
+    } else{
+        [[cell myButton] setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:indexPath.item]]forState:UIControlStateNormal];
+        //[cell myButton].imageView.image = [UIImage imageNamed:[arrayOfImages objectAtIndex:indexPath.item]];
+        [[cell myButton].imageView setContentMode:UIViewContentModeScaleAspectFit];
+    }
+    //[[cell myDescriptionLabel]setText:[arrayOfDescriptions objectAtIndex:indexPath.item]];
+    //NSString *segueIdentifier = [arrayOfDescriptions objectAtIndex:indexPath.item];
+    //[[cell myButton]setTitle:segueIdentifier forState:normal];
     if(!fullScreen){
         [[cell myButton] setAlpha:.2f];
         if(indexPath.item==currentButtonNum){
@@ -397,7 +414,7 @@ typedef enum possibleMoveDirection {
     } else {
         [[cell myButton] setAlpha:1.0f];
     }
-    [[cell myButton].imageView setContentMode:UIViewContentModeScaleAspectFit];
+    //[[cell myButton].imageView setContentMode:UIViewContentModeScaleAspectFit];
     [[cell myButton] setTag:indexPath.item];
     return cell;
 }/*
@@ -418,6 +435,30 @@ typedef enum possibleMoveDirection {
   
     }
 }*/
+- (IBAction)goToFullScreen:(UILongPressGestureRecognizer *)sender {
+    if(sender.state == UIGestureRecognizerStateBegan){
+            [UIView animateWithDuration:.5 animations:^{[_fullScreenCollection setAlpha:1.0f];}];
+            [UIView animateWithDuration:.3 animations:^{[_myCollectionView setAlpha:0.0f];}];
+            //[_fullScreenCollection setAlpha:1.0f];
+            fullScreen = YES;
+            [_fullScreenCollection reloadData];
+        } /*else if (sender.state == UIGestureRecognizerStateEnded){
+            [UIView animateWithDuration:.3 animations:^{[_fullScreenCollection setAlpha:0.0f];}];
+            [UIView animateWithDuration:.5 animations:^{[_myCollectionView setAlpha:1.0f];}];
+            fullScreen = NO;
+            [_myCollectionView reloadData];
+        }*/
+}
+- (IBAction)goToSmallerScreen:(UIPinchGestureRecognizer *)sender {
+    if(sender.velocity<-1.0){
+        [UIView animateWithDuration:.3 animations:^{[_fullScreenCollection setAlpha:0.0f];}];
+        [UIView animateWithDuration:.5 animations:^{[_myCollectionView setAlpha:1.0f];}];
+        fullScreen = NO;
+        [_myCollectionView reloadData];
+    }
+}
+
+
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
     return self.imageInScroll;

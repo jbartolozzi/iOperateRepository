@@ -213,6 +213,8 @@
 		D62B3A8F17419038006BFAE8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D62B3A9417419038006BFAE8 /* UTLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UTLViewController.h; sourceTree = "<group>"; };
 		D62B3A9517419038006BFAE8 /* UTLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UTLViewController.m; sourceTree = "<group>"; };
+		D62F852C179F785E00C667DC /* GraphingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphingView.h; sourceTree = "<group>"; };
+		D62F852D179F785E00C667DC /* GraphingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphingView.m; sourceTree = "<group>"; };
 		D66FFA43175FB6EE004C9AA4 /* EvaluationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluationViewController.h; sourceTree = "<group>"; };
 		D66FFA44175FB6EE004C9AA4 /* EvaluationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluationViewController.m; sourceTree = "<group>"; };
 		D66FFA46175FB765004C9AA4 /* EvaluationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluationCell.h; sourceTree = "<group>"; };
@@ -425,6 +427,8 @@
 				D62B3A8017419038006BFAE8 /* Supporting Files */,
 				D66FFA43175FB6EE004C9AA4 /* EvaluationViewController.h */,
 				D66FFA44175FB6EE004C9AA4 /* EvaluationViewController.m */,
+				D62F852C179F785E00C667DC /* GraphingView.h */,
+				D62F852D179F785E00C667DC /* GraphingView.m */,
 			);
 			path = iOperate;
 			sourceTree = "<group>";
@@ -652,12 +656,13 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "81B496DB-0EF8-47E4-B404-CD677283A149";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "81B496DB-0EF8-47E4-B404-CD677283A149";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -681,7 +686,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "81B496DB-0EF8-47E4-B404-CD677283A149";
