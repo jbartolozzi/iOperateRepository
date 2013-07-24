@@ -240,6 +240,8 @@
 		D680811F17553F7100366BAC /* 13.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 13.tif; sourceTree = "<group>"; };
 		D680812017553F7100366BAC /* 14.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 14.tif; sourceTree = "<group>"; };
 		D680812117553F7100366BAC /* 15.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 15.tif; sourceTree = "<group>"; };
+		D6925AC317A03FE2008BDBE8 /* GraphingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GraphingViewController.h; path = ../GraphingViewController.h; sourceTree = "<group>"; };
+		D6925AC417A03FE2008BDBE8 /* GraphingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GraphingViewController.m; path = ../GraphingViewController.m; sourceTree = "<group>"; };
 		D6F2A5101774E0B700B9D8B0 /* TestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestResult.h; sourceTree = "<group>"; };
 		D6F2A5111774E0B700B9D8B0 /* TestResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -402,6 +404,8 @@
 				C804D90217738B6600A7F07E /* QuizCollectionView.m */,
 				C810A96F1771FF6C0017C483 /* GraphViewController.h */,
 				C810A9701771FF6C0017C483 /* GraphViewController.m */,
+				D6925AC317A03FE2008BDBE8 /* GraphingViewController.h */,
+				D6925AC417A03FE2008BDBE8 /* GraphingViewController.m */,
 				C8A6AD281768D1A2002E1EBF /* EvaluationFooter.h */,
 				C8A6AD291768D1A2002E1EBF /* EvaluationFooter.m */,
 				1AB1B51D175D07E200F849DA /* QuizCell.h */,

@@ -10,6 +10,7 @@
 #import "TestResult.h"
 #import "GraphingView.h"
 #import <CoreGraphics/CoreGraphics.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface EvaluationViewController (){
     NSMutableArray *arrayOfText;
@@ -25,7 +26,7 @@
 @property (strong, nonatomic) TestResult *evalResult;
 @property (nonatomic) float grade;
 @property (strong, nonatomic) IBOutlet UITextView *resultsDisplay;
-@property (strong, nonatomic) IBOutlet UIView *visualResults;
+@property (strong, nonatomic) IBOutlet GraphingView *graphDisplay;
 @end
 
 @implementation EvaluationViewController
@@ -63,7 +64,6 @@
         displayText = [displayText stringByAppendingFormat:@"Grade: %f (%@, %0g)\n", result.grade,result.end, round(result.duration)]; 
     }
     self.resultsDisplay.text = displayText;
-    _visualResults.alpha = 1;
 	/*UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Evaluation Complete:" message:@"Submit your responses?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes",nil];
 	[alert show];*/
 }
@@ -72,7 +72,19 @@
     //GraphingView *myView = [[GraphingView alloc] initWithFrame: CGRectMake(20, 100, 280, 250)];
     //myView.backgroundColor = [UIColor whiteColor];
     //[self.view addSubview:myView];
-    _visualResults.alpha = .5;
+    //_visualResults.alpha = .5;
+    /*CALayer *sublayer = [CALayer layer];
+    sublayer.backgroundColor = [UIColor blueColor].CGColor;
+    sublayer.shadowOffset = CGSizeMake(0, 3);
+    sublayer.shadowRadius = 5.0;
+    sublayer.shadowColor = [UIColor blackColor].CGColor;
+    sublayer.shadowOpacity = 0.8;
+    sublayer.frame = CGRectMake(30, 30, 128, 192);
+
+    [_visualResults.layer addSublayer:sublayer];*/
+    [_graphDisplay setNeedsDisplay];
+    //[_visualResults setNeedsDisplay];
+    //[_visualResults setNeedsLayout];
     //[_visualResults drawRect:_visualResults.frame];
     /*
     CGPoint center = CGPointMake(50,50);
@@ -111,7 +123,6 @@
     [super viewDidLoad];
     [[self evaluationCollection]setDataSource:self];
     [[self evaluationCollection]setDelegate:self];
-    _visualResults.contentMode = UIViewContentModeRedraw;
     /*if(_comments == NULL){
         _comments = @"Comments:";
     }*/
