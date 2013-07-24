@@ -8,6 +8,8 @@
 
 #import "EvaluationViewController.h"
 #import "TestResult.h"
+#import "GraphingView.h"
+#import <CoreGraphics/CoreGraphics.h>
 
 @interface EvaluationViewController (){
     NSMutableArray *arrayOfText;
@@ -23,6 +25,7 @@
 @property (strong, nonatomic) TestResult *evalResult;
 @property (nonatomic) float grade;
 @property (strong, nonatomic) IBOutlet UITextView *resultsDisplay;
+@property (strong, nonatomic) IBOutlet UIView *visualResults;
 @end
 
 @implementation EvaluationViewController
@@ -60,11 +63,29 @@
         displayText = [displayText stringByAppendingFormat:@"Grade: %f (%@, %0g)\n", result.grade,result.end, round(result.duration)]; 
     }
     self.resultsDisplay.text = displayText;
+    _visualResults.alpha = 1;
 	/*UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Evaluation Complete:" message:@"Submit your responses?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes",nil];
 	[alert show];*/
 }
 - (IBAction)beginEval:(UIButton *)sender {
     self.evalResult = nil;
+    //GraphingView *myView = [[GraphingView alloc] initWithFrame: CGRectMake(20, 100, 280, 250)];
+    //myView.backgroundColor = [UIColor whiteColor];
+    //[self.view addSubview:myView];
+    _visualResults.alpha = .5;
+    //[_visualResults drawRect:_visualResults.frame];
+    /*
+    CGPoint center = CGPointMake(50,50);
+    float rectangleWidth = 100.0;
+    float rectangleHeight = 100.0;
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextAddRect(ctx,CGRectMake(center.x - (0.5 * rectangleWidth), center.y - (0.5 * rectangleHeight), rectangleWidth, rectangleHeight));
+    CGContextSetLineWidth(ctx, 10);
+    CGContextSetStrokeColorWithColor(ctx, [[UIColor grayColor] CGColor]);
+    CGContextStrokePath(ctx);
+    CGContextSetFillColorWithColor(ctx, [[UIColor greenColor] CGColor]);
+    CGContextAddRect(ctx,CGRectMake(center.x - (0.5 * rectangleWidth), center.y - (0.5 * rectangleHeight), rectangleWidth, rectangleHeight));
+    CGContextFillPath(ctx);*/
     //need to reset everything
 }
 
@@ -90,6 +111,7 @@
     [super viewDidLoad];
     [[self evaluationCollection]setDataSource:self];
     [[self evaluationCollection]setDelegate:self];
+    _visualResults.contentMode = UIViewContentModeRedraw;
     /*if(_comments == NULL){
         _comments = @"Comments:";
     }*/
