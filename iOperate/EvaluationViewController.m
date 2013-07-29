@@ -26,7 +26,6 @@
 @property (strong, nonatomic) TestResult *evalResult;
 @property (nonatomic) float grade;
 @property (strong, nonatomic) IBOutlet UITextView *resultsDisplay;
-@property (strong, nonatomic) IBOutlet GraphingView *graphDisplay;
 @end
 
 @implementation EvaluationViewController
@@ -82,7 +81,7 @@
     sublayer.frame = CGRectMake(30, 30, 128, 192);
 
     [_visualResults.layer addSublayer:sublayer];*/
-    [_graphDisplay setNeedsDisplay];
+    //[_graphDisplay setNeedsDisplay];
     //[_visualResults setNeedsDisplay];
     //[_visualResults setNeedsLayout];
     //[_visualResults drawRect:_visualResults.frame];
