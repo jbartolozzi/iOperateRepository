@@ -7,9 +7,10 @@
 //
 
 #import "DrawRectView.h"
-
+#import <QuartzCore/QuartzCore.h>
+@interface DrawRectView()
+@end
 @implementation DrawRectView
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -22,6 +23,13 @@
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
+
+bool readyToDrawLine = NO;
+float w = 10.0f;
+float sX = 200.0f;
+float sY = 200.0f;
+float eX = 400.0f;
+float eY = 400.0f;
 - (void)drawRect:(CGRect)rect
 {
     //[super drawRect:rect];
@@ -38,18 +46,30 @@
      CGContextSetFillColorWithColor(ctx, [[UIColor greenColor] CGColor]);
      CGContextAddRect(ctx,CGRectMake(center.x - (0.5 * rectangleWidth), center.y - (0.5 * rectangleHeight), rectangleWidth, rectangleHeight));
      CGContextFillPath(ctx);*/
+    if(readyToDrawLine){
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
 
     // Draw them with a 2.0 stroke width so they are a bit more visible.
-    CGContextSetLineWidth(context, 10.0);
+    CGContextSetLineWidth(context, w);
 
-    CGContextMoveToPoint(context, 200,200); //start at this point
+    CGContextMoveToPoint(context, sX,sY); //start at this point
 
-    CGContextAddLineToPoint(context, 400, 400); //draw to this point
+    CGContextAddLineToPoint(context, eX, eY); //draw to this point
 
     // and now draw the Path!
     CGContextStrokePath(context);
+    }
+}
+-(void)drawLine:(float)width:(float)startX:(float)startY:(float)endX:(float)endY{
+    readyToDrawLine = YES;
+    w= width;
+    sX = startX;
+    sY = startY;
+    eX = endX;
+    eY = endY;
+    
+    [self setNeedsDisplay];
 }
 
 

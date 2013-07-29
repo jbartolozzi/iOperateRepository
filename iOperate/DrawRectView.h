@@ -10,4 +10,5 @@
 
 @interface DrawRectView : UIView
 
+-(void)drawLine:(float)width:(float)startX:(float)startY:(float)endX:(float)endY;
 @end

@@ -55,6 +55,9 @@
 		D67C1497174D2F0500237C69 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D67C1496174D2F0500237C69 /* CustomCell.m */; };
 		D67C149A174D30AC00237C69 /* CollectionViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67C1499174D30AC00237C69 /* CollectionViewViewController.m */; };
 		D67CEEE717468CAD0036B49F /* PhotoViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67CEEE617468CAD0036B49F /* PhotoViewerViewController.m */; };
+		D67EF14B17A6EB8000993A53 /* DrawingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67EF14A17A6EB8000993A53 /* DrawingViewController.m */; };
+		D67EF14E17A6EFA700993A53 /* DrawRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = D67EF14D17A6EFA700993A53 /* DrawRectView.m */; };
+		D67EF15117A704BD00993A53 /* CustomGraphsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67EF15017A704BD00993A53 /* CustomGraphsViewController.m */; };
 		D680812217553F7100366BAC /* 1.tif in Resources */ = {isa = PBXBuildFile; fileRef = D680811317553F7100366BAC /* 1.tif */; };
 		D680812317553F7100366BAC /* 2.tif in Resources */ = {isa = PBXBuildFile; fileRef = D680811417553F7100366BAC /* 2.tif */; };
 		D680812417553F7100366BAC /* 3.tif in Resources */ = {isa = PBXBuildFile; fileRef = D680811517553F7100366BAC /* 3.tif */; };
@@ -215,6 +218,10 @@
 		D62B3A9517419038006BFAE8 /* UTLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UTLViewController.m; sourceTree = "<group>"; };
 		D62F852C179F785E00C667DC /* GraphingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphingView.h; sourceTree = "<group>"; };
 		D62F852D179F785E00C667DC /* GraphingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphingView.m; sourceTree = "<group>"; };
+		D66EB82717A6343800534D4C /* CustomDrawingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CustomDrawingView.h; path = iOperate/CustomDrawingView.h; sourceTree = "<group>"; };
+		D66EB82817A6343800534D4C /* CustomDrawingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CustomDrawingView.m; path = iOperate/CustomDrawingView.m; sourceTree = "<group>"; };
+		D66EB82917A6363B00534D4C /* Recognized.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Recognized.h; sourceTree = "<group>"; };
+		D66EB82A17A6363B00534D4C /* Recognized.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Recognized.m; sourceTree = "<group>"; };
 		D66FFA43175FB6EE004C9AA4 /* EvaluationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluationViewController.h; sourceTree = "<group>"; };
 		D66FFA44175FB6EE004C9AA4 /* EvaluationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluationViewController.m; sourceTree = "<group>"; };
 		D66FFA46175FB765004C9AA4 /* EvaluationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluationCell.h; sourceTree = "<group>"; };
@@ -225,6 +232,12 @@
 		D67C1499174D30AC00237C69 /* CollectionViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewViewController.m; sourceTree = "<group>"; };
 		D67CEEE517468CAD0036B49F /* PhotoViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewerViewController.h; sourceTree = "<group>"; };
 		D67CEEE617468CAD0036B49F /* PhotoViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewerViewController.m; sourceTree = "<group>"; };
+		D67EF14917A6EB8000993A53 /* DrawingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingViewController.h; sourceTree = "<group>"; };
+		D67EF14A17A6EB8000993A53 /* DrawingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingViewController.m; sourceTree = "<group>"; };
+		D67EF14C17A6EFA700993A53 /* DrawRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawRectView.h; sourceTree = "<group>"; };
+		D67EF14D17A6EFA700993A53 /* DrawRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawRectView.m; sourceTree = "<group>"; };
+		D67EF14F17A704BD00993A53 /* CustomGraphsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomGraphsViewController.h; path = iOperate/CustomGraphsViewController.h; sourceTree = "<group>"; };
+		D67EF15017A704BD00993A53 /* CustomGraphsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomGraphsViewController.m; path = iOperate/CustomGraphsViewController.m; sourceTree = "<group>"; };
 		D680811317553F7100366BAC /* 1.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 1.tif; sourceTree = "<group>"; };
 		D680811417553F7100366BAC /* 2.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 2.tif; sourceTree = "<group>"; };
 		D680811517553F7100366BAC /* 3.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 3.tif; sourceTree = "<group>"; };
@@ -240,8 +253,6 @@
 		D680811F17553F7100366BAC /* 13.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 13.tif; sourceTree = "<group>"; };
 		D680812017553F7100366BAC /* 14.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 14.tif; sourceTree = "<group>"; };
 		D680812117553F7100366BAC /* 15.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 15.tif; sourceTree = "<group>"; };
-		D6925AC317A03FE2008BDBE8 /* GraphingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GraphingViewController.h; path = ../GraphingViewController.h; sourceTree = "<group>"; };
-		D6925AC417A03FE2008BDBE8 /* GraphingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GraphingViewController.m; path = ../GraphingViewController.m; sourceTree = "<group>"; };
 		D6F2A5101774E0B700B9D8B0 /* TestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestResult.h; sourceTree = "<group>"; };
 		D6F2A5111774E0B700B9D8B0 /* TestResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -350,6 +361,10 @@
 		D62B3A6D17419038006BFAE8 = {
 			isa = PBXGroup;
 			children = (
+				D67EF14F17A704BD00993A53 /* CustomGraphsViewController.h */,
+				D67EF15017A704BD00993A53 /* CustomGraphsViewController.m */,
+				D66EB82717A6343800534D4C /* CustomDrawingView.h */,
+				D66EB82817A6343800534D4C /* CustomDrawingView.m */,
 				C87FF043176A7864007809E6 /* QuartzCore.framework */,
 				C810450217679BB400DFC1DE /* Default-Landscape@2x~ipad.png */,
 				C810450017679BB000DFC1DE /* Default-Landscape~ipad.png */,
@@ -396,6 +411,10 @@
 				1AD4E5BC17568C780028E418 /* AdvancedCollectionViewViewController.h */,
 				1AD4E5BD17568C780028E418 /* AdvancedCollectionViewViewController.m */,
 				1A4A11011755200300B5A253 /* MainStoryboard.storyboard */,
+				D67EF14917A6EB8000993A53 /* DrawingViewController.h */,
+				D67EF14A17A6EB8000993A53 /* DrawingViewController.m */,
+				D67EF14C17A6EFA700993A53 /* DrawRectView.h */,
+				D67EF14D17A6EFA700993A53 /* DrawRectView.m */,
 				C8F672CE177A353000B68AC0 /* BarGraphViewController.h */,
 				C8F672CF177A353000B68AC0 /* BarGraphViewController.m */,
 				C86D12B5177AA86B00E671D0 /* BarGraph2ViewController.h */,
@@ -404,8 +423,6 @@
 				C804D90217738B6600A7F07E /* QuizCollectionView.m */,
 				C810A96F1771FF6C0017C483 /* GraphViewController.h */,
 				C810A9701771FF6C0017C483 /* GraphViewController.m */,
-				D6925AC317A03FE2008BDBE8 /* GraphingViewController.h */,
-				D6925AC417A03FE2008BDBE8 /* GraphingViewController.m */,
 				C8A6AD281768D1A2002E1EBF /* EvaluationFooter.h */,
 				C8A6AD291768D1A2002E1EBF /* EvaluationFooter.m */,
 				1AB1B51D175D07E200F849DA /* QuizCell.h */,
@@ -433,6 +450,8 @@
 				D66FFA44175FB6EE004C9AA4 /* EvaluationViewController.m */,
 				D62F852C179F785E00C667DC /* GraphingView.h */,
 				D62F852D179F785E00C667DC /* GraphingView.m */,
+				D66EB82917A6363B00534D4C /* Recognized.h */,
+				D66EB82A17A6363B00534D4C /* Recognized.m */,
 			);
 			path = iOperate;
 			sourceTree = "<group>";
@@ -589,6 +608,7 @@
 			files = (
 				D62B3A8617419038006BFAE8 /* main.m in Sources */,
 				D62B3A8A17419038006BFAE8 /* UTLAppDelegate.m in Sources */,
+				D67EF14E17A6EFA700993A53 /* DrawRectView.m in Sources */,
 				D62B3A9617419038006BFAE8 /* UTLViewController.m in Sources */,
 				1AFF583917456BF9000BCCCD /* MainMenuViewController.m in Sources */,
 				1AFF583C17456D43000BCCCD /* MainMenuCell.m in Sources */,
@@ -602,11 +622,13 @@
 				1AB1B51F175D07E200F849DA /* QuizCell.m in Sources */,
 				D66FFA45175FB6EE004C9AA4 /* EvaluationViewController.m in Sources */,
 				D66FFA48175FB765004C9AA4 /* EvaluationCell.m in Sources */,
+				D67EF14B17A6EB8000993A53 /* DrawingViewController.m in Sources */,
 				C8A6AD2A1768D1A2002E1EBF /* EvaluationFooter.m in Sources */,
 				C810A9711771FF6C0017C483 /* GraphViewController.m in Sources */,
 				C804D90317738B6600A7F07E /* QuizCollectionView.m in Sources */,
 				D6F2A5121774E0B700B9D8B0 /* TestResult.m in Sources */,
 				C8F672D0177A353000B68AC0 /* BarGraphViewController.m in Sources */,
+				D67EF15117A704BD00993A53 /* CustomGraphsViewController.m in Sources */,
 				C86D12B7177AA86B00E671D0 /* BarGraph2ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
