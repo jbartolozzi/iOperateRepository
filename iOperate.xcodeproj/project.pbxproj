@@ -50,6 +50,7 @@
 		D62B3A8C17419038006BFAE8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D62B3A8B17419038006BFAE8 /* Default.png */; };
 		D62B3A9017419038006BFAE8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D62B3A8F17419038006BFAE8 /* Default-568h@2x.png */; };
 		D62B3A9617419038006BFAE8 /* UTLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D62B3A9517419038006BFAE8 /* UTLViewController.m */; };
+		D632A16A17A83DF3009AECA8 /* LineGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = D632A16917A83DF3009AECA8 /* LineGraph.m */; };
 		D66FFA45175FB6EE004C9AA4 /* EvaluationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66FFA44175FB6EE004C9AA4 /* EvaluationViewController.m */; };
 		D66FFA48175FB765004C9AA4 /* EvaluationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D66FFA47175FB765004C9AA4 /* EvaluationCell.m */; };
 		D67C1497174D2F0500237C69 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D67C1496174D2F0500237C69 /* CustomCell.m */; };
@@ -218,6 +219,8 @@
 		D62B3A9517419038006BFAE8 /* UTLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UTLViewController.m; sourceTree = "<group>"; };
 		D62F852C179F785E00C667DC /* GraphingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphingView.h; sourceTree = "<group>"; };
 		D62F852D179F785E00C667DC /* GraphingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphingView.m; sourceTree = "<group>"; };
+		D632A16817A83DF3009AECA8 /* LineGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineGraph.h; path = iOperate/LineGraph.h; sourceTree = "<group>"; };
+		D632A16917A83DF3009AECA8 /* LineGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LineGraph.m; path = iOperate/LineGraph.m; sourceTree = "<group>"; };
 		D66EB82717A6343800534D4C /* CustomDrawingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CustomDrawingView.h; path = iOperate/CustomDrawingView.h; sourceTree = "<group>"; };
 		D66EB82817A6343800534D4C /* CustomDrawingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CustomDrawingView.m; path = iOperate/CustomDrawingView.m; sourceTree = "<group>"; };
 		D66EB82917A6363B00534D4C /* Recognized.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Recognized.h; sourceTree = "<group>"; };
@@ -361,6 +364,8 @@
 		D62B3A6D17419038006BFAE8 = {
 			isa = PBXGroup;
 			children = (
+				D632A16817A83DF3009AECA8 /* LineGraph.h */,
+				D632A16917A83DF3009AECA8 /* LineGraph.m */,
 				D67EF14F17A704BD00993A53 /* CustomGraphsViewController.h */,
 				D67EF15017A704BD00993A53 /* CustomGraphsViewController.m */,
 				D66EB82717A6343800534D4C /* CustomDrawingView.h */,
@@ -606,6 +611,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D632A16A17A83DF3009AECA8 /* LineGraph.m in Sources */,
 				D62B3A8617419038006BFAE8 /* main.m in Sources */,
 				D62B3A8A17419038006BFAE8 /* UTLAppDelegate.m in Sources */,
 				D67EF14E17A6EFA700993A53 /* DrawRectView.m in Sources */,

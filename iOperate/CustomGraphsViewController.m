@@ -29,7 +29,7 @@
     [super viewDidLoad];
     
 	// Do any additional setup after loading the view.
-    _myView = [[DrawRectView alloc] initWithFrame: CGRectMake(20, 20, 500, 500)];
+    _myView = [[DrawRectView alloc] initWithFrame: CGRectMake(20, 20, 100, 100)];
     _myView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_myView];
 }
@@ -40,7 +40,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)drawLine:(UIButton *)sender {
-    [_myView drawLine:10.0f :20.0f :20.0f :400.0f :400.0f];
+    [_myView drawLine:10.0f :0.0f :100.0f :100.0f :100.0f];
 }
 
 @end

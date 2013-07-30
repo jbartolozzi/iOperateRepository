@@ -8,7 +8,9 @@
 
 #import "DrawRectView.h"
 #import <QuartzCore/QuartzCore.h>
+#import "LineGraph.h"
 @interface DrawRectView()
+@property(strong,nonatomic)LineGraph *graph;
 @end
 @implementation DrawRectView
 - (id)initWithFrame:(CGRect)frame
@@ -54,12 +56,23 @@ float eY = 400.0f;
     CGContextSetLineWidth(context, w);
 
     CGContextMoveToPoint(context, sX,sY); //start at this point
+        NSArray* points = [self.graph allPoints];
+        for(int i=0; i < points.count; i+=2){
+            CGContextAddLineToPoint(context, [points[i]floatValue],self.frame.size.height- [points[i+1]floatValue]); //draw to this point
+        }
+    
+    //CGContextAddLineToPoint(context, _graph.plotX, _graph.plotY); //draw to this point
 
-    CGContextAddLineToPoint(context, eX, eY); //draw to this point
 
     // and now draw the Path!
     CGContextStrokePath(context);
     }
+}
+-(LineGraph *)graph{
+    if(!_graph){
+        _graph = [[LineGraph alloc]init];
+    }
+    return _graph;
 }
 -(void)drawLine:(float)width:(float)startX:(float)startY:(float)endX:(float)endY{
     readyToDrawLine = YES;
@@ -68,6 +81,10 @@ float eY = 400.0f;
     sY = startY;
     eX = endX;
     eY = endY;
+    [self.graph addPoint:endX :endY];
+    /*self.graph.plotX = 450;
+    self.graph.plotY = 400;*/
+    
     
     [self setNeedsDisplay];
 }
