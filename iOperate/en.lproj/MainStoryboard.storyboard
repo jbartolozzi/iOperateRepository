@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4457.9" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="FkD-QS-onY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4471.1" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="FkD-QS-onY">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3697.3"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="7Hm-LP-kAW">
             <objects>
                 <viewController id="FkD-QS-onY" customClass="UTLViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="caX-9E-Dmt"/>
+                        <viewControllerLayoutGuide type="bottom" id="V6q-SK-NYq"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zYm-4P-aJt">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -145,6 +149,10 @@
         <scene sceneID="9gc-op-hKh">
             <objects>
                 <viewController id="5oN-2H-1Og" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0dm-tI-bAU"/>
+                        <viewControllerLayoutGuide type="bottom" id="v7a-K2-zRb"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="l1Q-sI-gEL">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -228,6 +236,10 @@
         <scene sceneID="Yf8-To-z2y">
             <objects>
                 <viewController id="hqh-RP-Alx" customClass="BarGraphViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jN2-pu-BIw"/>
+                        <viewControllerLayoutGuide type="bottom" id="wO4-xV-lvg"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IPR-w8-b6n">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -263,6 +275,10 @@
         <scene sceneID="op6-ve-wQo">
             <objects>
                 <viewController id="NXx-sn-hnX" customClass="BarGraph2ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bq9-Tg-Agp"/>
+                        <viewControllerLayoutGuide type="bottom" id="3uY-Jv-edm"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oYX-9J-Z2S">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -298,6 +314,10 @@
         <scene sceneID="xou-S7-o7u">
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="6Oy-Zg-6Cr" customClass="QuizViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dqq-AR-4pW"/>
+                        <viewControllerLayoutGuide type="bottom" id="NO7-1j-MND"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bLQ-KJ-Yr5">
                         <rect key="frame" x="0.0" y="44" width="768" height="980"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -732,6 +752,10 @@
         <scene sceneID="hgi-Ks-CkZ">
             <objects>
                 <viewController id="XNu-H8-Jhv" customClass="GraphViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0vr-aY-U8K"/>
+                        <viewControllerLayoutGuide type="bottom" id="gvE-MM-Pc3"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0sD-cm-Au0">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -807,6 +831,10 @@
         <scene sceneID="kyR-6T-93s">
             <objects>
                 <viewController id="L48-lL-F6i" customClass="EvaluationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D82-pL-FVl"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZXS-6u-ThD"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zem-Y3-c89">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -993,6 +1021,10 @@
         <scene sceneID="grl-ky-IcA">
             <objects>
                 <viewController id="UBG-p5-hvt" customClass="CollectionViewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vUa-1r-IGj"/>
+                        <viewControllerLayoutGuide type="bottom" id="oho-am-lAq"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pcw-ZN-UOC">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1105,6 +1137,10 @@
         <scene sceneID="6I1-ho-QMs">
             <objects>
                 <viewController title="PhotoViewer" modalTransitionStyle="flipHorizontal" id="kmc-zu-ia8" customClass="PhotoViewerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LbI-xW-Uk2"/>
+                        <viewControllerLayoutGuide type="bottom" id="CQc-sN-sSb"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FhZ-Ru-5Wj">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1409,6 +1445,10 @@
         <scene sceneID="XaE-Zu-d0H">
             <objects>
                 <viewController title="Slides" id="49K-et-Ltx" customClass="AdvancedCollectionViewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MoU-Sy-5y9"/>
+                        <viewControllerLayoutGuide type="bottom" id="zfR-3i-wdJ"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eHY-wj-dAS">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1598,6 +1638,10 @@
         <scene sceneID="eJJ-ZO-fQi">
             <objects>
                 <viewController id="J9O-J6-DLF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BT7-rP-AJl"/>
+                        <viewControllerLayoutGuide type="bottom" id="3kR-Z1-EyC"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fST-jE-tAo">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
