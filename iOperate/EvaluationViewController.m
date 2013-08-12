@@ -11,6 +11,7 @@
 #import "GraphingView.h"
 #import <CoreGraphics/CoreGraphics.h>
 #import <QuartzCore/QuartzCore.h>
+#import "DrawRectView.h"
 
 @interface EvaluationViewController (){
     NSMutableArray *arrayOfText;
@@ -26,7 +27,7 @@
 @property (strong, nonatomic) TestResult *evalResult;
 @property (nonatomic) float grade;
 @property (strong, nonatomic) IBOutlet UITextView *resultsDisplay;
-@property (strong, nonatomic) IBOutlet GraphingView *graphDisplay;
+@property (nonatomic,strong) DrawRectView *graphResults;
 @end
 
 @implementation EvaluationViewController
@@ -56,9 +57,11 @@
 		[self.commentField resignFirstResponder];
 	}
 }
+float numberOfSubmits = 0;
 - (IBAction)submitEvaluation:(id)sender {
     _grade = (float)correctAnswers/(float)totalQuestions;
     self.evalResult.grade = self.grade;
+    
     NSString *displayText = @"";
     for (TestResult *result in [TestResult allTestResults:TEST_NAME]){
         displayText = [displayText stringByAppendingFormat:@"Grade: %f (%@, %0g)\n", result.grade,result.end, round(result.duration)]; 
@@ -66,6 +69,8 @@
     self.resultsDisplay.text = displayText;
 	/*UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Evaluation Complete:" message:@"Submit your responses?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes",nil];
 	[alert show];*/
+    numberOfSubmits+=10;
+    [_graphResults drawLine:10.0f :1.0f :100.0f :numberOfSubmits :self.grade*100.0f];
 }
 - (IBAction)beginEval:(UIButton *)sender {
     self.evalResult = nil;
@@ -82,7 +87,7 @@
     sublayer.frame = CGRectMake(30, 30, 128, 192);
 
     [_visualResults.layer addSublayer:sublayer];*/
-    [_graphDisplay setNeedsDisplay];
+    //[_graphDisplay setNeedsDisplay];
     //[_visualResults setNeedsDisplay];
     //[_visualResults setNeedsLayout];
     //[_visualResults drawRect:_visualResults.frame];
@@ -121,6 +126,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _graphResults = [[DrawRectView alloc] initWithFrame: CGRectMake(20, 700, 100, 100)];
+    _graphResults.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:_graphResults];
+    
     [[self evaluationCollection]setDataSource:self];
     [[self evaluationCollection]setDelegate:self];
     /*if(_comments == NULL){
