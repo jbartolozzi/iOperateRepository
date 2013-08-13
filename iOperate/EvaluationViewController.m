@@ -58,19 +58,28 @@
 	}
 }
 float numberOfSubmits = 0;
+bool initialDraw = YES;
 - (IBAction)submitEvaluation:(id)sender {
     _grade = (float)correctAnswers/(float)totalQuestions;
     self.evalResult.grade = self.grade;
     
     NSString *displayText = @"";
+    
     for (TestResult *result in [TestResult allTestResults:TEST_NAME]){
-        displayText = [displayText stringByAppendingFormat:@"Grade: %f (%@, %0g)\n", result.grade,result.end, round(result.duration)]; 
+        displayText = [displayText stringByAppendingFormat:@"Grade: %f (%@, %0g)\n", result.grade,result.end, round(result.duration)];
+        if(initialDraw){
+        numberOfSubmits+=1;
+        [_graphResults drawLine:2.0f :1.0f :100.0f :numberOfSubmits :result.grade*100.0f];
+        }
     }
     self.resultsDisplay.text = displayText;
 	/*UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Evaluation Complete:" message:@"Submit your responses?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes",nil];
 	[alert show];*/
-    numberOfSubmits+=10;
-    [_graphResults drawLine:10.0f :1.0f :100.0f :numberOfSubmits :self.grade*100.0f];
+    if(!initialDraw){
+    numberOfSubmits+=1;
+    [_graphResults drawLine:2.0f :1.0f :100.0f :numberOfSubmits :self.grade*100.0f];
+    }
+    initialDraw=NO;
 }
 - (IBAction)beginEval:(UIButton *)sender {
     self.evalResult = nil;
@@ -127,7 +136,7 @@ float numberOfSubmits = 0;
 {
     [super viewDidLoad];
     
-    _graphResults = [[DrawRectView alloc] initWithFrame: CGRectMake(20, 700, 100, 100)];
+    _graphResults = [[DrawRectView alloc] initWithFrame: CGRectMake(20, 700, 110, 110)];
     _graphResults.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_graphResults];
     
