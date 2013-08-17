@@ -64,21 +64,36 @@ bool initialDraw = YES;
     self.evalResult.grade = self.grade;
     
     NSString *displayText = @"";
-    
+    NSComparator compareValues = ^(TestResult* a, TestResult* b)
+     {
+         return [a.start compare:b.start];
+     };
+	NSMutableArray* scores =  [[NSMutableArray alloc]init];
+    //self.photoButtonsOrdered = [self.photoButtons sortedArrayUsingComparator:compareTags];
     for (TestResult *result in [TestResult allTestResults:TEST_NAME]){
         displayText = [displayText stringByAppendingFormat:@"Grade: %f (%@, %0g)\n", result.grade,result.end, round(result.duration)];
-        if(initialDraw){
+        /*if(initialDraw){
         numberOfSubmits+=1;
         [_graphResults drawLine:2.0f :1.0f :100.0f :numberOfSubmits :result.grade*100.0f];
-        }
+        }*/
+        //[scores addObject:@(result.grade*100.0f)];
+        [scores addObject:result];
     }
     self.resultsDisplay.text = displayText;
 	/*UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Evaluation Complete:" message:@"Submit your responses?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes",nil];
 	[alert show];*/
+    
+    NSArray *sortedScores = [scores sortedArrayUsingComparator:compareValues];
+    for (int i = 0; i < sortedScores.count; i++){
+        numberOfSubmits+=1;
+        [_graphResults drawLine:2.0f :1.0f :100.0f :numberOfSubmits :((TestResult*)sortedScores[i]).grade*100.0f];
+    }
+    
+    /*
     if(!initialDraw){
     numberOfSubmits+=1;
     [_graphResults drawLine:2.0f :1.0f :100.0f :numberOfSubmits :self.grade*100.0f];
-    }
+    }*/
     initialDraw=NO;
 }
 - (IBAction)beginEval:(UIButton *)sender {

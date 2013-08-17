@@ -14,6 +14,7 @@
 @property(readonly, nonatomic)NSDate *start;
 @property(readonly, nonatomic)NSDate *end;
 @property(readonly, nonatomic)NSTimeInterval duration;
+@property(readonly, nonatomic) int testNumber;
 @property(nonatomic) float grade;
 @property(weak, nonatomic) NSString *type;
 @end

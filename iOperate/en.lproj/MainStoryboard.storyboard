@@ -880,22 +880,22 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="882" id="Fnx-Vc-DaV"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="jV8-KW-2Wl">
-                                    <size key="itemSize" width="768" height="77"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="10" id="jV8-KW-2Wl">
+                                    <size key="itemSize" width="768" height="47"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="l7G-Ge-18r" customClass="EvaluationCell">
-                                        <rect key="frame" x="0.0" y="10" width="768" height="77"/>
+                                        <rect key="frame" x="0.0" y="10" width="768" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="77"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="If4-Xo-0Sb">
-                                                    <rect key="frame" x="69" y="0.0" width="504" height="79"/>
+                                                    <rect key="frame" x="69" y="0.0" width="504" height="48"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="504" id="ySj-ou-kD8"/>
                                                     </constraints>
@@ -915,7 +915,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O6s-ms-nS1">
-                                                    <rect key="frame" x="594" y="25" width="154" height="29"/>
+                                                    <rect key="frame" x="594" y="10" width="154" height="29"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="154" id="IGV-6M-ueo"/>
                                                     </constraints>
@@ -1163,11 +1163,11 @@
                         <viewControllerLayoutGuide type="bottom" id="CQc-sN-sSb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FhZ-Ru-5Wj">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="black" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fan-1Z-wnH">
-                                <rect key="frame" x="0.0" y="527" width="768" height="281"/>
+                                <rect key="frame" x="1" y="487" width="768" height="281"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="281" id="Tgs-Y6-j5R"/>
@@ -1178,7 +1178,7 @@
                                 <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFg-Z6-PDS">
-                                <rect key="frame" x="26" y="285" width="40" height="40"/>
+                                <rect key="frame" x="27" y="285" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ATD-CD-4xg"/>
                                     <constraint firstAttribute="width" constant="40" id="QEu-RH-Zz1"/>
@@ -1196,7 +1196,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ia-ym-aiJ">
-                                <rect key="frame" x="702" y="285" width="40" height="40"/>
+                                <rect key="frame" x="703" y="285" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="xbS-qb-esw"/>
                                 </constraints>
@@ -1213,7 +1213,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uI1-zI-l0J">
-                                <rect key="frame" x="550" y="240" width="218" height="480"/>
+                                <rect key="frame" x="551" y="238" width="218" height="480"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Font Size" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezr-SH-G2d">
                                         <rect key="frame" x="56" y="20" width="106" height="21"/>
@@ -1285,7 +1285,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Mkl-0J-ddM">
-                                <rect key="frame" x="0.0" y="857" width="768" height="103"/>
+                                <rect key="frame" x="1" y="808" width="768" height="103"/>
                                 <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -1340,7 +1340,7 @@
                                 </connections>
                             </collectionView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" maximumZoomScale="6" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6b-WH-M2o">
-                                <rect key="frame" x="84" y="-44" width="600" height="549"/>
+                                <rect key="frame" x="85" y="-95" width="600" height="549"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1.tif" translatesAutoresizingMaskIntoConstraints="NO" id="UQe-TX-0ge">
@@ -1354,7 +1354,7 @@
                                 </connections>
                             </scrollView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleAspectFit" fixedFrame="YES" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="T6F-Es-LfJ">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <rect key="frame" x="1" y="0.0" width="768" height="960"/>
                                 <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="40" minimumInteritemSpacing="0.0" id="PJT-eO-X1r">
@@ -1415,6 +1415,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Textbook" id="3dD-Lb-9aK"/>
                     <navigationItem key="navigationItem" title="Image Viewer" id="c5s-gD-uu7">
                         <barButtonItem key="rightBarButtonItem" title="Tools" id="gLG-Qa-pB5">
                             <connections>
@@ -1460,7 +1461,130 @@
                     </connections>
                 </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-606" y="-2594"/>
+            <point key="canvasLocation" x="646" y="-3538"/>
+        </scene>
+        <!--View Controller - Overview-->
+        <scene sceneID="HWz-Qa-2f8">
+            <objects>
+                <viewController id="qHQ-Ae-UtX" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tHu-l6-D0s"/>
+                        <viewControllerLayoutGuide type="bottom" id="nvQ-xN-y84"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="k1q-4U-NJc">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Overview" id="X7i-EW-ynE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="miX-rV-EeQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="646" y="-2286"/>
+        </scene>
+        <!--Time Line View Controller - Timeline-->
+        <scene sceneID="xyG-BK-S1T">
+            <objects>
+                <viewController id="C6L-fC-mLN" customClass="TimeLineViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sfM-L8-dPw"/>
+                        <viewControllerLayoutGuide type="bottom" id="g7x-ho-Rct"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7nf-il-01J">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="exF-0r-CoW">
+                                <rect key="frame" x="0.0" y="65" width="1024" height="660"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fY7-xb-eKD">
+                                    <size key="itemSize" width="300" height="600"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <imageView key="backgroundView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="wallpaper-630620.jpg" id="gFt-tR-M4l">
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="660"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </imageView>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="WaZ-Fg-XMQ" customClass="TimeLinveCell">
+                                        <rect key="frame" x="0.0" y="94" width="300" height="600"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.tif" translatesAutoresizingMaskIntoConstraints="NO" id="JPZ-be-OFL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="233" height="253"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSJ-js-aqU">
+                                                    <rect key="frame" x="68" y="298" width="165" height="141"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3D-ee-IBq" customClass="ShowTextButton">
+                                                    <rect key="frame" x="14" y="285" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <state key="normal" title="Show">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="showText:" destination="C6L-fC-mLN" eventType="touchUpInside" id="lsc-k3-Ei2"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="Image" destination="JPZ-be-OFL" id="4pI-hd-pa4"/>
+                                            <outlet property="description" destination="bSJ-js-aqU" id="6Wg-e1-0Wj"/>
+                                            <outlet property="image" destination="JPZ-be-OFL" id="Goc-b5-7EN"/>
+                                            <outlet property="showButton" destination="x3D-ee-IBq" id="5Io-vZ-0sE"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Timeline" id="CZU-PP-TNR"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="timeLineCollection" destination="exF-0r-CoW" id="ERW-hj-zUE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tYT-pK-qXF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="698" y="-1014"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="n6Z-QJ-dFN">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="xsw-Sq-mms" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="WFB-NT-SgP"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="swI-35-jtZ">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="kmc-zu-ia8" kind="relationship" relationship="viewControllers" id="ixW-hD-C91"/>
+                        <segue destination="qHQ-Ae-UtX" kind="relationship" relationship="viewControllers" id="f3Y-mf-hFX"/>
+                        <segue destination="C6L-fC-mLN" kind="relationship" relationship="viewControllers" id="6Dz-tx-cYH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BmQ-sy-Ar0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-526" y="-2534"/>
         </scene>
         <!--Advanced Collection View View Controller - Slides-->
         <scene sceneID="XaE-Zu-d0H">
@@ -1515,7 +1639,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="kmc-zu-ia8" kind="push" id="cQe-5R-Dw2"/>
+                                                        <segue destination="xsw-Sq-mms" kind="push" id="X6r-2E-nsN"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPY-uh-dAE">
@@ -1706,6 +1830,7 @@
     <resources>
         <image name="1.png" width="144" height="144"/>
         <image name="1.tif" width="558" height="406.83270263671875"/>
+        <image name="2.tif" width="553" height="461.27999877929688"/>
         <image name="arrowLeft.png" width="29.760992050170898" height="27.84092903137207"/>
         <image name="arrowRight.png" width="29.760992050170898" height="27.84092903137207"/>
         <image name="wallpaper-630620.jpg" width="1920" height="1200"/>
