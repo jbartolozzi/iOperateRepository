@@ -77,6 +77,14 @@
     [cell evaluationResult].selectedSegmentIndex= [[arrayOfResults objectAtIndex:indexPath.item] integerValue];
     [[cell evaluationResult]setTag:indexPath.item];
     */
+    NSString* two = @"two";
+    if([[cell description].text isEqualToString: two]){
+        cell.frame= CGRectMake(cell.frame.origin.x, cell.frame.origin.y, 150.0f, 150.0f);
+    } else if([[cell description].text isEqualToString: @"one"]){
+        
+    } else {
+         cell.frame= CGRectMake(cell.frame.origin.x-150.0f, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height);
+    }
     return cell;
 }
 - (IBAction)showText:(ShowTextButton *)sender {
