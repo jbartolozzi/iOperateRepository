@@ -14,6 +14,9 @@
     NSMutableArray *arrayOfText;
     NSMutableArray *arrayOfImages;
     NSMutableArray *arrayOfButtons;
+    NSMutableArray *arrayOfCollapsed;
+    NSMutableArray *arrayOfOrigins;
+    
 }
 
 //@property (strong, nonatomic) IBOutletCollection(UITextView) NSArray *TextFields;
@@ -47,6 +50,8 @@
     [[self timeLineCollection] setDelegate:self];
     arrayOfText = [[NSMutableArray alloc]initWithObjects:@"one",@"two",@"three",@"four",@"five",@"six", nil];
     arrayOfImages = [[NSMutableArray alloc]initWithObjects:@"1.tif",@"2.tif",@"3.tif",@"4.tif",@"5.tif",@"6.tif", nil];
+    arrayOfCollapsed = [[NSMutableArray alloc]initWithObjects:@YES,@YES,@YES,@YES,@YES,@YES, nil];
+    arrayOfOrigins = [[NSMutableArray alloc]initWithObjects:@YES,@YES,@YES,@YES,@YES,@YES, nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,7 +74,7 @@
     static NSString *CellIdentifier = @"Cell";
     TimeLinveCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     [[cell image]setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:indexPath.item]] ];
-    [[cell description]setText:[arrayOfText objectAtIndex:indexPath.item]];
+    [[cell description]setText:[NSString stringWithFormat:@"%f", cell.frame.origin.x] ];//[arrayOfText objectAtIndex:indexPath.item]];
     [cell showButton].hiddenText = [cell description];
     /*[[cell evaluationText]setText:[arrayOfText objectAtIndex:indexPath.item]];
     NSString *text = [NSString stringWithFormat:@"%d)",indexPath.item];
@@ -77,13 +82,13 @@
     [cell evaluationResult].selectedSegmentIndex= [[arrayOfResults objectAtIndex:indexPath.item] integerValue];
     [[cell evaluationResult]setTag:indexPath.item];
     */
-    NSString* two = @"two";
-    if([[cell description].text isEqualToString: two]){
-        cell.frame= CGRectMake(cell.frame.origin.x, cell.frame.origin.y, 150.0f, 150.0f);
+    if([[arrayOfCollapsed objectAtIndex:indexPath.item] boolValue]){
+        [UIView animateWithDuration:0.5 animations:^{
+            cell.frame= CGRectMake(cell.frame.origin.x, cell.frame.origin.y, 150.0f, 600.0f);}];
     } else if([[cell description].text isEqualToString: @"one"]){
         
     } else {
-         cell.frame= CGRectMake(cell.frame.origin.x-150.0f, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height);
+         //cell.frame= CGRectMake(cell.frame.origin.x-150.0f, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height);
     }
     return cell;
 }
