@@ -74,6 +74,9 @@
 		D680812E17553F7100366BAC /* 13.tif in Resources */ = {isa = PBXBuildFile; fileRef = D680811F17553F7100366BAC /* 13.tif */; };
 		D680812F17553F7100366BAC /* 14.tif in Resources */ = {isa = PBXBuildFile; fileRef = D680812017553F7100366BAC /* 14.tif */; };
 		D680813017553F7100366BAC /* 15.tif in Resources */ = {isa = PBXBuildFile; fileRef = D680812117553F7100366BAC /* 15.tif */; };
+		D6AEDA9D17BEBA990096B389 /* TimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AEDA9C17BEBA990096B389 /* TimeLineViewController.m */; };
+		D6AEDAA017BEBAD60096B389 /* TimeLinveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AEDA9F17BEBAD60096B389 /* TimeLinveCell.m */; };
+		D6AEDAA317BF117C0096B389 /* ShowTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AEDAA217BF117C0096B389 /* ShowTextButton.m */; };
 		D6F2A5121774E0B700B9D8B0 /* TestResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F2A5111774E0B700B9D8B0 /* TestResult.m */; };
 /* End PBXBuildFile section */
 
@@ -256,6 +259,12 @@
 		D680811F17553F7100366BAC /* 13.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 13.tif; sourceTree = "<group>"; };
 		D680812017553F7100366BAC /* 14.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 14.tif; sourceTree = "<group>"; };
 		D680812117553F7100366BAC /* 15.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 15.tif; sourceTree = "<group>"; };
+		D6AEDA9B17BEBA990096B389 /* TimeLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeLineViewController.h; sourceTree = "<group>"; };
+		D6AEDA9C17BEBA990096B389 /* TimeLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeLineViewController.m; sourceTree = "<group>"; };
+		D6AEDA9E17BEBAD60096B389 /* TimeLinveCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeLinveCell.h; sourceTree = "<group>"; };
+		D6AEDA9F17BEBAD60096B389 /* TimeLinveCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeLinveCell.m; sourceTree = "<group>"; };
+		D6AEDAA117BF117C0096B389 /* ShowTextButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowTextButton.h; sourceTree = "<group>"; };
+		D6AEDAA217BF117C0096B389 /* ShowTextButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowTextButton.m; sourceTree = "<group>"; };
 		D6F2A5101774E0B700B9D8B0 /* TestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestResult.h; sourceTree = "<group>"; };
 		D6F2A5111774E0B700B9D8B0 /* TestResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -416,6 +425,10 @@
 				1AD4E5BC17568C780028E418 /* AdvancedCollectionViewViewController.h */,
 				1AD4E5BD17568C780028E418 /* AdvancedCollectionViewViewController.m */,
 				1A4A11011755200300B5A253 /* MainStoryboard.storyboard */,
+				D6AEDAA117BF117C0096B389 /* ShowTextButton.h */,
+				D6AEDAA217BF117C0096B389 /* ShowTextButton.m */,
+				D6AEDA9B17BEBA990096B389 /* TimeLineViewController.h */,
+				D6AEDA9C17BEBA990096B389 /* TimeLineViewController.m */,
 				D67EF14917A6EB8000993A53 /* DrawingViewController.h */,
 				D67EF14A17A6EB8000993A53 /* DrawingViewController.m */,
 				D67EF14C17A6EFA700993A53 /* DrawRectView.h */,
@@ -431,6 +444,8 @@
 				C8A6AD281768D1A2002E1EBF /* EvaluationFooter.h */,
 				C8A6AD291768D1A2002E1EBF /* EvaluationFooter.m */,
 				1AB1B51D175D07E200F849DA /* QuizCell.h */,
+				D6AEDA9E17BEBAD60096B389 /* TimeLinveCell.h */,
+				D6AEDA9F17BEBAD60096B389 /* TimeLinveCell.m */,
 				1AB1B51E175D07E200F849DA /* QuizCell.m */,
 				1AB1B51A175D07A800F849DA /* QuizViewController.h */,
 				1AB1B51B175D07A800F849DA /* QuizViewController.m */,
@@ -614,6 +629,8 @@
 				D632A16A17A83DF3009AECA8 /* LineGraph.m in Sources */,
 				D62B3A8617419038006BFAE8 /* main.m in Sources */,
 				D62B3A8A17419038006BFAE8 /* UTLAppDelegate.m in Sources */,
+				D6AEDA9D17BEBA990096B389 /* TimeLineViewController.m in Sources */,
+				D6AEDAA017BEBAD60096B389 /* TimeLinveCell.m in Sources */,
 				D67EF14E17A6EFA700993A53 /* DrawRectView.m in Sources */,
 				D62B3A9617419038006BFAE8 /* UTLViewController.m in Sources */,
 				1AFF583917456BF9000BCCCD /* MainMenuViewController.m in Sources */,
@@ -634,6 +651,7 @@
 				C804D90317738B6600A7F07E /* QuizCollectionView.m in Sources */,
 				D6F2A5121774E0B700B9D8B0 /* TestResult.m in Sources */,
 				C8F672D0177A353000B68AC0 /* BarGraphViewController.m in Sources */,
+				D6AEDAA317BF117C0096B389 /* ShowTextButton.m in Sources */,
 				D67EF15117A704BD00993A53 /* CustomGraphsViewController.m in Sources */,
 				C86D12B7177AA86B00E671D0 /* BarGraph2ViewController.m in Sources */,
 			);
