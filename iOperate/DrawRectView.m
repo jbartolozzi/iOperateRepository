@@ -50,12 +50,12 @@ float eY = 400.0f;
      CGContextFillPath(ctx);*/
     if(readyToDrawLine){
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
+    CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
 
     // Draw them with a 2.0 stroke width so they are a bit more visible.
     CGContextSetLineWidth(context, w);
 
-    CGContextMoveToPoint(context, sX,sY); //start at this point
+    CGContextMoveToPoint(context, sX,self.frame.size.height- sY); //start at this point
         NSArray* points = [self.graph allPoints];
         for(int i=0; i < points.count; i+=2){
             CGContextAddLineToPoint(context, [points[i]floatValue],self.frame.size.height- [points[i+1]floatValue]); //draw to this point
@@ -74,14 +74,18 @@ float eY = 400.0f;
     }
     return _graph;
 }
+bool firstPoint = YES;
 -(void)drawLine:(float)width:(float)startX:(float)startY:(float)endX:(float)endY{
     readyToDrawLine = YES;
     w= width;
-    sX = startX;
-    sY = startY;
-    eX = endX;
-    eY = endY;
+    if(firstPoint){
+        sX = endX;
+        sY = endY;
+        firstPoint = NO;
+    } else {
     [self.graph addPoint:endX :endY];
+    }
+    
     /*self.graph.plotX = 450;
     self.graph.plotY = 400;*/
     
