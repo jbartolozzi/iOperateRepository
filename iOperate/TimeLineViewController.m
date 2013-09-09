@@ -17,7 +17,14 @@
     NSMutableArray *arrayOfCollapsed;
     NSMutableArray *arrayOfOrigins;
     NSMutableArray *arrayOfShown;
-    
+    NSMutableArray *arrayOfType;
+    NSMutableArray *arrayOfWidths;
+    NSMutableArray *arrayOfImages1;
+    NSMutableArray *arrayOfImages2;
+    NSMutableArray *arrayOfImages3;
+    NSMutableArray *arrayOfImages4;
+    NSMutableArray *arrayOfImages5;
+    NSMutableArray *arrayOfImages6;
 }
 
 //@property (strong, nonatomic) IBOutletCollection(UITextView) NSArray *TextFields;
@@ -25,6 +32,10 @@
 
 @implementation TimeLineViewController
 
+float widthOne = 110.0;
+float widthTwo = 210.0;
+float widthThree = 310.0;
+int currentCell = 1;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -37,6 +48,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view.
    /* NSComparator compareValues = ^(id a, id b)
     {
@@ -49,6 +61,11 @@
     
     [[self timeLineCollection] setDataSource:self];
     [[self timeLineCollection] setDelegate:self];
+    [[self timeLineSubCollection] setDataSource:self];
+    [[self timeLineSubCollection] setDelegate:self];
+    _timeLineCollection.backgroundColor = [UIColor clearColor];
+    _timeLineSubCollection.backgroundColor = [UIColor clearColor];
+    
     arrayOfText = [[NSMutableArray alloc]initWithObjects:
                    @"Pay attention to the patient during induction of anesthesia, especially during intubation – be ready to help if it proves to be a difficult intubation.  Once the patient is intubated and an IV has been placed, initiate bed turning with your anesthesiology colleagues.\nOnce the bed is turned 90 degrees, the surgeon, who is gowned, gloved and wearing appropriate eye protection, puts on a headlight and adjusts it.  The scrub technician/nurse places a sheet over the patient’s body; you will evaluate the patient and position him/her.",
                    @"Once the time out has been performed a mouth gag is inserted.  You can use either a Crowe-Davis or McIvor mouth gag; the blade has a channel to accommodate the endotracheal tube.  There are three different size blades available for the gags.  The scrub nurse or technician will load the gag with the blade; as the gag is positioned, the fit of the blade is evaluated; if the fit is poor, the gag should be withdrawn and reloaded with the appropriate blade.  Poor blade choice or poor positioning of the mouth gag will impede access to the tonsillar issue so it is important to learn to position the gag properly and to learn to assess the fit of the blade.  Check to make sure the gag is fully closed.  Using thumb and middle finger as shown in the illustration, the surgeon scissors the mouth open.  With the mouth open check for loose teeth.  If any are loose, remove them prior to placing the gag.",
@@ -57,6 +74,18 @@
     arrayOfCollapsed = [[NSMutableArray alloc]initWithObjects:@YES,@YES,@YES,@YES,@YES,@YES, nil];
     arrayOfOrigins = [[NSMutableArray alloc]initWithObjects:@0.0,@310.0,@620.0,@930.0,@1240.0,@1550.0, nil];
     arrayOfShown = [[NSMutableArray alloc]initWithObjects:@YES,@YES,@YES,@YES,@YES,@YES, nil];
+    arrayOfType = [[NSMutableArray alloc]initWithObjects:@"1",@"2",@"3",@"3",@"1",@"1", nil];
+    
+    arrayOfWidths = [[NSMutableArray alloc]initWithObjects:@300.0,@300.0,@300.0,@300.0,@300.0,@300.0, nil];
+    arrayOfImages1 = [[NSMutableArray alloc]initWithObjects:@"1.tif",@"1.tif",@"1.tif",@"1.tif",@"1.tif",@"1.tif", nil];
+    arrayOfImages2 = [[NSMutableArray alloc]initWithObjects:@"2.tif",@"2.tif",@"2.tif",@"2.tif",@"2.tif",@"2.tif", nil];
+    arrayOfImages3 = [[NSMutableArray alloc]initWithObjects:@"3.tif",@"3.tif",@"3.tif",@"3.tif",@"3.tif",@"3.tif", nil];
+    arrayOfImages4 = [[NSMutableArray alloc]initWithObjects:@"4.tif",@"4.tif",@"4.tif",@"4.tif",@"4.tif",@"4.tif", nil];
+    arrayOfImages5 = [[NSMutableArray alloc]initWithObjects:@"5.tif",@"5.tif",@"5.tif",@"5.tif",@"5.tif",@"5.tif", nil];
+    arrayOfImages6 = [[NSMutableArray alloc]initWithObjects:@"6.tif",@"6.tif",@"6.tif",@"6.tif",@"6.tif",@"6.tif", nil];
+    
+    
+    [self updateCells];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,8 +105,10 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     static NSString *CellIdentifier = @"Cell";
     TimeLinveCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
+    if(collectionView==_timeLineCollection){
     [[cell image]setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:indexPath.item]] ];
     [[cell description]setText:[arrayOfText objectAtIndex:indexPath.item]];//[NSString stringWithFormat:@"%f", cell.frame.origin.x] ];
     [cell showButton].hiddenText = [cell description];
@@ -97,12 +128,44 @@
     [cell evaluationResult].selectedSegmentIndex= [[arrayOfResults objectAtIndex:indexPath.item] integerValue];
     [[cell evaluationResult]setTag:indexPath.item];
     */
-    if([[arrayOfCollapsed objectAtIndex:indexPath.item] boolValue]){
+    if(NO){//[[arrayOfCollapsed objectAtIndex:indexPath.item] boolValue]){
        /* [UIView animateWithDuration:0.5 animations:^{
             cell.frame= CGRectMake([[arrayOfOrigins objectAtIndex:indexPath.item]floatValue], cell.frame.origin.y, 150.0f, 600.0f);}];*/
-        cell.frame= CGRectMake([[arrayOfOrigins objectAtIndex:indexPath.item]floatValue], cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height);
+        cell.frame= CGRectMake(cell.frame.origin.x, cell.frame.origin.y,  cell.frame.size.width,[[arrayOfWidths objectAtIndex:indexPath.item]floatValue]);
+        /*cell.frame= CGRectMake(currentOrigin, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height);*/
+    }
+    } else {
+        if(currentCell == 1){
+            [[cell image]setImage:[UIImage imageNamed:[arrayOfImages1 objectAtIndex:indexPath.item]] ];
+        } else if(currentCell == 2){
+            [[cell image]setImage:[UIImage imageNamed:[arrayOfImages2 objectAtIndex:indexPath.item]] ];
+        } else if(currentCell == 3){
+            [[cell image]setImage:[UIImage imageNamed:[arrayOfImages3 objectAtIndex:indexPath.item]] ];
+        } else if(currentCell == 4){
+            [[cell image]setImage:[UIImage imageNamed:[arrayOfImages4 objectAtIndex:indexPath.item]] ];
+        } else if(currentCell == 5){
+            [[cell image]setImage:[UIImage imageNamed:[arrayOfImages5 objectAtIndex:indexPath.item]] ];
+        } else if(currentCell == 6){
+            [[cell image]setImage:[UIImage imageNamed:[arrayOfImages6 objectAtIndex:indexPath.item]] ];
+        }
     }
     return cell;
+}
+- (void) updateCells{
+    float currentOrigin = 0.0;
+    for(int i = 0; i < arrayOfOrigins.count; i++){
+        arrayOfOrigins[i] =@(currentOrigin);
+        if([arrayOfType[i] intValue]==1){
+            currentOrigin+=widthOne;
+            arrayOfWidths[i] = @(100.0);
+        }else if([arrayOfType[i] intValue]==2){
+            currentOrigin +=widthTwo;
+            arrayOfWidths[i] = @(200.0);
+        }else{
+            currentOrigin+=widthThree;
+            arrayOfWidths[i] = @(300.0);
+        }
+    }
 }
 - (IBAction)showText:(ShowTextButton *)sender {
     if(sender.showing == YES){//![[arrayOfShown objectAtIndex:sender.tag]boolValue]){
@@ -116,6 +179,9 @@
         arrayOfShown[sender.tag] = @YES;
         sender.showing = YES;
     }
+    
+    currentCell = (int)(sender.tag)+1;
+    [_timeLineSubCollection reloadData];
 }
 
 @end

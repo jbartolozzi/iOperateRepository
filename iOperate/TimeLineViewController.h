@@ -11,4 +11,5 @@
 @interface TimeLineViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UICollectionView *timeLineCollection;
+@property (weak, nonatomic) IBOutlet UICollectionView *timeLineSubCollection;
 @end
