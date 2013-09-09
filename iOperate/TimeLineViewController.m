@@ -25,6 +25,7 @@
     NSMutableArray *arrayOfImages4;
     NSMutableArray *arrayOfImages5;
     NSMutableArray *arrayOfImages6;
+    IBOutlet UIImageView *testPicture;
 }
 
 //@property (strong, nonatomic) IBOutletCollection(UITextView) NSArray *TextFields;
@@ -109,18 +110,20 @@ int currentCell = 1;
     static NSString *CellIdentifier = @"Cell";
     TimeLinveCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     if(collectionView==_timeLineCollection){
-    [[cell image]setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:indexPath.item]] ];
-    [[cell description]setText:[arrayOfText objectAtIndex:indexPath.item]];//[NSString stringWithFormat:@"%f", cell.frame.origin.x] ];
-    [cell showButton].hiddenText = [cell description];
-    [[cell showButton] setTag:indexPath.item];
+        [[cell image]setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:indexPath.item]] ];
+        [[cell description]setText:[arrayOfText objectAtIndex:indexPath.item]];//[NSString stringWithFormat:@"%f", cell.frame.origin.x] ];
+        [cell showButton].hiddenText = [cell description];
+        [[cell showButton] setTag:indexPath.item];
     if([[arrayOfShown objectAtIndex:indexPath.item]boolValue]){
         [cell showButton].hiddenText.alpha=1.0f;
         [[cell showButton] setTitle:@"Hide" forState:UIControlStateNormal];
-        [cell showButton].showing = YES;
+        //[cell showButton].showing = YES;
+        [cell bottomTick].alpha = 1.0;
     } else {
         [cell showButton].hiddenText.alpha=0.0f;
         [[cell showButton] setTitle:@"Show" forState:UIControlStateNormal];
-        [cell showButton].showing = NO;
+        //[cell showButton].showing = NO;
+        [cell bottomTick].alpha = 0.0;
     }
     /*[[cell evaluationText]setText:[arrayOfText objectAtIndex:indexPath.item]];
     NSString *text = [NSString stringWithFormat:@"%d)",indexPath.item];
@@ -135,7 +138,8 @@ int currentCell = 1;
         /*cell.frame= CGRectMake(currentOrigin, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height);*/
     }
     } else {
-        if(currentCell == 1){
+        
+        /*if(currentCell == 1){
             [[cell image]setImage:[UIImage imageNamed:[arrayOfImages1 objectAtIndex:indexPath.item]] ];
         } else if(currentCell == 2){
             [[cell image]setImage:[UIImage imageNamed:[arrayOfImages2 objectAtIndex:indexPath.item]] ];
@@ -147,7 +151,7 @@ int currentCell = 1;
             [[cell image]setImage:[UIImage imageNamed:[arrayOfImages5 objectAtIndex:indexPath.item]] ];
         } else if(currentCell == 6){
             [[cell image]setImage:[UIImage imageNamed:[arrayOfImages6 objectAtIndex:indexPath.item]] ];
-        }
+        }*/
     }
     return cell;
 }
@@ -168,20 +172,26 @@ int currentCell = 1;
     }
 }
 - (IBAction)showText:(ShowTextButton *)sender {
-    if(sender.showing == YES){//![[arrayOfShown objectAtIndex:sender.tag]boolValue]){
+    testPicture.frame = sender.frame;
+    testPicture.alpha=0.0;
+    if([arrayOfShown[sender.tag] boolValue]){//![[arrayOfShown objectAtIndex:sender.tag]boolValue]){
         [UIView animateWithDuration:0.5 animations:^{ sender.hiddenText.alpha= 0.0f;}];
         [sender setTitle:@"Show" forState:UIControlStateNormal];
         arrayOfShown[sender.tag] = @NO;
-        sender.showing = NO;
+        //sender.showing = NO;
     } else{
         [UIView animateWithDuration:0.5 animations:^{ sender.hiddenText.alpha= 1.0f;}];
         [sender setTitle:@"Hide" forState:UIControlStateNormal];
         arrayOfShown[sender.tag] = @YES;
-        sender.showing = YES;
+        //sender.showing = YES;
     }
-    
     currentCell = (int)(sender.tag)+1;
-    [_timeLineSubCollection reloadData];
+    [testPicture setImage:[UIImage imageNamed:[arrayOfImages objectAtIndex:sender.tag]]];
+    [UIView animateWithDuration:0.5 animations:^{ testPicture.alpha= 1.0f;}];
+    [UIView animateWithDuration:0.5 animations:^{ testPicture.frame= CGRectMake(0, 500, 200, 200);}];
+    //[self collectionView:_timeLineCollection cellForItemAtIndexPath:path];
+    //[_timeLineCollection reloadData];
+    //[_timeLineSubCollection reloadData];
 }
 
 @end

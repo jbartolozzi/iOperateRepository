@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4457.9" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="FkD-QS-onY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4488.2" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="FkD-QS-onY">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3715.3"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="7Hm-LP-kAW">
             <objects>
                 <viewController id="FkD-QS-onY" customClass="UTLViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DG9-Px-qgM"/>
+                        <viewControllerLayoutGuide type="bottom" id="cP8-8A-Qsq"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zYm-4P-aJt">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="left" image="wallpaper-630620.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="K2W-by-J5k">
+                            <imageView userInteractionEnabled="NO" contentMode="left" misplaced="YES" image="wallpaper-630620.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="K2W-by-J5k">
                                 <rect key="frame" x="0.0" y="-57" width="768" height="1061"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1061" id="0EM-ld-47I"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHN-1u-gGD">
+                            <button opaque="NO" contentMode="top" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHN-1u-gGD">
                                 <rect key="frame" x="292" y="437" width="93" height="41"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
@@ -60,7 +64,7 @@
                                     <action selector="userNameInput:" destination="FkD-QS-onY" eventType="editingDidEnd" id="35S-KS-dUl"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Children's Hospital of Philadelphia ©2013" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgA-QN-jUw">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Children's Hospital of Philadelphia ©2013" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgA-QN-jUw">
                                 <rect key="frame" x="20" y="963" width="292" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="1SB-MQ-ehq"/>
@@ -70,7 +74,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" text="Version" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hak-hP-C3W">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" misplaced="YES" text="Version" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hak-hP-C3W">
                                 <rect key="frame" x="620" y="963" width="86" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="86" id="777-7R-fZL"/>
@@ -79,7 +83,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" text="1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwz-qi-4cH">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" misplaced="YES" text="1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwz-qi-4cH">
                                 <rect key="frame" x="709" y="963" width="39" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="39" id="NZA-9D-zuj"/>
@@ -145,17 +149,21 @@
         <scene sceneID="9gc-op-hKh">
             <objects>
                 <viewController id="5oN-2H-1Og" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oP3-NQ-DIj"/>
+                        <viewControllerLayoutGuide type="bottom" id="17W-Hv-juY"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="l1Q-sI-gEL">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="left" ambiguous="YES" image="wallpaper-630620.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="kWa-Ca-fCQ">
+                            <imageView userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" image="wallpaper-630620.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="kWa-Ca-fCQ">
                                 <rect key="frame" x="-8" y="-86" width="1095" height="1061"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1061" id="Ovn-U9-lt8"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="top" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rH-oQ-hmB">
+                            <button opaque="NO" contentMode="top" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rH-oQ-hmB">
                                 <rect key="frame" x="466" y="236" width="93" height="41"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
@@ -176,7 +184,7 @@
                                     <action selector="sendLogin:" destination="FkD-QS-onY" eventType="touchUpInside" id="8AZ-H8-SXY"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="top" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NOG-ZE-kA8">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="top" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NOG-ZE-kA8">
                                 <rect key="frame" x="410" y="188" width="204" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
@@ -184,7 +192,7 @@
                                     <action selector="passwordInput:" destination="FkD-QS-onY" eventType="editingDidEnd" id="UpS-FR-MaE"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="top" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Rbr-aP-GcR">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="top" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Rbr-aP-GcR">
                                 <rect key="frame" x="410" y="131" width="204" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="204" id="3Sl-hN-Nyh"/>
@@ -228,6 +236,10 @@
         <scene sceneID="yAo-Pc-DgD">
             <objects>
                 <viewController id="uvh-rR-0Nh" customClass="CustomGraphsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PWw-BF-JAx"/>
+                        <viewControllerLayoutGuide type="bottom" id="FrI-Qy-vSP"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hDf-ho-bhL">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -257,6 +269,10 @@
         <scene sceneID="Yf8-To-z2y">
             <objects>
                 <viewController id="hqh-RP-Alx" customClass="BarGraphViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ylw-fH-lx1"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZSc-Yp-g2N"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IPR-w8-b6n">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -292,6 +308,10 @@
         <scene sceneID="op6-ve-wQo">
             <objects>
                 <viewController id="NXx-sn-hnX" customClass="BarGraph2ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tI0-gz-2xU"/>
+                        <viewControllerLayoutGuide type="bottom" id="KTO-za-Rpj"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oYX-9J-Z2S">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -327,6 +347,10 @@
         <scene sceneID="xou-S7-o7u">
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="6Oy-Zg-6Cr" customClass="QuizViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cH3-bG-HUO"/>
+                        <viewControllerLayoutGuide type="bottom" id="l78-2D-5dW"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bLQ-KJ-Yr5">
                         <rect key="frame" x="0.0" y="44" width="768" height="980"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -638,7 +662,6 @@
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="6" translatesAutoresizingMaskIntoConstraints="NO" id="DCy-y5-6Yj">
                                         <rect key="frame" x="162" y="799" width="446" height="29"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="446" id="Vi5-TV-ebw"/>
                                         </constraints>
@@ -761,6 +784,10 @@
         <scene sceneID="hgi-Ks-CkZ">
             <objects>
                 <viewController id="XNu-H8-Jhv" customClass="GraphViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IVr-Fc-wfm"/>
+                        <viewControllerLayoutGuide type="bottom" id="75v-wG-6o9"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0sD-cm-Au0">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -771,9 +798,8 @@
                                     <constraint firstAttribute="height" constant="1010" id="Ti3-Lp-kwi"/>
                                 </constraints>
                             </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JZT-qv-Zij">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JZT-qv-Zij">
                                 <rect key="frame" x="34" y="849" width="700" height="29"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="700" id="zsN-JU-WTW"/>
                                 </constraints>
@@ -790,17 +816,15 @@
                                     <action selector="setGraph:" destination="XNu-H8-Jhv" eventType="valueChanged" id="BuN-kc-6x2"/>
                                 </connections>
                             </segmentedControl>
-                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minimumValue="0.10000000000000001" maximumValue="0.90000000000000002" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="dvl-CL-qg3">
+                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minimumValue="0.10000000000000001" maximumValue="0.90000000000000002" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="dvl-CL-qg3">
                                 <rect key="frame" x="271" y="893" width="94" height="29"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="stepperChanged:" destination="XNu-H8-Jhv" eventType="valueChanged" id="Ioj-F1-dvC"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Plp-Np-QLO">
+                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Plp-Np-QLO">
                                 <rect key="frame" x="422" y="893" width="94" height="29"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="changeDistance:" destination="XNu-H8-Jhv" eventType="valueChanged" id="OBc-js-PnW"/>
@@ -836,6 +860,10 @@
         <scene sceneID="kyR-6T-93s">
             <objects>
                 <viewController id="L48-lL-F6i" customClass="EvaluationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="upn-Zp-IF2"/>
+                        <viewControllerLayoutGuide type="bottom" id="w6c-EH-T5c"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zem-Y3-c89">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -884,7 +912,6 @@
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O6s-ms-nS1">
                                                     <rect key="frame" x="594" y="10" width="154" height="29"/>
-                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="154" id="IGV-6M-ueo"/>
                                                     </constraints>
@@ -1011,11 +1038,15 @@
         <scene sceneID="grl-ky-IcA">
             <objects>
                 <viewController id="UBG-p5-hvt" customClass="CollectionViewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pAJ-cy-Xg1"/>
+                        <viewControllerLayoutGuide type="bottom" id="JIC-9t-MA0"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pcw-ZN-UOC">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="left" image="wallpaper-630620.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="7Ls-24-tRs">
+                            <imageView userInteractionEnabled="NO" contentMode="left" misplaced="YES" image="wallpaper-630620.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="7Ls-24-tRs">
                                 <rect key="frame" x="0.0" y="0.0" width="777" height="1053"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="777" id="1AK-lK-YhO"/>
@@ -1123,11 +1154,15 @@
         <scene sceneID="6I1-ho-QMs">
             <objects>
                 <viewController title="PhotoViewer" modalTransitionStyle="flipHorizontal" id="kmc-zu-ia8" customClass="PhotoViewerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YFm-H0-7q9"/>
+                        <viewControllerLayoutGuide type="bottom" id="iEe-6H-sfh"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FhZ-Ru-5Wj">
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="black" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fan-1Z-wnH">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="black" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fan-1Z-wnH">
                                 <rect key="frame" x="1" y="487" width="768" height="281"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1173,7 +1208,7 @@
                                     <action selector="buttonRight:" destination="kmc-zu-ia8" eventType="touchUpInside" id="a1h-sE-sPW"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uI1-zI-l0J">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uI1-zI-l0J">
                                 <rect key="frame" x="551" y="238" width="218" height="480"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Font Size" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezr-SH-G2d">
@@ -1220,7 +1255,7 @@
                                             <action selector="decreaseFontSize:" destination="kmc-zu-ia8" eventType="touchUpInside" id="WO2-fE-2lM"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" text="• Here are some of my notes" translatesAutoresizingMaskIntoConstraints="NO" id="wfF-uU-zag">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" text="• Here are some of my notes" translatesAutoresizingMaskIntoConstraints="NO" id="wfF-uU-zag">
                                         <rect key="frame" x="20" y="107" width="178" height="353"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1245,7 +1280,7 @@
                                     <constraint firstItem="IBD-Fp-RaY" firstAttribute="top" secondItem="uI1-zI-l0J" secondAttribute="top" constant="51" id="yby-Ex-Tgi"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Mkl-0J-ddM">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Mkl-0J-ddM">
                                 <rect key="frame" x="1" y="808" width="768" height="103"/>
                                 <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
@@ -1260,13 +1295,13 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="S55-EW-57P" customClass="CustomCell">
-                                        <rect key="frame" x="20" y="16" width="70" height="70"/>
+                                        <rect key="frame" x="20" y="17" width="70" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBb-Kn-pJe">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBb-Kn-pJe">
                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="70" id="42v-8M-NTK"/>
@@ -1428,6 +1463,10 @@
         <scene sceneID="HWz-Qa-2f8">
             <objects>
                 <viewController id="qHQ-Ae-UtX" customClass="OverviewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eNl-8A-Kj5"/>
+                        <viewControllerLayoutGuide type="bottom" id="ful-CS-GA3"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="k1q-4U-NJc">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1444,7 +1483,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="Cell" id="Cx3-PT-hgh" customClass="CustomCell">
-                                        <rect key="frame" x="20" y="10" width="205" height="231"/>
+                                        <rect key="frame" x="20" y="74" width="205" height="231"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="205" height="231"/>
@@ -1479,10 +1518,44 @@
         <scene sceneID="xyG-BK-S1T">
             <objects>
                 <viewController id="C6L-fC-mLN" customClass="TimeLineViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Hi-Gk-ENB"/>
+                        <viewControllerLayoutGuide type="bottom" id="JH0-Bm-Z4Z"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7nf-il-01J">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U69-Ba-eCa">
+                                <rect key="frame" x="0.0" y="464" width="1024" height="304"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7A8-ec-icA">
+                                    <size key="itemSize" width="252" height="256"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="5uN-rm-Y0l" customClass="TimeLinveCell">
+                                        <rect key="frame" x="0.0" y="88" width="252" height="256"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="252" height="256"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ipo-CC-hEr">
+                                                    <rect key="frame" x="14" y="3" width="218" height="164"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="image" destination="Ipo-CC-hEr" id="7Cd-2n-ajC"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" image="wallpaper-630620.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Bcs-Ze-MbQ">
                                 <rect key="frame" x="-3" y="0.0" width="1029" height="768"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -1529,7 +1602,12 @@
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6KL-Wb-emR">
-                                                    <rect key="frame" x="140" y="328" width="10" height="70"/>
+                                                    <rect key="frame" x="138" y="328" width="12" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zoT-nJ-v12">
+                                                    <rect key="frame" x="138" y="364" width="12" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -1538,6 +1616,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="Image" destination="JPZ-be-OFL" id="4pI-hd-pa4"/>
+                                            <outlet property="bottomTick" destination="zoT-nJ-v12" id="iYn-k6-OLP"/>
                                             <outlet property="description" destination="bSJ-js-aqU" id="6Wg-e1-0Wj"/>
                                             <outlet property="image" destination="JPZ-be-OFL" id="Goc-b5-7EN"/>
                                             <outlet property="showButton" destination="x3D-ee-IBq" id="5Io-vZ-0sE"/>
@@ -1550,36 +1629,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U69-Ba-eCa">
-                                <rect key="frame" x="0.0" y="464" width="1024" height="304"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7A8-ec-icA">
-                                    <size key="itemSize" width="252" height="256"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="5uN-rm-Y0l" customClass="TimeLinveCell">
-                                        <rect key="frame" x="0.0" y="24" width="252" height="256"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="252" height="256"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ipo-CC-hEr">
-                                                    <rect key="frame" x="14" y="3" width="218" height="164"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <connections>
-                                            <outlet property="image" destination="Ipo-CC-hEr" id="7Cd-2n-ajC"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M6v-tl-PFH">
+                                <rect key="frame" x="392" y="320" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -1587,6 +1640,7 @@
                     <tabBarItem key="tabBarItem" title="Timeline" id="CZU-PP-TNR"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="testPicture" destination="M6v-tl-PFH" id="pmX-sF-Acn"/>
                         <outlet property="timeLineCollection" destination="exF-0r-CoW" id="ERW-hj-zUE"/>
                         <outlet property="timeLineSubCollection" destination="U69-Ba-eCa" id="6bw-H7-VLX"/>
                     </connections>
@@ -1620,6 +1674,10 @@
         <scene sceneID="XaE-Zu-d0H">
             <objects>
                 <viewController title="Slides" id="49K-et-Ltx" customClass="AdvancedCollectionViewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tuq-Hp-icC"/>
+                        <viewControllerLayoutGuide type="bottom" id="cLX-c9-1lU"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eHY-wj-dAS">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1631,7 +1689,7 @@
                                     <constraint firstAttribute="height" constant="970" id="y3z-20-Ftv"/>
                                 </constraints>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zwx-gf-MzE">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zwx-gf-MzE">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="768" id="P8K-gY-N7I"/>
@@ -1809,6 +1867,10 @@
         <scene sceneID="eJJ-ZO-fQi">
             <objects>
                 <viewController id="J9O-J6-DLF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4WC-zU-SJD"/>
+                        <viewControllerLayoutGuide type="bottom" id="1fS-uk-jec"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fST-jE-tAo">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1863,9 +1925,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="iT2-vR-bZo"/>
-        <segue reference="1ud-JP-Agu"/>
-        <segue reference="F2b-u6-ZfJ"/>
-        <segue reference="FlC-S5-pAa"/>
+        <segue reference="1ao-Id-9th"/>
+        <segue reference="4QC-ub-Jv6"/>
+        <segue reference="RHe-Xu-5W3"/>
+        <segue reference="6nm-Wh-i16"/>
     </inferredMetricsTieBreakers>
 </document>

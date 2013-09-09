@@ -13,5 +13,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *image;
 @property (strong, nonatomic) IBOutlet ShowTextButton *showButton;
 @property (strong, nonatomic) IBOutlet UITextView *description;
+@property (strong, nonatomic) IBOutlet UIImageView *bottomTick;
 
 @end
