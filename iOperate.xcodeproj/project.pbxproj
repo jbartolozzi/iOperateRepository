@@ -560,6 +560,11 @@
 				CLASSPREFIX = UTL;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "SIG Center";
+				TargetAttributes = {
+					D62B3A7517419038006BFAE8 = {
+						DevelopmentTeam = LD9753Q7H5;
+					};
+				};
 			};
 			buildConfigurationList = D62B3A7117419038006BFAE8 /* Build configuration list for PBXProject "iOperate" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -758,7 +763,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Aline Normoyle (44BG9DZDLW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Aline Normoyle (44BG9DZDLW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -773,8 +778,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "81B496DB-0EF8-47E4-B404-CD677283A149";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "81B496DB-0EF8-47E4-B404-CD677283A149";
+				PROVISIONING_PROFILE = "DB4FC7E6-2AC4-4BB8-9EC4-0ABFD66D0794";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DB4FC7E6-2AC4-4BB8-9EC4-0ABFD66D0794";
 				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
@@ -786,7 +791,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Aline Normoyle (44BG9DZDLW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Aline Normoyle (44BG9DZDLW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -801,8 +806,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "81B496DB-0EF8-47E4-B404-CD677283A149";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "81B496DB-0EF8-47E4-B404-CD677283A149";
+				PROVISIONING_PROFILE = "DB4FC7E6-2AC4-4BB8-9EC4-0ABFD66D0794";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DB4FC7E6-2AC4-4BB8-9EC4-0ABFD66D0794";
 				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;

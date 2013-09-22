@@ -39,6 +39,14 @@
     _evalResult.type = TEST_NAME;
     return _evalResult;
 }
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    if(interfaceOrientation == UIInterfaceOrientationPortrait||interfaceOrientation==UIInterfaceOrientationPortraitUpsideDown)
+        return YES;
+    
+    return NO;
+}
 - (IBAction)openComments:(id)sender {
 	if (self.commentField.alpha < 1.0) {
         if (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
@@ -304,7 +312,7 @@ bool initialDraw = YES;
         arrayOfResults[sender.tag] = @"NO";
     }
     
-    [_evaluationCollection reloadData];
+    //[_evaluationCollection reloadData];
 }
 - (IBAction)resultMarked:(UISegmentedControl *)sender {
     if(sender.selectedSegmentIndex==0){
@@ -314,7 +322,7 @@ bool initialDraw = YES;
         arrayOfResults[sender.tag] = [NSNumber numberWithInt:1];
         correctAnswers++;
     }
-    [_evaluationCollection reloadData];
+    //[_evaluationCollection reloadData];
 }
 #define ALL_COMMENTS_KEY @"comments_ALL"
 -(void)synchronize{

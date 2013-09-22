@@ -25,12 +25,20 @@ NSMutableArray *arrayOfImages;
     }
     return self;
 }
-
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    if(interfaceOrientation == UIInterfaceOrientationLandscapeLeft||interfaceOrientation == UIInterfaceOrientationLandscapeLeft)
+        return YES;
+    
+    return NO;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [[self OverviewCollectionView] setDataSource:self];
     [[self OverviewCollectionView] setDelegate:self];
+    [self.view setAutoresizesSubviews:YES];
+    [[self OverviewCollectionView] setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
     arrayOfImages = [[NSMutableArray alloc]initWithObjects:@"1.tif",@"2.tif",@"3.tif",@"4.tif",@"5.tif",@"6.tif",@"7.tif",@"8.tif",@"9.tif",@"10.tif",@"11.tif",@"12.tif",@"13.tif",@"14.tif",@"15.tif",nil];
     
 	// Do any additional setup after loading the view.

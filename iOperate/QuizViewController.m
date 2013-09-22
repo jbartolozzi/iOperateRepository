@@ -51,6 +51,13 @@
     }
     return self;
 }
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    if(interfaceOrientation == UIInterfaceOrientationPortrait||interfaceOrientation==UIInterfaceOrientationPortraitUpsideDown)
+        return YES;
+    
+    return NO;
+}
 
 - (void)viewDidLoad
 {
