@@ -1925,10 +1925,22 @@
     </scenes>
     <resources>
         <image name="1.png" width="144" height="144"/>
+        <image name="1.png" width="144" height="144"/>
+        <image name="1.png" width="144" height="144"/>
         <image name="1.tif" width="3300" height="2406"/>
+        <image name="2.tif" width="2304" height="1922"/>
         <image name="2.tif" width="2304" height="1922"/>
         <image name="arrowLeft.png" width="124" height="116"/>
         <image name="arrowRight.png" width="124" height="116"/>
+        <image name="wallpaper-630620.jpg" width="1920" height="1200"/>
+        <image name="wallpaper-630620.jpg" width="1920" height="1200"/>
+        <image name="wallpaper-630620.jpg" width="1920" height="1200"/>
+        <image name="wallpaper-630620.jpg" width="1920" height="1200"/>
+        <image name="wallpaper-630620.jpg" width="1920" height="1200"/>
+        <image name="wallpaper-630620.jpg" width="1920" height="1200"/>
+        <image name="wallpaper-630620.jpg" width="1920" height="1200"/>
+        <image name="wallpaper-630620.jpg" width="1920" height="1200"/>
+        <image name="wallpaper-630620.jpg" width="1920" height="1200"/>
         <image name="wallpaper-630620.jpg" width="1920" height="1200"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
