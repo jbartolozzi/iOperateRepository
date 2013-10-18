@@ -112,14 +112,14 @@
 - (IBAction)sendLogin:(id)sender {
 	[self.userNameField resignFirstResponder];
 	[self.passwordField resignFirstResponder];
-    if ([self.userName  isEqualToString: @"s"] && [self.password  isEqualToString: @"p"]) {
+    //if ([self.userName  isEqualToString: @"s"] && [self.password  isEqualToString: @"p"]) {
 		[self performSegueWithIdentifier:@"student" sender:sender];
-	}
-	else if ([self.userName isEqualToString:@"p"] && [self.password isEqualToString:@"p"]) {
+	//}
+	//else if ([self.userName isEqualToString:@"p"] && [self.password isEqualToString:@"p"]) {
 		[self performSegueWithIdentifier:@"prof" sender:sender];
-	}
+	//}
 	
-	else {
+	/*else {
 		UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Invalid Username/Password."
 													message:nil
 													delegate:self
@@ -129,7 +129,7 @@
 		self.passwordField.text = @"";
 		self.passwordField.placeholder = @"Password";
 		attempts++;
-	}
+	}*/
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

@@ -161,7 +161,7 @@ bool initialDraw = YES;
     
     _graphResults = [[DrawRectView alloc] initWithFrame: CGRectMake(20, 700, 110, 110)];
     _graphResults.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:_graphResults];
+   // [self.view addSubview:_graphResults];
     
     [[self evaluationCollection]setDataSource:self];
     [[self evaluationCollection]setDelegate:self];
